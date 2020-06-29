@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Exo 2'!important; }
+ 
+.header-text{
+    text-align:justify;
+    font-weight: 700;
+    font-size: 36px;
+    color: #1b2b91;
+}
+
+.para-text{
+    text-align:justify;
+
+    font-weight:300;
+    font-size:14px;
+}

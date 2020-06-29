@@ -8,6 +8,7 @@ import { HomeCourseComponent } from './home-course/home-course.component';
 import { HomeFeaturesComponent } from './home-features/home-features.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     RouterModule,
+    NgbModule
   ],
   exports:[ SectionsComponent ]
 })

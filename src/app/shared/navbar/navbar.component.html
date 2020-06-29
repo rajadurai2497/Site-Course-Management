@@ -1,10 +1,11 @@
-<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+<nav id="navbar-main"
+  class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
   <div class="container">
     <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
       <img src="./assets/img/brand/loogo-01.png">
     </a>
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+      [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
@@ -17,17 +18,17 @@
           </div>
           <div class="col-6 collapse-close">
             <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
-                  [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+              [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
               <span></span>
               <span></span>
             </button>
           </div>
         </div>
       </div>
-  
+
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
         <li class="nav-color">
-          <a class="nav-link nav-link-icon" [routerLink]="['/home']" >
+          <a class="nav-link nav-link-icon" [routerLink]="['/home']">
             <!-- <i class="fa fa-facebook-square"></i> -->
             <span class="nav-link-inner--text">Home</span>
           </a>
@@ -56,11 +57,11 @@
           </a>
         </li>
         <li class="nav-item d-none d-lg-block ml-lg-4 nav-link">
-          <a   class="btn btn-icon ">
+          <a class="btn btn-icon ">
             <span class="btn-inner--icon">
-              <i class="fa fa-sign-in" mr-2 ></i>
+              <i class="fa fa-sign-in" mr-2></i>
             </span>
-            <span class="nav-link-inner--text btn-color ">  LOGIN</span>
+            <span class="nav-link-inner--text btn-color "> LOGIN</span>
           </a>
         </li>
       </ul>
