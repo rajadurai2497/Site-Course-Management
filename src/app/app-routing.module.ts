@@ -9,21 +9,18 @@ import { CommunityComponent } from './community/community.component';
 import { QueriesComponent } from './queries/queries.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { CourseComponent } from './course/course.component';
 
 
 const routes: Routes = [
   { path: 'home',             component: HomeComponent },
   { path: 'About-us',             component: AboutUsComponent },
   { path: 'Community',             component: CommunityComponent },
-
   { path: 'register',           component: SignupComponent },
-
   { path: 'Queries',          component: QueriesComponent },
-  // { path: 'Course',          component: CourseComponent },
-  // { path: 'buy-course',          component: BuyCourseComponent },
+  { path: 'Course',          component: CourseComponent },
   { path: 'privacy-policy',          component: PrivacyPolicyComponent },
   { path: 'terms-conditions',          component: TermsConditionsComponent},
-  // { path: 'Course-learn-more',          component: CourseLearnMoreComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

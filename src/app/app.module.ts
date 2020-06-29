@@ -16,6 +16,7 @@ import { TermsConditionsComponent } from './terms-conditions/terms-conditions.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CourseComponent } from './course/course.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +26,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AboutUsComponent,
     CommunityComponent,
     QueriesComponent,
-    // CourseComponent,
+    CourseComponent,
     PrivacyPolicyComponent,
     TermsConditionsComponent,
-    // CourseLearnMoreComponent,
-    // BuyCourseComponent
+    
   ],
   imports: [
     BrowserModule,
