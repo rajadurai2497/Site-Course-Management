@@ -1,0 +1,119 @@
+@import "custom/utilities/backgrounds.scss";
+@import "custom/utilities/floating.scss";
+@import "custom/utilities/helper.scss";
+@import "custom/utilities/position.scss";
+@import "custom/utilities/sizing.scss";
+@import "custom/utilities/spacing.scss";
+@import "custom/utilities/shadows.scss";
+@import "custom/utilities/text.scss";
+@import "custom/utilities/transform.scss";
+
+
+  .btn-view {
+    color: #fff;
+    border-color: #1b2b91;
+    background-color:#1b2b91;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08)
+}
+
+.card-color{
+  background-color:#7a32a3;
+}
+
+
+.bg-gradient{
+  background: linear-gradient(87deg, #212121 0,#212121 100%)!important
+}
+
+.hr-color
+{
+  background-color:white;
+}
+
+.hr-margin
+{
+  margin-bottom: 10px;
+}
+.font{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.shape-navbar{
+  background-color:white;
+}
+.nav-color{
+    color: white;
+}
+
+.section-header-shape {
+  //margin: 180px 0;
+  position: relative;
+  overflow: hidden;
+
+  .stars-and-coded{
+      margin-top: 8rem;
+  }
+  
+  .shape {
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height:60%;
+
+      span {
+          position: absolute;
+      }
+
+      +.container {
+          position: relative;
+          // padding-top: 6rem;
+          // padding-bottom: 0rem;
+          height: 100%;
+      }
+
+      &.shape-skew {
+
+          +.container {
+              padding-top: 0;
+
+              .col {
+                  margin-top: -100px;
+              }
+          }
+
+          + .shape-container {
+              padding-top: 18rem;
+              padding-bottom: 19rem;
+          }
+      }
+  }
+}
+.hi-text{
+    font-size:14px;
+    text-align:justify;
+    color:#0a3638eb;
+    
+}
+
+
+.ftr-text{
+    font-size:16px;
+
+    text-align:justify;
+    color:#c1bdbd;
+   
+}
+.ftr-head{
+    color:#1b2b91;
+}
+
+.ftr-texts{
+    font-size:16px;
+    font-weight:300;
+    text-align:justify;
+    color:#c1bdbd;
+}
+
