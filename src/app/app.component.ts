@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
   private _router: Subscription;
 
   constructor( private renderer : Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
-  @HostListener('window:scroll', ['$event'])
+  
+  @HostListener('window:scroll', [''])
   hasScrolled() {
 
       var st = window.pageYOffset;

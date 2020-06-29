@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CourseComponent } from './course/course.component';
+import { CoursesModule } from './courses/courses.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { CourseComponent } from './course/course.component';
     AppRoutingModule,
     HomeModule,
     BrowserAnimationsModule,
+    CoursesModule,
     NgbModule
   ],
   providers: [],
