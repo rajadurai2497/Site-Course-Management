@@ -121,10 +121,27 @@
     color: #225da0;
 }
 
+.header-text-li{
+    font-family: 'Roboto' !important;
+    text-align:center;
+    font-weight: 500;
+    font-size: 22px; 
+    color: #225da0;
+}
+
+
 .header-text{
     font-family: 'Roboto' !important;
-    text-align:left;
+    text-align:center;
     font-weight: 500;
     font-size: 36px; 
     color: #225da0;
+}
+
+.header-texts{
+    text-align:center;
+    font-weight: 500;
+    font-size: 14px;
+    color: #225da0;
+    padding-top: 0px;
 }

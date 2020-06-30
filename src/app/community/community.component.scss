@@ -5,6 +5,12 @@
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08)
 }
 
+.btn-lavender {
+    color: #fff;
+    border-color: #1b2b91;
+    background-color:#1b2b91;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+}
 .bg-greenish{
     background-color:#1b2b91;
 }
@@ -20,19 +26,35 @@
     font-size:14px;
 }
 
+.par-txt{
+    text-align:justify;
+    color: #7c7f88;
+    font-weight: 300;
+    font-size:18px;
+}
 
 .header-text{
-    text-align:left;
-    font-weight: 600;
-    font-size: 36px;
-    color: #1b2b91;
+    font-family: 'Roboto' !important;
+    text-align:center;
+    font-weight: 500;
+    font-size: 20px;
+    color: #225da0;
 }
 
 .header-txt{
+    font-family: 'Roboto' !important;
     text-align:left;
     font-weight: 600;
     font-size: 20px;
-    color: #1b2b91;
+    color: #225da0;
+}
+
+.head-txt{
+    font-family: 'Roboto' !important;
+    text-align:center;
+    font-weight: 400;
+    font-size: 20px;
+    color: #225da0;
 }
 
 
@@ -46,22 +68,7 @@
   
 }
 
- 
-img {
-    height:60px;
-}
 
-.bck-img{
-    background-image: url('/assets/img/back/stock.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    opacity: 0.3;
-}
-
-.over-lay-blue {
-    background:rgba(8, 8, 8, 0.73);
-}
 
 .header-text-lst{
     text-align:center;
@@ -71,3 +78,45 @@ img {
     color: #ffffff
 }
 
+
+
+.header-txt-list{
+    font-family: 'Roboto' !important;
+    text-align:left;
+    font-weight: 500;
+    font-size: 26px; 
+    color: #225da0;
+}
+
+.head-txt-list{
+    font-family: 'Roboto' !important;
+    text-align:justify;
+    font-weight: 500;
+    font-size: 26px; 
+    color: #225da0;
+}
+
+.header-texts{
+    text-align:center;
+    font-weight: 500;
+    font-size: 14px;
+    color: #225da0;
+    padding-top: 0px;
+}
+
+
+
+.heade-txt-list{
+    font-family: 'Roboto' !important;
+    text-align:center;
+    font-weight: 500;
+    font-size: 26px; 
+    color: #225da0;
+}
+para-txt-list{
+    font-family: 'Roboto' !important;
+    text-align:justify;
+    font-weight: 500;
+    font-size: 16px; 
+    color: #225da0;
+}
