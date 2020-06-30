@@ -2,12 +2,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Exo 2'!important; }
- 
+ .headings{
+     font-family: 'Roboto' !important;
+     text-align:center;
+    font-weight: 700;
+    font-size: 36px;
+    color: #225da0;
+ }
 .header-text{
+    font-family: 'Roboto' !important;
     text-align:justify;
     font-weight: 700;
     font-size: 36px;
-    color: #1b2b91;
+    color: #225da0;
 }
 
 .para-text{
@@ -15,4 +22,10 @@ body { margin: 0; font-family: 'Exo 2'!important; }
 
     font-weight:300;
     font-size:14px;
+}
+
+.footer-img img{
+    height:3.2rem;
+    width:auto ;
+    // float:right;
 }

@@ -24,7 +24,7 @@ $gray-800: #32325d !default;   // Line heading color
 $gray-900: #212529 !default;
 $black:    #000 !default;
 $web-primary:#1b2b91;
-$web-secondary:#75cd7b;
+$web-secondary:#1b2b91;
 $web-teritary:#d3efd5;
 
 $grays: () !default;
@@ -143,9 +143,9 @@ $shapes-primary-colors: map-merge((
 
 $shapes-default-colors: () !default;
 $shapes-default-colors: map-merge((
-    "step-1-gradient-bg":        #D3EFD5,
-    "step-2-gradient-bg":           #D3EFD5,
-    "step-3-gradient-bg":          #D3EFD5,
+    "step-1-gradient-bg":        rgb(51, 202, 207),
+    "step-2-gradient-bg":           rgb(169, 243, 218),
+    "step-3-gradient-bg":          rgb(198, 241, 227),
  
   "span-1-bg":                  #7795f8,
   "span-2-bg":                  #7b9aff,

@@ -69,13 +69,6 @@
     color: #1b2b91
 }
 
-.header-text-lst{
-    text-align:center;
-    padding:100px 0 50px 0;
-    font-weight: 700;
-    font-size: 30px;
-    color: #1b2b91
-}
 .header-text{
     text-align:center;
     font-weight: 700;
@@ -95,7 +88,7 @@
     color: #1b2b91;
 }
 .text-primarys{
-    background-color: #1b2b91;
+    background-color: #3e50b4;
 }
 
 
@@ -120,3 +113,18 @@
 }
 
 
+.header-text-list{
+    font-family: 'Roboto' !important;
+    text-align:left;
+    font-weight: 500;
+    font-size: 22px; 
+    color: #225da0;
+}
+
+.header-text{
+    font-family: 'Roboto' !important;
+    text-align:left;
+    font-weight: 500;
+    font-size: 36px; 
+    color: #225da0;
+}

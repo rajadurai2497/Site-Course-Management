@@ -15,14 +15,18 @@
     color:#1b2b91;
 }
 
-.bck-img{
-    background-image: url('/assets/img/back/download.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    opacity: 0.3;
+
+.home_headings{
+    font-family: 'Roboto' !important;
+    text-align:center;
+   font-weight: 700;
+   font-size: 36px;
+   color: #225da0;
+   margin-top: 0px;
 }
 
-.over-lay-blue {
-    background: rgba(211, 239, 213, 0.73);
+.btn-wrap{
+    margin-left: 105px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
 }
