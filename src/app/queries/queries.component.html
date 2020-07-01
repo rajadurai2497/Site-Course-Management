@@ -32,7 +32,7 @@
                                       <!-- <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                       </div> -->
-                                      <input class="form-control" placeholder="Name" >
+                                      <input class="form-control" placeholder="Name" name="name" [(ngModel)]="queries.name" >
                                     </div>
                                 </div>
                                 
@@ -41,7 +41,7 @@
                                     <!-- <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div> -->
-                                    <input class="form-control" placeholder="Email" type="email" >
+                                    <input class="form-control" placeholder="Email" type="email" name="email" [(ngModel)]="queries.email" >
                                   </div>
                                 </div>
                                 <div class="form-group">
@@ -49,7 +49,7 @@
                                     <!-- <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                                     </div> -->
-                                    <input class="form-control" placeholder="Phone Number">
+                                    <input class="form-control" placeholder="Phone Number" name="phoneNumber" [(ngModel)]="queries.phoneNumber">
                                   </div>
                                 </div>
                             
@@ -63,7 +63,7 @@
                                       </div>
                                     <div class="row pb-0">
                                         <div class="col-md-0 mr-auto ml-auto">
-                                            <button class="btn btn-lavender btn-lg btn-fill btn-hover">Send Message</button>
+                                            <button class="btn btn-lavender btn-lg btn-fill btn-hover" (click)="onSubmitButtonClicked()">Send Message</button>
                                         </div>
                                     </div>
                               </form>

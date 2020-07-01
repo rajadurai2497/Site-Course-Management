@@ -18,6 +18,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CourseComponent } from './course/course.component';
 import { CoursesModule } from './courses/courses.module';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +31,7 @@ import { CoursesModule } from './courses/courses.module';
     QueriesComponent,
     CourseComponent,
     PrivacyPolicyComponent,
-    TermsConditionsComponent,
-    
+    TermsConditionsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +41,7 @@ import { CoursesModule } from './courses/courses.module';
     HomeModule,
     BrowserAnimationsModule,
     CoursesModule,
+    HttpClientModule,
     NgbModule
   ],
   providers: [],
