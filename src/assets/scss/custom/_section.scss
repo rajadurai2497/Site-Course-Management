@@ -175,7 +175,11 @@ sections {
             background: shapes-default-color("span-5-bg");
         }
     }
-
+    .shape-defaut {
+        background: linear-gradient(150deg, shapes-default-color("step-1-gradient-bg") 15%,
+         shapes-default-color("step-2-gradient-bg") 70%,
+          shapes-default-color("step-3-gradient-bg") 94%);
+    }
     .shape-light {
         background: linear-gradient(150deg, shapes-light-color("step-1-gradient-bg") 15%, shapes-light-color("step-2-gradient-bg") 70%, shapes-light-color("step-3-gradient-bg") 94%);
 
