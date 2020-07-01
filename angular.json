@@ -29,7 +29,9 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/scss/argon.scss"
+              "src/assets/scss/argon.scss",
+              "/node_modules/font-awesome/scss/font-awesome.scss"
+             
             ],
             "scripts": []
           },

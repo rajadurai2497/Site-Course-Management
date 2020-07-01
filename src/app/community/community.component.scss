@@ -27,7 +27,7 @@
 }
 
 .par-txt{
-    text-align:justify;
+    text-align:center;
     color: #7c7f88;
     font-weight: 300;
     font-size:18px;
@@ -119,4 +119,23 @@ para-txt-list{
     font-weight: 500;
     font-size: 16px; 
     color: #225da0;
+}
+
+
+.header-texts{
+    font-family: 'Roboto' !important;
+    text-align:center;
+    font-weight: 500;
+    font-size: 30px;
+    color: #225da0;
+    padding-top: 0px;
+}
+
+.header-texts-p{
+    font-family: 'Roboto' !important;
+    text-align:center;
+    // font-weight: 500;
+    font-size: 14px;
+    color: #225da0;
+    padding-top: 0px;
 }

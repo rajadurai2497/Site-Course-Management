@@ -154,6 +154,14 @@ $shapes-default-colors: map-merge((
   "span-5-bg":                  #6adaff
 ), $shapes-default-colors);
 
+$shapes-defaut-colors: () !default;
+$shapes-defaut-colors: map-merge((
+    "step-1-gradient-bg":        rgb(51, 202, 207),
+    "step-2-gradient-bg":           rgb(169, 243, 218),
+    "step-3-gradient-bg":          rgb(198, 241, 227),
+ 
+), $shapes-defaut-colors);
+
 $shapes-light-colors: () !default;
 $shapes-light-colors: map-merge((
   "step-1-gradient-bg":         #b2cbe1,

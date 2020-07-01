@@ -26,17 +26,10 @@
 }
 
 
-.navbar-brnd {
-    font-size: $font-size-sm;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: .600rem;
-    letter-spacing: .10px;
-
-    img {
+.navbar-brnd img {
         height: 100px;
         }
-}
+
 .navbar-dark {
     .navbar-brand {
         color: $black;
