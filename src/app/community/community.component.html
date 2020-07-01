@@ -64,7 +64,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                 </div>
-                                <input class="form-control" placeholder="Name" >
+                                <input class="form-control" placeholder="Name" name="name" [(ngModel)]="community.name" >
                               </div>
                           </div>
                           <div class="form-group mb-3">
@@ -72,7 +72,7 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                               </div>
-                              <input class="form-control" placeholder="Email" type="email" >
+                              <input class="form-control" placeholder="Email" type="email" name="email" [(ngModel)]="community.emailId" >
                             </div>
                           </div>
                           <div class="form-group" >
@@ -80,11 +80,11 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                               </div>
-                              <input class="form-control" placeholder="Phone Number" >
+                              <input class="form-control" placeholder="Phone Number"  name="phoneName" [(ngModel)]="community.phoneName">
                             </div>
                           </div>
                           <div class="text-center">
-                            <button type="button" class="btn btn-community my-4">Submit</button>
+                            <button type="button" class="btn btn-community my-4" (click)="onSubmitButtonClicked()">Submit</button>
                           </div>
                         </form>
                    </div>

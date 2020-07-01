@@ -18,6 +18,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CourseComponent } from './course/course.component';
 import { CoursesModule } from './courses/courses.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +30,7 @@ import { CoursesModule } from './courses/courses.module';
     QueriesComponent,
     CourseComponent,
     PrivacyPolicyComponent,
-    TermsConditionsComponent,
-    
+    TermsConditionsComponent
   ],
   imports: [
     BrowserModule,
