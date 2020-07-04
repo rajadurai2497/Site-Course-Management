@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +13,6 @@ import { CommunityComponent } from './community/community.component';
 import { QueriesComponent } from './queries/queries.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CourseComponent } from './course/course.component';
@@ -41,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     AppRoutingModule,
     HomeModule,
-    BrowserAnimationsModule,
+
     CoursesModule,
     HttpClientModule,
     NgbModule
