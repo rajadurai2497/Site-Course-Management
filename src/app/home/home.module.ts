@@ -6,15 +6,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { SectionsModule } from '../sections/sections.module';
+import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        BrowserModule,
         FormsModule,
-        RouterModule,
         SectionsModule,
-        NgbModule
+        NgbModule,
+        HomeRoutingModule
     ],
     declarations: [ HomeComponent ],
     exports:[ HomeComponent ],
