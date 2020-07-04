@@ -143,9 +143,9 @@ $shapes-primary-colors: map-merge((
 
 $shapes-default-colors: () !default;
 $shapes-default-colors: map-merge((
-    "step-1-gradient-bg":        rgb(51, 202, 207),
-    "step-2-gradient-bg":           rgb(169, 243, 218),
-    "step-3-gradient-bg":          rgb(198, 241, 227),
+    "step-1-gradient-bg":        rgb(28,206,234,0.82),
+    "step-2-gradient-bg":           rgb(147,26,222,0.83),
+    "step-3-gradient-bg":          rgba(188, 149, 212, 0.83),
  
   "span-1-bg":                  #7795f8,
   "span-2-bg":                  #7b9aff,
@@ -226,7 +226,7 @@ $section-colors: map-merge((
 
 // Links
 
-$link-color:                $primary !default;
+$link-color:                $white !default;
 $link-decoration:           none !default;
 $link-hover-color:          white($link-color, 15%);
 $link-hover-decoration:     none !default;
