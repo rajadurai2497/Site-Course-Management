@@ -31,7 +31,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Username" type="text" (focus)="focus=true" (blur)="focus=false">
+                    <input class="form-control" placeholder="Username" type="text" (focus)="focus=true" (blur)="focus=false" >
                   </div>
                 </div>
                 <div class="form-group" [ngClass]="{'focused':focus2===true}">
@@ -39,7 +39,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                       </div>
-                      <input class="form-control" placeholder="Password" type="password" (focus)="focus2=true" (blur)="focus2=false">
+                      <input class="form-control" placeholder="Password" type="password" (focus)="focus2=true" (blur)="focus2=false" name="passWord" [(ngModel)]="signup.passWord">
                     </div>
                   </div>
 
@@ -48,7 +48,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                       </div>
-                      <input class="form-control" placeholder="Name" type="text" (focus)="focus=true" (blur)="focus=false">
+                      <input class="form-control" placeholder="Name" type="text" (focus)="focus=true" (blur)="focus=false" name="name" [(ngModel)]="signup.name">
                     </div>
                   </div>
                 <div class="form-group" [ngClass]="{'focused':focus1===true}">
@@ -56,7 +56,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Email" type="email" (focus)="focus1=true" (blur)="focus1=false">
+                    <input class="form-control" placeholder="Email" type="email" (focus)="focus1=true" (blur)="focus1=false" name="emailId" [(ngModel)]="signup.emailId">
                   </div>
                 </div>
                 
@@ -65,7 +65,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                       </div>
-                      <input class="form-control" placeholder="PhoneNumber" type="text" (focus)="focus=true" (blur)="focus=false">
+                      <input class="form-control" placeholder="PhoneNumber" type="text" (focus)="focus=true" (blur)="focus=false" name="phoneNumber" [(ngModel)]="signup.phoneNumber">
                     </div>
                   </div>
                  
@@ -74,7 +74,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                         </div>
-                        <input class="form-control" placeholder="city" type="text" (focus)="focus=true" (blur)="focus=false">
+                        <input class="form-control" placeholder="city" type="text" (focus)="focus=true" (blur)="focus=false" name="city" [(ngModel)]="signup.city">
                       </div>
                     </div>
                
@@ -91,7 +91,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary mt-4">Create account</button>
+                  <button type="button" class="btn btn-primary mt-4" (click)=" onSubmitButtonClicked()">Create account</button>
                 </div>
               </form>
                      
@@ -104,9 +104,6 @@
                 <div class="col-md-7 order-md-1 d-lg-inline d-none ">
                     <img src="./assets/img/brand/img33-01.png" class="img-fluid floating">
                 </div>
-              
-            
-                
         </div>
       </div>
   
