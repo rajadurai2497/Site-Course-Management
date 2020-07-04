@@ -16,14 +16,17 @@ import { CourseDetailsComponent } from './courses/course-details/course-details.
 
 const routes: Routes = [
   { path: 'home',             component: HomeComponent },
+  { path: 'signup',           component: SignupComponent },
   { path: 'About-us',             component: AboutUsComponent },
   { path: 'Community',             component: CommunityComponent },
-  { path: 'register',           component: SignupComponent },
   { path: 'Queries',          component: QueriesComponent },
   { path: 'Course',          component: CourseComponent },
   { path: 'course-details',          component: CourseDetailsComponent },
   { path: 'privacy-policy',          component: PrivacyPolicyComponent },
   { path: 'terms-conditions',          component: TermsConditionsComponent},
+  
+  
+
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

@@ -35,13 +35,19 @@
   padding-left: $badge-pill-padding-x;
   @include border-radius($badge-pill-border-radius);
 }
+.badge-success {
+  color: #1AAE6F;
+  background-color: rgb(147,231,195,0.5);
+}
 
 // Colors
 //
 // Contextual variations (linked badges get darker on :hover).
 
-@each $color, $value in $theme-colors {
-  .badge-#{$color} {
-    @include badge-variant($value);
-  }
-}
+// @each $color, $value in $theme-colors {
+//   .badge-#{
+//     $color
+//   } {
+//     @include badge-variant($value);
+//   }
+// }
