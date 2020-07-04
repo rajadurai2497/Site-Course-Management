@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SignupComponent } from 'src/app/signup/signup.component';
 import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-course-details',
@@ -12,7 +13,7 @@ export class CourseDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   addSignup() {
-    const dialogRef = this.dialog.open(CourseDetailsComponent, {
+    const dialogRef = this.dialog.open(SignupComponent, {
       height: '500px',
       width: '800px',
     });

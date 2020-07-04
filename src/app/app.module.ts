@@ -20,7 +20,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CourseComponent } from './course/course.component';
 import { CoursesModule } from './courses/courses.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CourseDetailsComponent } from './courses/course-details/course-details.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     QueriesComponent,
     CourseComponent,
     PrivacyPolicyComponent,
-    TermsConditionsComponent
+    TermsConditionsComponent,
+    CourseDetailsComponent
 
   ],
   imports: [
@@ -44,6 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     CoursesModule,
     HttpClientModule,
+    MatDialogModule,
+    CommonModule,
     NgbModule
   ],
   providers: [],
