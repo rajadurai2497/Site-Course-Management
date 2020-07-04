@@ -15,25 +15,30 @@ import { CourseDetailsComponent } from './courses/course-details/course-details.
 
 
 const routes: Routes = [
-  { path: 'home',             component: HomeComponent },
-  { path: 'signup',           component: SignupComponent },
-  { path: 'About-us',             component: AboutUsComponent },
-  { path: 'Community',             component: CommunityComponent },
-  { path: 'Queries',          component: QueriesComponent },
-  { path: 'Course',          component: CourseComponent },
-  { path: 'course-details',          component: CourseDetailsComponent },
-  { path: 'privacy-policy',          component: PrivacyPolicyComponent },
-  { path: 'terms-conditions',          component: TermsConditionsComponent},
-  
-  
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(module => module.HomeModule)
 
+
+  },
+  { path: 'signup', component: SignupComponent },
+  { path: 'About-us', component: AboutUsComponent },
+  { path: 'Community', component: CommunityComponent },
+  { path: 'Queries', component: QueriesComponent },
+  { path: 'Course', component: CourseComponent },
+  {
+    path: 'course-details',
+    loadChildren: () => import('./courses/courses.module').then(module => module.CoursesModule)
+  },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'terms-conditions', component: TermsConditionsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{
+    RouterModule.forRoot(routes, {
       useHash: true
     })],
   exports: [RouterModule]
