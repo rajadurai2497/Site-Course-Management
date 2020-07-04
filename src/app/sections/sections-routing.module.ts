@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SectionsComponent } from './sections.component';
 
 
 const routes: Routes = [];
