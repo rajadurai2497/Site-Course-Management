@@ -31,7 +31,7 @@
    font-weight: 700;
    font-size: 36px;
    color: #225da0;
-   margin-top:50px;
+   margin-top:120px;
 }
 
 .btn-wrap{
@@ -42,11 +42,12 @@
 
 
 .backimg{
-    background-image: url('/assets/img/brand/backgroun-01.png');
+    background-image: url('/assets/img/back/stock.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  opacity: 0.5;
 }
 .overlay{
-    background-color: #1b2b91;
+    background-color: #33cacf80;
 }

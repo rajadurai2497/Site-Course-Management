@@ -22,6 +22,7 @@ import { CoursesModule } from './courses/courses.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderModule } from 'angular-image-slider';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SliderModule } from 'angular-image-slider';
     CourseComponent,
     PrivacyPolicyComponent,
     TermsConditionsComponent
+   
 
   ],
   imports: [
@@ -47,6 +49,7 @@ import { SliderModule } from 'angular-image-slider';
     HttpClientModule,
     SliderModule,
     BrowserAnimationsModule,
+    CarouselModule,
     NgbModule
   ],
   providers: [],

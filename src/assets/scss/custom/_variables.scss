@@ -131,9 +131,10 @@ $shape-colors: map-merge((
 
 $shapes-primary-colors: () !default;
 $shapes-primary-colors: map-merge((
-  "step-1-gradient-bg":        #D3EFD5,
-  "step-2-gradient-bg":           #D3EFD5,
-  "step-3-gradient-bg":          #D3EFD5,
+  "step-1-gradient-bg":         rgb(51, 202, 207),
+  "step-2-gradient-bg":          rgb(137, 228, 197),
+  "step-3-gradient-bg":           rgb(169, 243, 218),
+  
   "span-1-bg":                  #53f,
   "span-2-bg":                  #4553ff,
   "span-3-bg":                  #4f40ff,
@@ -157,10 +158,10 @@ $shapes-default-colors: map-merge((
 
 $shapes-defaut-colors: () !default;
 $shapes-defaut-colors: map-merge((
-    "step-1-gradient-bg":        rgb(51, 202, 207),
-    "step-2-gradient-bg":           rgb(169, 243, 218),
-    "step-3-gradient-bg":          rgb(198, 241, 227),
- 
+    "step-1-gradient-bg":         rgb(51, 202, 207),
+    "step-2-gradient-bg":          rgb(51, 202, 207),
+    "step-3-gradient-bg":           rgb(51, 202, 207),
+    
 ), $shapes-defaut-colors);
 
 $shapes-light-colors: () !default;

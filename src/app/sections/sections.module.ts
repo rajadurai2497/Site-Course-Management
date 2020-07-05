@@ -11,15 +11,17 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SliderModule } from 'angular-image-slider';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
-  declarations: [SectionsComponent, HomeAboutComponent, HomeCourseComponent, HomeFeaturesComponent],
+  declarations: [SectionsComponent,  HomeAboutComponent, HomeCourseComponent, HomeFeaturesComponent,],
   imports: [
     CommonModule,
     SectionsRoutingModule,
     FormsModule,
     NgbModule,
-    SliderModule
+    SliderModule,
+    CarouselModule
   ],
   exports:[ SectionsComponent ]
 })
