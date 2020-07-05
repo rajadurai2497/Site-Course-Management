@@ -96,23 +96,23 @@
    
     color: #1b2b91;
 }
+
 .text-primarys{
-    color: #1b2b91;
-  background-color: rgb(153, 238, 217);
+    background-color: #62aaeb;
+    color: whitesmoke;
 }
 
 
-.bck-img{
-    background-image: url('/assets/img/back/stock.jpg');
+.bck-img{ 
+    background-image: url('/assets/img/back/download.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    opacity: 0.3;
-}
-
-.over-lay-blue {
-    background:rgba(8, 8, 8, 0.73);
-}
+    opacity: 0.5;
+  }
+  .overlay{
+      background-color: #33cacf80;
+  }
 
 .header-text-lst{
     text-align:center;

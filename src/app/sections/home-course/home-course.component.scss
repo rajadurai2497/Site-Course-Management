@@ -28,3 +28,14 @@
     font-weight: 500;
     font-size:15px;
 }
+
+.backimg{
+    background-image: url('/assets/img/back/download.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.5;
+}
+.overlay{
+    background-color: #33cacf80;
+}

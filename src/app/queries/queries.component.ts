@@ -42,6 +42,7 @@ export class QueriesComponent implements OnInit {
   public onSubmitButtonClicked(): void {
     this.queries.contactusId = 0;
     this.queriesService.createQueries(this.queries).subscribe((data) => {
+      alert('Registered Successfully');
       console.log('Add');
     });
   }

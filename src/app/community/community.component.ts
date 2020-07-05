@@ -42,6 +42,7 @@ export class CommunityComponent implements OnInit {
   public onSubmitButtonClicked(): void {
     this.community.communityUserId = 0;
     this.communityService.createCommunity(this.community).subscribe((data) => {
+      alert('Registered Successfully')
       console.log('Added');
     });
   }
