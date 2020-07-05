@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SignupService } from '../services/signup.service';
+import { AddSignupModel } from '../models/signup/signup.model';
 
 @Component({
     selector: 'app-signup',
@@ -10,7 +12,20 @@ export class SignupComponent implements OnInit {
     focus;
     focus1;
     focus2;
-    constructor() { }
 
-    ngOnInit() {}
+    public signup = new AddSignupModel();
+
+    constructor(private readonly  signupService: SignupService ) {}
+
+    ngOnInit(): void {}
+    public onSubmitButtonClicked(): void {
+        this.signup.userId = 0;
+        this.signupService.createSignup(this.signup).subscribe((data) => {
+          console.log('Added');
+        });
+      }
+
+
+
+
 }
