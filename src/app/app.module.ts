@@ -27,7 +27,6 @@ import { CommonModule } from '@angular/common';
     SignupComponent,
     NavbarComponent,
     FooterComponent,
-    CommunityComponent,
     
   ],
   imports: [
