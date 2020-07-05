@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 import { SectionsRoutingModule } from './sections-routing.module';
 import { SectionsComponent } from './sections.component';
 import { HomeAboutComponent } from './home-about/home-about.component';
@@ -9,15 +10,18 @@ import { HomeFeaturesComponent } from './home-features/home-features.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SliderModule } from 'angular-image-slider';
 
 
 @NgModule({
-  declarations: [SectionsComponent, HomeAboutComponent, HomeCourseComponent, HomeFeaturesComponent],
+  declarations: [SectionsComponent,  HomeAboutComponent, HomeCourseComponent, HomeFeaturesComponent,],
   imports: [
     CommonModule,
     SectionsRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    SliderModule
+
   ],
   exports:[ SectionsComponent ]
 })
