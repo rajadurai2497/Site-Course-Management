@@ -11,7 +11,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
           </div>
-          <input class="form-control" placeholder="Username" type="text" >
+          <input class="form-control" placeholder="Username" [(ngModel)]="signup.name" type="text" >
         </div>
       </div>
       <div class="form-group" [ngClass]="{'focused':focus2===true}">
@@ -24,15 +24,6 @@
         </div>
       </div>
 
-      <div class="form-group" >
-        <div class="input-group input-group-alternative mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-          </div>
-          <input class="form-control" placeholder="Name" type="text" 
-            name="name" [(ngModel)]="signup.name">
-        </div>
-      </div>
       <div class="form-group" [ngClass]="{'focused':focus1===true}">
         <div class="input-group input-group-alternative mb-3">
           <div class="input-group-prepend">
