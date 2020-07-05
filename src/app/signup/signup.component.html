@@ -1,113 +1,76 @@
-
-  <section class="section section-shaped pb-5">
-    <div class="shape shape-style-1 shape-default">
-            
+<div class="card shadow border-0">
+  <div class="card-header bg-greenish">
+    <div class=" text-center  mb-3">
+      <h2 class="text-center text-blues">REGISTER HERE</h2>
     </div>
-  </section>
-
-
-
-    
-    
-  <section class="section section-lgg pb-5 ">
-  
-      <div class="container">
-          <div class="row row-grid align-items-center">
-              
-           
-  
-  
-     <div class="col-md-5 order-md-2" style="padding-top:52px">
-       <div class="card shadow border-0" >
-                              <div class="card-header bg-greenish" >
-                                <div class=" text-center  mb-3">
-                                  <h2 class="text-center text-blues">REGISTER HERE</h2>
-                                </div>
-                              </div>
-            <div class="card-body px-lg-5 py-lg-5 ">
-              <form role="form">
-                <div class="form-group" [ngClass]="{'focused':focus===true}">
-                  <div class="input-group input-group-alternative mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Username" type="text" (focus)="focus=true" (blur)="focus=false">
-                  </div>
-                </div>
-                <div class="form-group" [ngClass]="{'focused':focus2===true}">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                      </div>
-                      <input class="form-control" placeholder="Password" type="password" (focus)="focus2=true" (blur)="focus2=false">
-                    </div>
-                  </div>
-
-                <div class="form-group" [ngClass]="{'focused':focus===true}">
-                    <div class="input-group input-group-alternative mb-3">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                      </div>
-                      <input class="form-control" placeholder="Name" type="text" (focus)="focus=true" (blur)="focus=false">
-                    </div>
-                  </div>
-                <div class="form-group" [ngClass]="{'focused':focus1===true}">
-                  <div class="input-group input-group-alternative mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Email" type="email" (focus)="focus1=true" (blur)="focus1=false">
-                  </div>
-                </div>
-                
-                <div class="form-group" [ngClass]="{'focused':focus===true}">
-                    <div class="input-group input-group-alternative mb-3">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                      </div>
-                      <input class="form-control" placeholder="PhoneNumber" type="text" (focus)="focus=true" (blur)="focus=false">
-                    </div>
-                  </div>
-                 
-                  <div class="form-group" [ngClass]="{'focused':focus===true}">
-                      <div class="input-group input-group-alternative mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                        </div>
-                        <input class="form-control" placeholder="city" type="text" (focus)="focus=true" (blur)="focus=false">
-                      </div>
-                    </div>
-               
-                <div class="row my-4">
-                  <div class="col-12">
-                    <div class="custom-control custom-control-alternative custom-checkbox">
-                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
-                      <label class="custom-control-label" for="customCheckRegister">
-                        <span>I agree with the
-                          <a href="javascript:void(0)">Privacy Policy</a>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="button" class="btn btn-primary mt-4">Create account</button>
-                </div>
-              </form>
-                     
-                              </div>
-                          </div>
-  
-                </div>
-                
-            
-                <div class="col-md-7 order-md-1 d-lg-inline d-none ">
-                    <img src="./assets/img/brand/img33-01.png" class="img-fluid floating">
-                </div>
-              
-            
-                
+  </div>
+  <div class="card-body px-lg-5 py-lg-5 ">
+    <form role="form">
+      <div class="form-group" >
+        <div class="input-group input-group-alternative mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+          </div>
+          <input class="form-control" placeholder="Username" [(ngModel)]="signup.name" type="text" >
         </div>
       </div>
-  
-    </section>  
+      <div class="form-group" [ngClass]="{'focused':focus2===true}">
+        <div class="input-group input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+          </div>
+          <input class="form-control" placeholder="Password" type="password" 
+            name="passWord" [(ngModel)]="signup.passWord">
+        </div>
+      </div>
+
+      <div class="form-group" [ngClass]="{'focused':focus1===true}">
+        <div class="input-group input-group-alternative mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+          </div>
+          <input class="form-control" placeholder="Email" type="email" 
+            name="emailId" [(ngModel)]="signup.emailId">
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <div class="input-group input-group-alternative mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+          </div>
+          <input class="form-control" placeholder="PhoneNumber" type="text" 
+            name="phoneNumber" [(ngModel)]="signup.phoneNumber">
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <div class="input-group input-group-alternative mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+          </div>
+          <input class="form-control" placeholder="city" type="text" 
+            name="city" [(ngModel)]="signup.city">
+        </div>
+      </div>
+
+      <div class="row my-4">
+        <div class="col-12">
+          <div class="custom-control custom-control-alternative custom-checkbox">
+            <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+            <label class="custom-control-label" for="customCheckRegister">
+              <span>I agree with the
+                <a href="javascript:void(0)">Privacy Policy</a>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary mt-4" (click)=" onSubmitButtonClicked()">Create account</button>
+        <button type="button" class="btn btn-primary mt-4" (click)=" onNoClick()">Cancel</button>
+      </div>
+    </form>
+
+  </div>
+</div>

@@ -287,12 +287,11 @@
 
 </section>
   
-  
-<div>Some tags before</div>
-<owl-carousel-o [options]="customOptions">
-<ng-template carouselSlide>slide 1</ng-template>  
-<ng-template carouselSlide>slide 2</ng-template>  
-<ng-template carouselSlide>slide3</ng-template>  
-</owl-carousel-o>
-<div>Some tags after</div>
 
+
+<angular-image-slider
+  [autoRotate]="true"
+  [autoRotateAfter]="2000"
+  [autoRotateRight]="true"
+  [images]="imagesUrl"
+></angular-image-slider>
