@@ -54,8 +54,8 @@
                     <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                   </div>
                   <input class="form-control" placeholder="Name" name="fullName" [(ngModel)]="community.fullName" required>
-                  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                    <div *ngIf="name.errors.required">
+                  <div *ngIf="fullName.invalid && (fullName.dirty ||fullName.touched)" class="alert alert-danger">
+                    <div *ngIf="fullName.errors.required">
                       Name is required.
                     </div>
                   </div>
