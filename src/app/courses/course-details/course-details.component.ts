@@ -10,7 +10,7 @@ export class CourseDetailsComponent implements OnInit {
   constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {}
-  addSignup() {
+  signup() {
     const dialogRef = this.dialog.open(SignupComponent, {
       height: '500px',
       width: '800px',
@@ -25,3 +25,5 @@ export class CourseDetailsComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 }
+
+

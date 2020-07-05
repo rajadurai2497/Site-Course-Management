@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './courses.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { CourseService } from '../services/course.service';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
   imports: [
     CommonModule,
     CoursesRoutingModule
-  ]
+  ],
+  providers:[CourseService]
 })
 export class CoursesModule { }
