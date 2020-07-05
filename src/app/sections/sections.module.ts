@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 import { SectionsRoutingModule } from './sections-routing.module';
 import { SectionsComponent } from './sections.component';
 import { HomeAboutComponent } from './home-about/home-about.component';
@@ -18,7 +19,7 @@ import { SliderModule } from 'angular-image-slider';
     SectionsRoutingModule,
     FormsModule,
     NgbModule,
-     SliderModule
+    SliderModule
   ],
   exports:[ SectionsComponent ]
 })
