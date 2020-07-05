@@ -42,6 +42,7 @@ import { CommonModule } from '@angular/common';
     RouterModule,
     AppRoutingModule,
     HomeModule,
+
     CoursesModule,
     HttpClientModule,
     MatDialogModule,
