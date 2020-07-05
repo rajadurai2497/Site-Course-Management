@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
@@ -18,7 +18,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CourseComponent } from './course/course.component';
 import { CoursesModule } from './courses/courses.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CourseDetailsComponent } from './courses/course-details/course-details.component';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,8 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     QueriesComponent,
     CourseComponent,
     PrivacyPolicyComponent,
-    TermsConditionsComponent
-
+    TermsConditionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,12 +40,17 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     AppRoutingModule,
     HomeModule,
-
     CoursesModule,
     HttpClientModule,
-    NgbModule
+    MatDialogModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    NgbModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

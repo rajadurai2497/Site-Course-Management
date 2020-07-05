@@ -1,18 +1,29 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { AllCourse } from 'src/app/models/course/course.model';
-import { CourseService } from 'src/app/services/course.service';
-
+import { Component, OnInit } from '@angular/core';
+import { SignupComponent } from 'src/app/signup/signup.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-course-details',
   templateUrl: './course-details.component.html',
-  styleUrls: ['./course-details.component.scss']
+  styleUrls: ['./course-details.component.scss'],
 })
 export class CourseDetailsComponent implements OnInit {
-  @Input() course:AllCourse;
-  constructor(private readonly _courseService:CourseService) { }
+  constructor(private dialog: MatDialog) {}
 
-  ngOnInit() {
-    console.log(this._courseService.currentCourse)
+  ngOnInit(): void {}
+  signup() {
+    const dialogRef = this.dialog.open(SignupComponent, {
+      height: '700px',
+      width: '400px',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.getAddSignup();
+      }
+    });
   }
-
+  getAddSignup() {
+    throw new Error('Method not implemented.');
+  }
 }
+
+
