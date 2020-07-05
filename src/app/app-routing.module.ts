@@ -22,16 +22,34 @@ const routes: Routes = [
 
   },
   { path: 'signup', component: SignupComponent },
-  { path: 'About-us', component: AboutUsComponent },
-  { path: 'Community', component: CommunityComponent },
-  { path: 'Queries', component: QueriesComponent },
-  { path: 'Course', component: CourseComponent },
+  {
+    path: 'About-us',
+    loadChildren: () => import('./about-us/about-us.module').then(module => module.AboutUsModule)
+  },
+  {
+    path: 'Community',
+    loadChildren: () => import('./community/community.module').then(module => module.CommunityModule)
+  },
+  {
+    path: 'Queries',
+    loadChildren: () => import('./queries/queries.module').then(module => module.QueriesModule)
+  },
+  {
+    path: 'Course',
+    loadChildren: () => import('./course/course.module').then(module => module.CourseModule)
+  },
   {
     path: 'course-details',
     loadChildren: () => import('./courses/courses.module').then(module => module.CoursesModule)
   },
-  { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: 'terms-conditions', component: TermsConditionsComponent },
+  {
+    path: 'privacy-policy',
+    loadChildren: () => import('./privacy-policy/privacy-policy.module').then(module => module.PrivacyPolicyModule)
+  },
+  {
+    path: 'terms-conditions',
+    loadChildren: () => import('./terms-conditions/terms-conditions.module').then(module => module.TermsConditionsModule)
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
