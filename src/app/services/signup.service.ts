@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class SignupService {
 
-  public readonly routePrefix = '/Token/RegisterUser';
+  public readonly routePrefix = 'Token/RegisterUser';
   constructor(private readonly httpClient: HttpClient) {}
 
   createSignup(signup: any): Observable<any> {
