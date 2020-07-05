@@ -19,7 +19,7 @@ import { CourseComponent } from './course/course.component';
 import { CoursesModule } from './courses/courses.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CourseDetailsComponent } from './courses/course-details/course-details.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
@@ -33,8 +33,6 @@ import { CommonModule } from '@angular/common';
     CourseComponent,
     PrivacyPolicyComponent,
     TermsConditionsComponent,
-    CourseDetailsComponent
-
   ],
   imports: [
     BrowserModule,
@@ -42,15 +40,17 @@ import { CommonModule } from '@angular/common';
     RouterModule,
     AppRoutingModule,
     HomeModule,
-
     CoursesModule,
     HttpClientModule,
     MatDialogModule,
     CommonModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
