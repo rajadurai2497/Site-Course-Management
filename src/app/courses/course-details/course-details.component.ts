@@ -12,8 +12,8 @@ export class CourseDetailsComponent implements OnInit {
   ngOnInit(): void {}
   signup() {
     const dialogRef = this.dialog.open(SignupComponent, {
-      height: '500px',
-      width: '800px',
+      height: '700px',
+      width: '400px',
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
