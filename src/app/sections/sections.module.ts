@@ -9,7 +9,7 @@ import { HomeFeaturesComponent } from './home-features/home-features.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { SliderModule } from 'angular-image-slider';
 
 @NgModule({
   declarations: [SectionsComponent, HomeAboutComponent, HomeCourseComponent, HomeFeaturesComponent],
@@ -17,7 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     SectionsRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+     SliderModule
   ],
   exports:[ SectionsComponent ]
 })

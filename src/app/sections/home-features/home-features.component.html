@@ -28,7 +28,7 @@
                 <li class="py-2">
                   <div class="d-flex align-items-center">
                     <div>
-                      <div class="badge badge-circle badge-success mr-3 ">
+                      <div class="badge badge-circle badge-success mr-3 text-primarys">
                           <i class="fa fa-handshake-o" aria-hidden="true"></i>
                       </div>
                     </div>
@@ -41,7 +41,7 @@
                 <li class="py-2">
                   <div class="d-flex align-items-center">
                     <div>
-                      <div class="badge badge-circle badge-success mr-3">
+                      <div class="badge badge-circle badge-success mr-3 text-primarys">
                           <i class="fa fa-envira" aria-hidden="true"></i>
                       </div>
                     </div>
@@ -54,7 +54,7 @@
                 <li class="py-2">
                     <div class="d-flex align-items-center">
                       <div>
-                        <div class="badge badge-circle badge-success mr-3">
+                        <div class="badge badge-circle badge-success mr-3 text-primarys">
                             <i class="fa fa-asterisk" aria-hidden="true"></i>
                         </div>
                       </div>
@@ -67,7 +67,7 @@
                   <li class="py-2">
                       <div class="d-flex align-items-center">
                         <div>
-                          <div class="badge badge-circle badge-success mr-3">
+                          <div class="badge badge-circle badge-success mr-3 text-primarys">
                               <i class="fa fa-asterisk" aria-hidden="true"></i>
                           </div>
                         </div>
@@ -180,11 +180,7 @@
   </section>
   
   <section class="section section-lgs section-card-shaped pb-20">
-      
-      
-       
-      
-      <div class="col-lg-12">
+        <div class="col-lg-12">
           <h1 class="header-texts" >MARKETS</h1>
         </div>
 
@@ -193,7 +189,7 @@
       
      <div class="row ">
        
-        <div class="col-lg-3 col-md-12 card-colors ">
+        <div class="col-lg-3 col-md-12 card-colors  ">
           <ul class="navbar-brnd">
             <img src="./assets/img/brand/stocks.png">
           </ul>
@@ -266,5 +262,17 @@
       </div>
     </div>
     
+
+
+  <angular-image-slider
+    [autoRotate]="true"
+    [autoRotateAfter]="2000"
+    [autoRotateRight]="true"
+    [images]="imagesUrl">
+  
+  </angular-image-slider>
+
+
+
 </section>
 

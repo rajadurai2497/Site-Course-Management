@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CourseComponent } from './course/course.component';
 import { CoursesModule } from './courses/courses.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SliderModule } from 'angular-image-slider';
 
 @NgModule({
   declarations: [
@@ -39,9 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     AppRoutingModule,
     HomeModule,
-
     CoursesModule,
     HttpClientModule,
+    SliderModule,
     NgbModule
   ],
   providers: [],

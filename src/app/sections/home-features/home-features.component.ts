@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeFeaturesComponent implements OnInit {
 
   constructor() { }
-
+  public imagesUrl;
   ngOnInit() {
+    this.imagesUrl = ['assets/img/ill/img2-01.png', 'assets/img/ill/img88-01.png', 'assets/img/ill/hme_bg-01.png'];
   }
 
 }
