@@ -40,8 +40,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {}
   public onSubmitButtonClicked(): void {
     this.signup.userId = 0;
-    this._signupService.createSignup(this.signup).subscribe((data) => {
-      console.log('Added');
+    this._signupService.createSignup(this.signup).then((data) => {
     });
   }
 
@@ -57,6 +56,7 @@ export class SignupComponent implements OnInit {
     };
     this._courseDetailsService.addSignup(signup).then((data) => {
       if (data && data.result) {
+        alert('Registered Successfully')
         this.dialogRef.close(true);
       }
     });
