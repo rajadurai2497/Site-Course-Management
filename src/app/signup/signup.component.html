@@ -35,7 +35,7 @@
           </div>
           <input class="form-control" placeholder="Username" required
           minlength="4" [(ngModel)]="signup.userName" name=" userName" type="text" #userName="ngModel" >
-          <div *ngIf=" userName.invalid && (username.dirty || userName.touched)" class="alert alert-danger">
+          <div *ngIf=" userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger">
             <div *ngIf=" userName.errors.required">
               Name is required.
             </div>
@@ -124,7 +124,7 @@
       </div>
      
       <span>Already an user!
-          <a class="linkcolr" (click)="login()"  >Login Here</a>
+          <a class="linkcolr"  >Login Here</a>
         </span>
     </form>
 
@@ -206,7 +206,7 @@
          </div>
         
          <span>Already an user!
-             <a class="linkcolr" (click)="login()"  >Login Here</a>
+             <a class="linkcolr" >Login Here</a>
            </span>
        </form>
    
