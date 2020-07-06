@@ -4,6 +4,7 @@ import { AddSignupModel } from '../models/signup/signup.model';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { WindowRef } from '../services/window-ref.service';
+import { Router, ActivatedRoute } from '@angular/router';
 export interface DialogData {
   animal: string;
   name: string;
@@ -15,6 +16,12 @@ export interface DialogData {
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
+  courseMasterId: string;
+  courseName: string;
+  courseAmount: number;
+  description: string;
+  provideWhat: string;
+
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   userId: number;
@@ -36,12 +43,32 @@ export class SignupComponent implements OnInit {
     public dialogRef: MatDialogRef<SignupComponent>,
     // tslint:disable-next-line: variable-name
     private winRef: WindowRef,
+    private readonly router: Router,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     // tslint:disable-next-line: variable-name
     private readonly _signupService: SignupService,
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
+    this.route.queryParams.forEach((params) => {
+      if (params['courseMasterId']) {
+        this.courseMasterId = params['courseMasterId'];
+      }
+      if (params['courseName']) {
+        this.courseName = params['courseName'];
+      }
+      if (params['provideWhat']) {
+        this.provideWhat = params['couprovideWhat'];
+      }
+      if (params['description']) {
+        this.description = params['description'];
+      }
+      if (params['courseAmount']) {
+        this.courseAmount = params['courseAmount'];
+      }
+    });
+
     this.addSignup = new FormGroup({
       userName: new FormControl(this.signup.userName, [Validators.required, Validators.minLength(4)]),
       passWord: new FormControl(this.signup.passWord, [Validators.required]),
@@ -71,7 +98,13 @@ export class SignupComponent implements OnInit {
   }
   public onSubmitButtonClicked(): void {
     this.signup.userId = 0;
-    this._signupService.createSignup(this.signup).then((data) => {});
+    this._signupService.createSignup(this.signup).then((data) => {
+      if (data && data.result) {
+        this.initPay();
+      } else {
+        alert(data.errorDetails);
+      }
+    });
   }
 
   public addCourse(): void {
@@ -98,13 +131,27 @@ export class SignupComponent implements OnInit {
   // Razor pay
 
   public initPay(): void {
+    console.log('Course Amount' + this.courseAmount);
+    const ref = this;
     const options = {
-      key: 'rzp_test_HTQz79bVMhpN4L',
-      amount: '2000',
-      name: 'Merchant Name',
+      key: 'rzp_live_hWFxIpBogfM8X2',
+      amount: this.courseAmount * 100,
+      name: 'LURE CAP',
+      handler: (response) => {
+        ref.handlePayment(response);
+      },
     };
 
     this.rzp1 = new this.winRef.nativeWindow.Razorpay(options);
     this.rzp1.open();
+  }
+
+  public handlePayment(response): void {
+    if (response.razorpay_payment_id) {
+      alert('payment Success');
+      window.open('https://lurecapacademy-admin.netlify.app/', '_blank');
+    } else {
+      alert('payment Failed, Please Try Again Later');
+    }
   }
 }
