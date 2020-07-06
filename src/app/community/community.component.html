@@ -9,15 +9,14 @@
         <div class="pr-md-5">
           <h3 class="header-txt-list">Traders Community</h3>
           <p class="para-txt">
-            Join an energetic community of 1,000+ traders on the same wavelength as you.Trading is lonely when you're
-            surrounded by "Normal People" who just don't get it.
+            Join an energetic community of 1,000+ traders on the same wavelength as you.Trading is lonely when you're surrounded by "Normal
+            People" who just don't get it.
           </p>
 
           <ul class="header-txt">
             <li>Trading Tips</li>
             <p class="para-txt">
-              We’re constantly on the look out to provide our members with only the top techniques to have the upper
-              hand in trading.
+              We’re constantly on the look out to provide our members with only the top techniques to have the upper hand in trading.
             </p>
             <li>Collaborative Environment</li>
             <p class="para-txt">Join in community of like-minded individuals with the same passion to excel in life.</p>
@@ -51,16 +50,11 @@
               <div class="form-group">
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                    <span class="input-group-text">
+                      <i class="ni ni-single-02"></i>
+                    </span>
                   </div>
-                  <input
-                    class="form-control"
-                    placeholder="Name"
-                    name="fullName"
-                    required
-                    minlength="4"
-                    [(ngModel)]="community.fullName"
-                    #fullName="ngModel"
+                  <input class="form-control" placeholder="Name" name="fullName" required minlength="4" [(ngModel)]="community.fullName" #fullName="ngModel"
                   />
                   <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="alert alert-danger">
                     <div *ngIf="fullName.errors.required">
@@ -69,56 +63,46 @@
                     <div *ngIf="fullName.errors.minlength">
                       Name must be at least 4 characters long.
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
               <div class="form-group mb-3">
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    <span class="input-group-text">
+                      <i class="ni ni-email-83"></i>
+                    </span>
                   </div>
-                  <input
-                    class="form-control"
-                    placeholder="Email"
-                    type="email"
-                    name="emailId"
-                    required [pattern]="emailPattern"
-                    [(ngModel)]="community.emailId"
-                    #emailId="ngModel"
-                   
-                  />
+                  <input class="form-control" placeholder="Email" type="email" name="emailId" required [pattern]="emailPattern" [(ngModel)]="community.emailId"
+                    #emailId="ngModel" />
                   <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="alert alert-danger">
-                  <div *ngIf="emailId.errors.required">
-                    Email is required.
-                  </div>
-                  <div *ngIf="emailId.errors.pattern">
-                   Type correct email Id
-                  </div>
+                    <div *ngIf="emailId.errors.required">
+                      Email is required.
+                    </div>
+                    <div *ngIf="emailId.errors.pattern">
+                      Type correct email Id
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
+                    <span class="input-group-text">
+                      <i class="ni ni-mobile-button"></i>
+                    </span>
                   </div>
-                  <input
-                    class="form-control"
-                    placeholder="Phone Number"
-                    name="phoneNumber"
-                    required [pattern]="phoneNumberPattern"
-                    [(ngModel)]="community.phoneNumber"
-                    #phoneNumber="ngModel"
-                  />
+                  <input class="form-control" placeholder="Phone Number" name="phoneNumber" required [pattern]="phoneNumberPattern" [(ngModel)]="community.phoneNumber"
+                    #phoneNumber="ngModel" />
                   <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="alert alert-danger">
                     <div *ngIf="phoneNumber.errors.required">
                       PhoneNumberis required.
                     </div>
                     <div *ngIf="phoneNumber.errors.pattern">
-                     Type correct PhoneNumber
+                      Type correct PhoneNumber
                     </div>
-                    </div>
+                  </div>
                 </div>
               </div>
               <div class="text-center">
@@ -141,18 +125,31 @@
   </div>
 </div>
 
- <section class="section section-lgs section-card-shaped over-lay-blue pb-20">
-    <div class="shape shape-style-1 light-bg">
-    </div>
-    <div class="container">
-        <div class="row row-grid align-items-center"> 
-          <div class="col-lg-4 order-md-1">
-              <img src="./assets/img/ill/img2-01.png" class="img-fluid ">
-          </div>
+<section class="section section-lgs section-card-shaped over-lay-blue pb-20">
+  <div class="shape shape-style-1 light-bg">
+  </div>
+  <div class="container">
+    <div class="row row-grid align-items-center">
+      <div class="col-lg-4 order-md-1">
+        <img src="./assets/img/ill/img2-01.png" class="img-fluid ">
+      </div>
+      <div class="col-lg-8 order-md-2">
+             
+        <h1 class="header-txt-list">
+            YOU'RE JOINING A MOVEMENT
+        </h1>
+      <div class="row">
+        <div class="col">
+     
+          <p class=" para-texts">
+              There are a lot of other stock market trading services and companies that are out there but you'll see very quickly that we are different. We’re extremely proud of our stock market trading community and the "Open Demate account with us" mentality that flows throughout it. You're not joining in just cheap trading service. You're joining a movement when you subscribe to our community. You’re going to quickly see that the Lurecap Academy Academy Community isn’t about the money. We are all about the people. We are about helping you. YOU are our passion!</p>
         </div>
       </div>
-    </div>
-  </div>
+      </div>
+      </div>
+      </div>
+   
+ 
   <div class="container">
     <div class="row row-grid align-items-center">
       <div class="col">
@@ -167,10 +164,10 @@
       <div class="col">
         <h1 class="header-txt-list">STOCK MARKET TRADING AGAINST THE GRAIN</h1>
         <p class="para-txt">
-          We love that we are going completely against the grain in the industry. No sugar-coating: It takes time,
-          dedication, passion, motivation, and focus to make it as a trader. We believe ANYONE CAN BECOME A PROFITABLE
-          TRADER – if they have the proper mind-set and dedication. You might be thinking that what we're saying sounds
-          too good to be true? What you see is what you get in our trading community.
+          We love that we are going completely against the grain in the industry. No sugar-coating: It takes time, dedication, passion,
+          motivation, and focus to make it as a trader. We believe ANYONE CAN BECOME A PROFITABLE TRADER – if they have the
+          proper mind-set and dedication. You might be thinking that what we're saying sounds too good to be true? What you
+          see is what you get in our trading community.
         </p>
       </div>
     </div>
@@ -200,7 +197,7 @@
             <li class="py-2">
               <div class="d-flex align-items-center">
                 <div>
-                  <div class="badge badge-circle badge-success mr-3">
+                  <div class="badge badge-circle badge-success mr-3 text-primarys">
                     <i class="fa fa-handshake-o" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -210,46 +207,12 @@
               </div>
             </li>
 
-             <!-- <li class="py-2">
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="badge badge-circle badge-success mr-3 text-primarys ">
-                            <i class="fa fa-handshake-o" aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <h6 class="mb-0 header-txt">Mental Reprograming</h6>
-                      </div>
-                    </div>
-                  </li> -->
-                  <!-- <li class="py-2">
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="badge badge-circle badge-success mr-3 text-primarys">
-                            <i class="fa fa-envira" aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <h6 class="mb-0 header-txt">Collaborative Environment</h6>
-                      </div>
-                    </div>
-                  </li> -->
-                  <!-- <li class="py-2">
-                      <div class="d-flex align-items-center">
-                        <div>
-                          <div class="badge badge-circle badge-success mr-3 text-primarys">
-                              <i class="fa fa-asterisk" aria-hidden="true"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <h6 class="mb-0 header-txt">On Demand Mentorship</h6>
-                        </div>
-                      </div>
-                    </li> -->
+            
+                   
             <li class="py-2">
               <div class="d-flex align-items-center">
                 <div>
-                  <div class="badge badge-circle badge-success mr-3">
+                  <div class="badge badge-circle badge-success mr-3 text-primarys">
                     <i class="fa fa-envira" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -261,7 +224,7 @@
             <li class="py-2">
               <div class="d-flex align-items-center">
                 <div>
-                  <div class="badge badge-circle badge-success mr-3">
+                  <div class="badge badge-circle badge-success mr-3 text-primarys">
                     <i class="fa fa-asterisk" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -291,30 +254,38 @@
 
     <div class="row">
       <div class="col-lg-6 footer-img d-lg-inline d-none">
-        <a href="https://zerodha.com"
-          ><img class="col-lg-6 float-lg-right" src="./assets/img/brand/Blank-cover.png"
-        /></a>
-        <a href="https://www.angelbroking.com"
-          ><img class="col-lg-6 float-lg-right" src="./assets/img/brand/image3.png"
-        /></a>
+        <a href="https://zerodha.com">
+          <img class="col-lg-6 float-lg-right" src="./assets/img/brand/Blank-cover.png" />
+        </a>
+        <a href="https://www.angelbroking.com">
+          <img class="col-lg-6 float-lg-right" src="./assets/img/brand/image3.png" />
+        </a>
       </div>
       <div class="col-lg-6 footer-img d-lg-inline d-none">
-        <a href="#"><img class="col-lg-6 float-lg-left" src="./assets/img/brand/icici.png" /></a>
-        <a href="#"><img class="col-lg-6 float-lg-left" src="./assets/img/brand/upstox.png" /></a>
+        <a href="#">
+          <img class="col-lg-6 float-lg-left" src="./assets/img/brand/icici.png" />
+        </a>
+        <a href="#">
+          <img class="col-lg-6 float-lg-left" src="./assets/img/brand/upstox.png" />
+        </a>
       </div>
     </div>
     <div class="row d-lg-none">
       <div class="col-lg-6 footer-img" style="padding-left: 22px;">
-        <a href="https://zerodha.com"
-          ><img class="col-lg-6 float-lg-right" src="./assets/img/brand/Blank-cover.png"
-        /></a>
-        <a href="https://www.angelbroking.com"
-          ><img class="col-lg-6 float-lg-right" src="./assets/img/brand/image3.png"
-        /></a>
+        <a href="https://zerodha.com">
+          <img class="col-lg-6 float-lg-right" src="./assets/img/brand/Blank-cover.png" />
+        </a>
+        <a href="https://www.angelbroking.com">
+          <img class="col-lg-6 float-lg-right" src="./assets/img/brand/image3.png" />
+        </a>
       </div>
       <div class="col-lg-6 footer-img" style="padding-left: 56px;">
-        <a href="#"><img class="col-lg-6 float-lg-left" src="./assets/img/brand/icici.png" /></a>
-        <a href="#"><img class="col-lg-6 float-lg-left" src="./assets/img/brand/upstox.png" /></a>
+        <a href="#">
+          <img class="col-lg-6 float-lg-left" src="./assets/img/brand/icici.png" />
+        </a>
+        <a href="#">
+          <img class="col-lg-6 float-lg-left" src="./assets/img/brand/upstox.png" />
+        </a>
       </div>
     </div>
   </div>
