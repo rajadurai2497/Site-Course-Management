@@ -82,7 +82,7 @@ export class SignupComponent implements OnInit {
     };
     this._courseDetailsService.addSignup(signup).then((data) => {
       if (data && data.result) {
-        alert('Registered Successfully')
+        alert('Registered Successfully');
         this.dialogRef.close(true);
       }
     });

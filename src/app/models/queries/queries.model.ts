@@ -11,8 +11,6 @@ export class AddQueriesModel {
         description: string;
         refund: true;
   // tslint:disable-next-line: member-ordering
-  alterEgo: any;
-  power: any;
   get(arg0: string) {
     throw new Error('Method not implemented.');
   }
