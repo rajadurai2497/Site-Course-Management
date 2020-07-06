@@ -1,10 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { SignupService } from '../services/signup.service';
 import { AddSignupModel } from '../models/signup/signup.model';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { WindowRef } from '../services/window-ref.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 export interface DialogData {
   animal: string;
   name: string;
@@ -14,15 +15,11 @@ export interface DialogData {
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
+  providers: [MatDialog],
 })
 export class SignupComponent implements OnInit {
-  courseMasterId: string;
-  courseName: string;
-  courseAmount: number;
-  description: string;
-  provideWhat: string;
-
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
+  [x: string]: any;
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   userId: number;
   city: string;
@@ -38,6 +35,7 @@ export class SignupComponent implements OnInit {
   addSignup: any;
   name: any;
   rzp1: any;
+  getlogin: any;
 
   constructor(
     public dialogRef: MatDialogRef<SignupComponent>,
@@ -45,30 +43,12 @@ export class SignupComponent implements OnInit {
     private winRef: WindowRef,
     private readonly router: Router,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    private dialog: MatDialog,
     // tslint:disable-next-line: variable-name
     private readonly _signupService: SignupService,
     private route: ActivatedRoute,
   ) {}
-
   ngOnInit(): void {
-    this.route.queryParams.forEach((params) => {
-      if (params['courseMasterId']) {
-        this.courseMasterId = params['courseMasterId'];
-      }
-      if (params['courseName']) {
-        this.courseName = params['courseName'];
-      }
-      if (params['provideWhat']) {
-        this.provideWhat = params['couprovideWhat'];
-      }
-      if (params['description']) {
-        this.description = params['description'];
-      }
-      if (params['courseAmount']) {
-        this.courseAmount = params['courseAmount'];
-      }
-    });
-
     this.addSignup = new FormGroup({
       userName: new FormControl(this.signup.userName, [Validators.required, Validators.minLength(4)]),
       passWord: new FormControl(this.signup.passWord, [Validators.required]),
@@ -77,15 +57,10 @@ export class SignupComponent implements OnInit {
         Validators.required,
         Validators.pattern(this.phoneNumberPattern),
       ]),
-      alterEgo: new FormControl(this.signup.alterEgo),
-      power: new FormControl(this.signup.power, Validators.required),
     });
   }
   get userName() {
     return this.signup.get(' userName');
-  }
-  get power() {
-    return this.signup.get('power');
   }
   get emailId() {
     return this.signup.get('emailId');
@@ -107,23 +82,25 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  public addCourse(): void {
-    const signup = {
-      userId: 0,
-      userName: this.userName,
-      passWord: this.passWord,
-      name: this.name,
-      emailId: this.emailId,
-      phoneNumber: this.phoneNumber,
-      city: this.city,
-    };
-    this._courseDetailsService.addSignup(signup).then((data) => {
+  login() {
+    const dialogRef = this.dialog.open(LoginComponent, {
+      height: '500px',
+      width: '800px',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.getlogin();
+      }
+    });
+
+    this._courseDetailsService.addSignup(this.signup).then((data) => {
       if (data && data.result) {
         alert('Registered Successfully');
         this.dialogRef.close(true);
       }
     });
   }
+
   onNoClick(): void {
     this.dialogRef.close();
   }
