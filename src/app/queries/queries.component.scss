@@ -26,7 +26,7 @@
 
 .para-txt{
     text-align:justify;
-    color: #7c7f88;
+    color:#141518;
     font-weight: 500;
     font-size:15px;
 }
@@ -37,6 +37,13 @@
     font-weight: 600;
     font-size: 36px;
     color: #1b2b91;
+}
+
+.header-txt{
+    text-align:left;
+    font-weight: 600;
+    font-size: 26px;
+   
 }
 
 .bck-img{
@@ -82,3 +89,14 @@
     color: #225da0;
     padding-top: 0px;
 }
+.card-colrs{
+    box-shadow: 0 4px 8px 0 rgba(87, 92, 93, 0.2);
+    transition:0.3s;
+ //    background-image: linear-gradient(to bottom right,rgb(51, 202, 207),
+ //    rgb(169, 243, 218),
+ //    rgb(198, 241, 227));
+ //    padding: 0 20px 0 20px;
+    
+    background-color: whitesmoke;
+    
+ }
