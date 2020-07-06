@@ -27,7 +27,7 @@ export class QueriesComponent implements OnInit {
         Validators.required,
         Validators.pattern(this.emailPattern),
       ]),
-      phoneNumber: new FormControl(this.queries. phoneNumber, [
+      phoneNumber: new FormControl(this.queries.phoneNumber, [
         Validators.required,
         Validators.pattern(this. phoneNumberPattern),
       ]),
