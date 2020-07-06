@@ -80,7 +80,6 @@ export class SignupComponent implements OnInit {
         this.getlogin();
       }
     });
-
     this._courseDetailsService.addSignup(this.signup).then((data) => {
       if (data && data.result) {
         alert('Registered Successfully');
