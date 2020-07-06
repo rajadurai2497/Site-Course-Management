@@ -12,7 +12,7 @@ import { TermsConditionsComponent } from './terms-conditions/terms-conditions.co
 import { CourseComponent } from './course/course.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseDetailsComponent } from './courses/course-details/course-details.component';
-
+import {  LoginComponent } from './signup/login/login.component';
 
 const routes: Routes = [
   {
@@ -22,6 +22,7 @@ const routes: Routes = [
 
   },
   { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent},
   {
     path: 'About-us',
     loadChildren: () => import('./about-us/about-us.module').then(module => module.AboutUsModule)
@@ -57,7 +58,7 @@ const routes: Routes = [
   imports: [CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      useHash: true
+      useHash: false
     })],
   exports: [RouterModule]
 })

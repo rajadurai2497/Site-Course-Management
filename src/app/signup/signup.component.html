@@ -1,11 +1,33 @@
-<div class="card shadow border-0">
-  <div class="card-header bg-greenish">
-    <div class=" text-center  mb-3">
-      <h2 class="text-center text-blues">REGISTER HERE</h2>
+
+  <section class="section section-shaped pb-5">
+    <div class="shape shape-style-1 shape-primary">
+            
     </div>
-  </div>
-  <div class="card-body px-lg-5 py-lg-5 ">
-    <form role="form">
+  </section>
+  
+   
+    <section class="section section-lg  light-bg  section-card-shaped pb-20">
+        <div class="shape shape-style-1 ">
+                 
+        </div>
+
+         
+          <div class="container">
+                 
+            <div class="row row-grid align-items-center " >
+                <div class="col-md-8 order-md-1 d-lg-inline d-none" >
+                    <img src="./assets/img/brand/img888-01.png" class="img-fluid floating">
+              </div>
+              
+            <div class="col-md-4 order-md-2  d-lg-inline d-none">
+                 <div class="card shadow border-0">
+                    <div class="card-header bg-greenish">
+                       <div class=" text-center  mb-3">
+                         <h2 class="text-center text-blues">REGISTER HERE</h2>
+                       </div>
+                    </div>
+                  <div class="card-body px-lg-4 py-lg-4 ">
+              <form role="form">
       <div class="form-group" >
         <div class="input-group input-group-alternative mb-3">
           <div class="input-group-prepend">
@@ -60,17 +82,107 @@
             <input class="custom-control-input" id="customCheckRegister" type="checkbox">
             <label class="custom-control-label" for="customCheckRegister">
               <span>I agree with the 
-                <a href="javascript:void(0)">Privacy Policy</a>
+                <a class="linkcolr" [routerLink]="['/privacy-policy']" >Privacy Policy</a>
               </span>
             </label>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary mt-4" (click)=" onSubmitButtonClicked()">Create account</button>
+               
+              </div>
           </div>
         </div>
       </div>
-      <div class="text-center">
-        <button type="button" class="btn btn-primary mt-4" (click)=" onSubmitButtonClicked()">Create account</button>
-        <button type="button" class="btn btn-primary mt-4" (click)=" onNoClick()">Cancel</button>
-      </div>
+     
+      <span>Already an user!
+          <a class="linkcolr" (click)="login()"  >Login Here</a>
+        </span>
     </form>
 
-  </div>
-</div>
+                   </div>
+                 </div>
+                 </div>
+                 <div class="col-md-4 order-md-2 d-lg-none " style="margin-top: -70px;">
+                    <div class="card shadow border-0">
+                       <div class="card-header bg-greenish">
+                          <div class=" text-center  mb-3">
+                            <h2 class="text-center text-blues">REGISTER HERE</h2>
+                          </div>
+                       </div>
+                     <div class="card-body px-lg-4 py-lg-4 ">
+                 <form role="form">
+         <div class="form-group" >
+           <div class="input-group input-group-alternative mb-3">
+             <div class="input-group-prepend">
+               <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+             </div>
+             <input class="form-control" placeholder="Username" [(ngModel)]="signup.userName" name="username" type="text" >
+           </div>
+         </div>
+         <div class="form-group" [ngClass]="{'focused':focus2===true}">
+           <div class="input-group input-group-alternative">
+             <div class="input-group-prepend">
+               <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+             </div>
+             <input class="form-control" placeholder="Password" type="password" 
+               name="passWord" [(ngModel)]="signup.passWord">
+           </div>
+         </div>
+   
+         <div class="form-group" [ngClass]="{'focused':focus1===true}">
+           <div class="input-group input-group-alternative mb-3">
+             <div class="input-group-prepend">
+               <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+             </div>
+             <input class="form-control" placeholder="Email" type="email" 
+               name="emailId" [(ngModel)]="signup.emailId">
+           </div>
+         </div>
+   
+         <div class="form-group" >
+           <div class="input-group input-group-alternative mb-3">
+             <div class="input-group-prepend">
+               <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+             </div>
+             <input class="form-control" placeholder="PhoneNumber" type="text" 
+               name="phoneNumber" [(ngModel)]="signup.phoneNumber">
+           </div>
+         </div>
+   
+         <div class="form-group" >
+           <div class="input-group input-group-alternative mb-3">
+             <div class="input-group-prepend">
+               <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+             </div>
+             <input class="form-control" placeholder="city" type="text" 
+               name="city" [(ngModel)]="signup.city">
+           </div>
+         </div>
+   
+         <div class="row my-4">
+           <div class="col-12">
+             <div class="custom-control custom-control-alternative custom-checkbox">
+               <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+               <label class="custom-control-label" for="customCheckRegister">
+                 <span>I agree with the 
+                   <a class="linkcolr" [routerLink]="['/privacy-policy']" >Privacy Policy</a>
+                 </span>
+               </label>
+               <div class="text-center">
+                   <button type="button" class="btn btn-primary mt-4" (click)=" onSubmitButtonClicked()">Create account</button>
+                  
+                 </div>
+             </div>
+           </div>
+         </div>
+        
+         <span>Already an user!
+             <a class="linkcolr" (click)="login()"  >Login Here</a>
+           </span>
+       </form>
+   
+                      </div>
+                    </div>
+                    </div>
+            </div>
+    </div>
+    </section>

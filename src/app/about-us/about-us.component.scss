@@ -66,16 +66,17 @@
     color: #1b2b91;
 }
 
-.bck-img{
-    background-image: url('/assets/img/back/stock.jpg');
+
+.light-bg{
+    background-image:url('/assets/img/brand/imgwavee-01.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    opacity: 0.3;
-}
+    opacity: 0.5;
+  }
 
-.over-lay-blue {
-    background:rgba(8, 8, 8, 0.73);
+  .over-lay-blue {
+    background: #33cacfbf;
 }
 
 .header-text-lst{
