@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupComponent } from 'src/app/signup/signup.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AllCourse } from 'src/app/models/course/course.model';
 @Component({
   selector: 'app-course-details',
@@ -16,18 +16,18 @@ export class CourseDetailsComponent implements OnInit {
   provideWhat: string;
   learnersNumber: string;
 
-  constructor(private dialog: MatDialog, private route: ActivatedRoute) {}
+  constructor(private dialog: MatDialog, private route: ActivatedRoute, private readonly router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.forEach((params) => {
-      if (params['courseMasterId']) {
-        this.courseMasterId = params['courseMasterId'];
+      if (params['courseId']) {
+        this.courseMasterId = params['courseId'];
       }
       if (params['courseName']) {
         this.courseName = params['courseName'];
       }
       if (params['provideWhat']) {
-        this.provideWhat = params['couprovideWhat'];
+        this.provideWhat = params['provideWhat'];
       }
       if (params['description']) {
         this.description = params['description'];
@@ -48,4 +48,9 @@ export class CourseDetailsComponent implements OnInit {
       width: '400px',
     });
   }
+
+  public onPurchaseNowButtonClick(): void {
+    this.router.navigate(['/signup'], { queryParams: { course: this.courseMasterId } });
+  }
+  // [routerLink]="['/signup']"
 }

@@ -1,5 +1,5 @@
 
-<div class="container">
+<div>
     <div class="card shadow border-0" >
         <div class="card-header bg-greenish" >
           <div class=" text-center  mb-3">
@@ -11,14 +11,14 @@
             <div class="form-group">
                 <div class="input-group ">
                  
-                  <input class="form-control" placeholder="Username"   >
+                  <input class="form-control" placeholder="Username"  name="userName" [(ngModel)]="userName" >
                 </div>
             </div>
             
             <div class="form-group mb-3" >
               <div class="input-group ">
                 
-                <input class="form-control" placeholder="Password" >
+                <input class="form-control" placeholder="Password" name="password" [(ngModel)]="password">
               </div>
             </div>
             <a class="linkcolr"  >forgot Password?</a>
@@ -26,7 +26,7 @@
                 
                 <div class="row pb-0">
                     <div class="col-md-0 mr-auto ml-auto">
-                        <button class="btn btn-lavender btn-lg btn-fill btn-hover" >login</button>
+                        <button class="btn btn-lavender btn-lg btn-fill btn-hover" (click)="login()" >login</button>
                     </div>
                 </div>
           </form>

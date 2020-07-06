@@ -25,6 +25,11 @@ body { margin: 0; font-family: 'Exo 2'!important; }
     font-size:14px;
 }
 
+.mat-dialogue-no-padding .mat-dialog-container {
+    padding: 0;
+  }
+  
+
 .footer-img img{
     height:3.2rem;
     width:auto ;
