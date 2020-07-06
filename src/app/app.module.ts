@@ -12,12 +12,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './signup/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     NavbarComponent,
     FooterComponent,
+    LoginComponent,
     
   ],
   imports: [
