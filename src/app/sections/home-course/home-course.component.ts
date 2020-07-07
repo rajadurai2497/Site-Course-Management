@@ -22,12 +22,15 @@ export class HomeCourseComponent implements OnInit {
       }
     });
   }
+
   public goToDetails(course: AllCourse): void {
     let navigationExtras: NavigationExtras = {
       queryParams: {
         "courseId": course.courseMasterId,
         "courseName": course.courseName,
         "courseAmount": course.courseAmount,
+        "provideWhat": course.provideWhat,
+        "description": course.description,
       },
       skipLocationChange: true
     };
