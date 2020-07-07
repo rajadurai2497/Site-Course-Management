@@ -24,17 +24,17 @@ export class HomeFeaturesComponent implements OnInit {
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    dots: false,
+    dots: true,
   
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ['prev', 'next'],
     responsive: {
       0: {
         items: 1
       },
      
     },
-    nav: true
+    nav: false
   }
   
 }
