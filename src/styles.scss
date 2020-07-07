@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Exo 2'!important; }
  .headings{
@@ -23,6 +24,11 @@ body { margin: 0; font-family: 'Exo 2'!important; }
     font-weight:300;
     font-size:14px;
 }
+
+.mat-dialogue-no-padding .mat-dialog-container {
+    padding: 0;
+  }
+  
 
 .footer-img img{
     height:3.2rem;
