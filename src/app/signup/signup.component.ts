@@ -7,6 +7,7 @@ import { WindowRef } from '../services/window-ref.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CourseService } from '../services/course.service';
+import { PaymentService } from '../services/payment.service';
 export interface DialogData {
   animal: string;
   name: string;
@@ -39,6 +40,7 @@ export class SignupComponent implements OnInit {
   name: any;
   rzp1: any;
   getlogin: any;
+  orderDetails: any;
 
   constructor(
     public dialogRef: MatDialogRef<SignupComponent>,
@@ -48,12 +50,12 @@ export class SignupComponent implements OnInit {
     private readonly _signupService: SignupService,
     private readonly _courseService: CourseService,
     private readonly _activatedRoute: ActivatedRoute,
+    private readonly paymentService: PaymentService,
   ) {}
   ngOnInit(): void {
     this._activatedRoute.queryParams.subscribe((queryParams) => {
       this.courseId = queryParams['course'];
     });
-    this.getAllCourselist();
     this.addSignup = new FormGroup({
       userName: new FormControl(this.signup.userName, [Validators.required, Validators.minLength(4)]),
       passWord: new FormControl(this.signup.passWord, [Validators.required]),
@@ -80,18 +82,9 @@ export class SignupComponent implements OnInit {
     this.signup.userId = 0;
     this._signupService.createSignup(this.signup).then((data) => {
       if (data && data.result) {
-        this.initPay();
+        console.log(data);
       } else {
         alert(data.errorDetails);
-      }
-    });
-  }
-
-  public getAllCourselist(): void {
-    this._courseService.getAllCourselist().then((data) => {
-      if (data && data.result) {
-        this.allCourse = data.allCourse;
-        this.selectedCourse = this.allCourse.find((x) => x.courseMasterId == this.courseId);
       }
     });
   }
@@ -104,8 +97,10 @@ export class SignupComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        console.log(result);
-        this.initPay();
+        this.paymentService.insertOrder(this.courseId, result.access_token).subscribe((value: any) => {
+          console.log(value);
+          this.initPay(value, result.access_token);
+        });
       }
     });
   }
@@ -116,28 +111,41 @@ export class SignupComponent implements OnInit {
 
   // Razor pay
 
-  public initPay(): void {
-    console.log('Course Amount' + this.selectedCourse.courseAmount);
+  public initPay(orderDetails, access_token): void {
     const ref = this;
     const options = {
-      key: 'rzp_live_hWFxIpBogfM8X2',
-      amount: this.selectedCourse.courseAmount * 100,
+      key: orderDetails.razorKey,
+      amount: orderDetails.coursePaymentData.courseAmount,
+      currency: 'INR',
+      order_id: orderDetails.jsonData.id,
       name: 'LURE CAP',
+      prefill: {
+        name: orderDetails.coursePaymentData.name,
+        email: orderDetails.coursePaymentData.emailId,
+        contact: orderDetails.coursePaymentData.phoneNumber,
+      },
       handler: (response) => {
-        ref.handlePayment(response);
+        const payload =
+          '{Paymentid: "' +
+          response.razorpay_payment_id +
+          '",' +
+          'Orderid: "' +
+          response.razorpay_order_id +
+          '",' +
+          'Signature: "' +
+          response.razorpay_signature +
+          '"}';
+        this.paymentService.verifyPayment(payload, access_token).subscribe((message: any) => {
+          if (message) {
+            alert('Payment Success');
+          } else {
+            alert('payment failed');
+          }
+        });
       },
     };
 
     this.rzp1 = new this.winRef.nativeWindow.Razorpay(options);
     this.rzp1.open();
-  }
-
-  public handlePayment(response): void {
-    if (response.razorpay_payment_id) {
-      alert('payment Success');
-      window.open('https://lurecapacademy-admin.netlify.app/', '_blank');
-    } else {
-      alert('payment Failed, Please Try Again Later');
-    }
   }
 }
