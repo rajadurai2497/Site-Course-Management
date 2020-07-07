@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { SectionsRoutingModule } from './sections-routing.module';
 import { SectionsComponent } from './sections.component';
@@ -20,6 +20,7 @@ import { SliderModule } from 'angular-image-slider';
     SectionsRoutingModule,
     FormsModule,
     NgbModule,
+    CarouselModule,
     SliderModule
 
   ],

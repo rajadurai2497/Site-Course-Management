@@ -7,14 +7,11 @@ import { NavigationExtras, Router } from '@angular/router';
   selector: 'app-course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.scss'],
-  providers: [CourseService]
+  providers: [CourseService],
 })
 export class CourseComponent implements OnInit {
-
   allCourse: AllCourse[] = [];
-  constructor(private readonly _courseService: CourseService, private router: Router) { }
-
-
+  constructor(private readonly _courseService: CourseService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllCourselist();
@@ -27,19 +24,17 @@ export class CourseComponent implements OnInit {
     });
   }
   public goToDetails(course: AllCourse): void {
-    let navigationExtras: NavigationExtras = {
+    const navigationExtras: NavigationExtras = {
       queryParams: {
-        "courseId": course.courseMasterId,
-        "courseName": course.courseName,
-        "courseAmount": course.courseAmount,
-        "provideWhat": course.provideWhat,
-        "description": course.description,
+        courseId: course.courseMasterId,
+        courseName: course.courseName,
+        courseAmount: course.courseAmount,
+        provideWhat: course.provideWhat,
+        description: course.description,
       },
-      skipLocationChange: true
+      skipLocationChange: true,
     };
 
     this.router.navigate(['course-details'], navigationExtras);
   }
 }
-
-

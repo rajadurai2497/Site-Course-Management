@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupComponent } from 'src/app/signup/signup.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AllCourse } from 'src/app/models/course/course.model';
 @Component({
   selector: 'app-course-details',
@@ -10,37 +10,45 @@ import { AllCourse } from 'src/app/models/course/course.model';
 })
 export class CourseDetailsComponent implements OnInit {
   courseMasterId: string;
+<<<<<<< HEAD
     courseName: string;
     courseAmount: string;
     description: string;
     provideWhat: string;
     learnersNumber: string;
+=======
+  courseName: string;
+  courseAmount: string;
+  description: string;
+  provideWhat: string;
+  learnersNumber: string;
+>>>>>>> 21ce186412fbe50be0c42dd2f141aa4b5181220c
 
-  constructor(private dialog: MatDialog, private route: ActivatedRoute) { }
+  constructor(private dialog: MatDialog, private route: ActivatedRoute, private readonly router: Router) {}
 
   ngOnInit(): void {
-    this.route.queryParams.forEach(params => {
-      if (params["courseMasterId"]) {
-        this.courseMasterId = params["courseMasterId"];
+    this.route.queryParams.forEach((params) => {
+      if (params['courseId']) {
+        this.courseMasterId = params['courseId'];
       }
-      if (params["courseName"]) {
-        this.courseName = params["courseName"];
+      if (params['courseName']) {
+        this.courseName = params['courseName'];
       }
-      if (params["provideWhat"]) {
-        this.provideWhat = params["couprovideWhat"];
+      if (params['provideWhat']) {
+        this.provideWhat = params['provideWhat'];
       }
-      if (params["description"]) {
-        this.description = params["description"];
+      if (params['description']) {
+        this.description = params['description'];
       }
-      if (params["courseAmount"]) {
-        this.courseAmount = params["courseAmount"];
+      if (params['courseAmount']) {
+        this.courseAmount = params['courseAmount'];
       }
     });
-    console.log(this.courseMasterId)
-    console.log(this.courseName)
-    console.log(this.provideWhat)
-    console.log(this.description)
-    console.log(this.courseAmount)
+    console.log(this.courseMasterId);
+    console.log(this.courseName);
+    console.log(this.provideWhat);
+    console.log(this.description);
+    console.log(this.courseAmount);
   }
   signup() {
     const dialogRef = this.dialog.open(SignupComponent, {
@@ -49,6 +57,8 @@ export class CourseDetailsComponent implements OnInit {
     });
   }
 
+  public onPurchaseNowButtonClick(): void {
+    this.router.navigate(['/signup'], { queryParams: { course: this.courseMasterId } });
+  }
+  // [routerLink]="['/signup']"
 }
-
-
