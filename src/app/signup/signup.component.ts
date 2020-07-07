@@ -104,7 +104,13 @@ export class SignupComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        console.log(result);
+        this.getlogin();
+      }
+    });
+    this._courseDetailsService.addSignup(this.signup).then((data) => {
+      if (data && data.result) {
+        alert('Registered Successfully');
+        this.dialogRef.close(true);
         this.initPay();
       }
     });

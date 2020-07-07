@@ -10,11 +10,19 @@ import { AllCourse } from 'src/app/models/course/course.model';
 })
 export class CourseDetailsComponent implements OnInit {
   courseMasterId: string;
+<<<<<<< HEAD
+    courseName: string;
+    courseAmount: string;
+    description: string;
+    provideWhat: string;
+    learnersNumber: string;
+=======
   courseName: string;
   courseAmount: string;
   description: string;
   provideWhat: string;
   learnersNumber: string;
+>>>>>>> 21ce186412fbe50be0c42dd2f141aa4b5181220c
 
   constructor(private dialog: MatDialog, private route: ActivatedRoute, private readonly router: Router) {}
 
