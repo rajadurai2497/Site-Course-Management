@@ -13,15 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './signup/login/login.component';
+import { WindowRef } from './services/window-ref.service';
 @NgModule({
-  declarations: [
-    AppComponent,
-    SignupComponent,
-    NavbarComponent,
-    FooterComponent,
-    LoginComponent,
-    
-  ],
+  declarations: [AppComponent, SignupComponent, NavbarComponent, FooterComponent, LoginComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -31,12 +25,9 @@ import { LoginComponent } from './signup/login/login.component';
     HttpClientModule,
     MatDialogModule,
     CommonModule,
-    NgbModule
+    NgbModule,
   ],
-  providers: [
-    { provide: MatDialogRef, useValue: {} },
-    { provide: MAT_DIALOG_DATA, useValue: [] },
-  ],
+  providers: [WindowRef, { provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

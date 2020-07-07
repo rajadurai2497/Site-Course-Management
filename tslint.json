@@ -9,6 +9,10 @@
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
+    "object-literal-shorthand":false,
+    "variable-name":false,
+    "triple-equals":false,
+    "no-string-literal":false,
     "directive-selector": [
       true,
       "attribute",

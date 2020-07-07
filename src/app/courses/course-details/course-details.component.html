@@ -28,7 +28,7 @@
           <div [innerHTML]="provideWhat"></div>
           <br>
           <h5 class="pr-text">Price:₹{{courseAmount}}/-</h5>
-          <a [routerLink]="['/signup']" >
+          <a (click)="onPurchaseNowButtonClick()" >
             <span class="btn btn-view mt-4">PURCHASE NOW</span>
 
           </a>
