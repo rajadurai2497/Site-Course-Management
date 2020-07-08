@@ -42,7 +42,9 @@ export class CommunityComponent implements OnInit {
     this.communityService.createCommunity(this.community).subscribe((data) => {
       if (data && data.result) {
         alert('Registered Successfully');
-        } else {
+        } 
+        else {
+          
           alert('Registered UnSuccessfully');
         }
       this.dialogRef.close(true);

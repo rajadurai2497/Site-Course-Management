@@ -1,6 +1,6 @@
 .para-text{
     text-align:justify;
-
+    color: #141518;
     font-weight: 500;
     font-size:15px;
     margin-top:0px;
@@ -13,7 +13,23 @@
     font-weight: 500;
     font-size: 36px;
     color: #225da0;
+    
+}
+
+.head-card{
+    text-align:center;
+    font-weight: 600;
+    font-size: 26px !important;
+   
+}
+.header-tt-list{
+    font-family: 'Roboto' !important;
+    text-align:left;
+    font-weight: 500;
+    font-size: 27px;
+    color: #225da0;
     margin-top: 0px;
+    padding-top: 40px;
 }
 pr-text{
     text-align:justify;

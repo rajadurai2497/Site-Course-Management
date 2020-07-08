@@ -56,10 +56,13 @@
     font-size: 26px;
     color: #1b2b91;
 }
-
+.size-fix
+{
+    height: 280px !important;
+}
 .para-text{
     text-align:justify;
-    color: #7c7f88;
+    color:  #141518; 
     font-weight: 500;
     font-size:15px;
 }
@@ -109,7 +112,7 @@
  //    rgb(198, 241, 227));
  //    padding: 0 20px 0 20px;
     
-    background-color: whitesmoke;
+    background-color: #ffff;
     
  }
 
