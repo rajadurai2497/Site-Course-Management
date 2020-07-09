@@ -8,6 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CourseService } from '../services/course.service';
 import { PaymentService } from '../services/payment.service';
+import { ValidationService } from '../services/validation.service';
 export interface DialogData {
   animal: string;
   name: string;
@@ -51,6 +52,7 @@ export class SignupComponent implements OnInit {
     private readonly _courseService: CourseService,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly paymentService: PaymentService,
+    private readonly _validation: ValidationService,
   ) {}
   ngOnInit(): void {
     this._activatedRoute.queryParams.subscribe((queryParams) => {
@@ -80,6 +82,7 @@ export class SignupComponent implements OnInit {
   }
   public onSubmitButtonClicked(): void {
     this.signup.userId = 0;
+    if (this. validationSignup()) {
     this._signupService.createSignup(this.signup).then((data) => {
       if (data && data.result) {
         console.log(data);
@@ -87,6 +90,7 @@ export class SignupComponent implements OnInit {
         alert(data.errorDetails);
       }
     });
+  }
   }
 
   login() {
@@ -147,5 +151,31 @@ export class SignupComponent implements OnInit {
 
     this.rzp1 = new this.winRef.nativeWindow.Razorpay(options);
     this.rzp1.open();
+  }
+  validationSignup() {
+    if (!this.signup.userName) {
+      alert('Field Empty');
+      return false;
+    }
+    if (!this.signup.passWord) {
+      alert('Field Empty');
+      return false;
+    }
+    if (!this.signup.emailId) {
+      alert('Email Address Field Empty');
+      return false;
+    }
+
+    if (!this._validation.isEmailId(this.signup.emailId)) {
+      alert('Invalid Email Address');
+      return false;
+    }
+    if (!this.signup.phoneNumber) {
+      alert('Field Empty');
+      return false;
+    }
+    return true;
+
+
   }
 }
