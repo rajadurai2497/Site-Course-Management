@@ -8,7 +8,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CourseService } from '../services/course.service';
 import { PaymentService } from '../services/payment.service';
-import { ValidationService } from '../services/validation.service';
 export interface DialogData {
   animal: string;
   name: string;
@@ -52,7 +51,6 @@ export class SignupComponent implements OnInit {
     private readonly _courseService: CourseService,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly paymentService: PaymentService,
-    private readonly _validation: ValidationService,
   ) {}
   ngOnInit(): void {
     this._activatedRoute.queryParams.subscribe((queryParams) => {
