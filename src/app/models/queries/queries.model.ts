@@ -1,4 +1,7 @@
 export class AddQueriesModel {
+  validationQueries() {
+    throw new Error("Method not implemented.");
+  }
         // tslint:disable-next-line: member-ordering
         contactusId: number;
         // tslint:disable-next-line: member-ordering
