@@ -105,12 +105,28 @@
 }
 
 .light-bg{
-    background-image:url('/assets/img/brand/imgwavee-01.png');
+    background-image:url('/assets/img/brand/background-design.webp');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     opacity: 0.5;
   }
+  
+.lit-bg{
+    background-image:url('/assets/img/brand/mobile-back.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.5;
+  }
+  
+.over-laye {
+    background: #33cacf2e;
+}
+.padds{
+    margin-left: 17px;
+    margin-right: 24px;
+}
  
   .header-txt{
     text-align:justify;
@@ -165,4 +181,15 @@
     
     background-color: #ffff;
     
+ }
+ card-colr{
+   
+    transition:0.3s;
+ 
+    
+    background-color: #ffff;
+    
+ }
+ .stock-img{
+     height: 310px;
  }
