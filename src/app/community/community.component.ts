@@ -39,6 +39,7 @@ export class CommunityComponent implements OnInit {
 
   public onSubmitButtonClicked(): void {
     this.community.communityUserId = 0;
+    this.addCommunity.reset();
     if (this.validationCommunity()) {
 
       this.communityService.createCommunity(this.community).subscribe((data) => {

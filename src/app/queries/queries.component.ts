@@ -12,7 +12,7 @@ import { ValidationService } from '../services/validation.service';
 export class QueriesComponent implements OnInit {
 
   public queries = new AddQueriesModel();
-  addQueries: any;
+  addQueries: FormGroup;
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   dialogRef: any;
@@ -43,13 +43,14 @@ export class QueriesComponent implements OnInit {
     if (this.validationQueries()) {
     this.queriesService.createQueries(this.queries).subscribe((data) => {
       if (data && data.result) {
-        alert('Registered Successfully');
+        alert('Thank You for choosing us our executive will contact you soon');
         } else {
           alert('Registered UnSuccessfully');
         }
       this.dialogRef.close(true);
     });
   }
+    this.addQueries.reset();
   }
   validationQueries() {
     if (!this.queries.name) {

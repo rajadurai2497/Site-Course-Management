@@ -37,10 +37,10 @@
                   />
                 </div>
                   <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="c-text-danger">
-                    <p *ngIf="userName.errors.required">
+                    <p *ngIf="userName.errors.required" class="par-txxt">
                       *Name is required.
                     </p>
-                    <p *ngIf="userName.errors.minlength">
+                    <p *ngIf="userName.errors.minlength" class="par-txxt">
                       *Name must be at least 4 characters long.
                     </p>
                   </div>
@@ -58,7 +58,7 @@
                     #passWord="ngModel"
                   /> </div>
                   <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)" class="c-text-danger">
-                    <p *ngIf="passWord.errors.required">
+                    <p *ngIf="passWord.errors.required" class="par-txxt">
                       *Password is required.
                     </p>
                   </div>
@@ -79,10 +79,10 @@
                     #emailId="ngModel"
                   /></div>
                   <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="c-text-danger">
-                    <p *ngIf="emailId.errors.required">
+                    <p *ngIf="emailId.errors.required" class="par-txxt">
                       *Email is required.
                     </p>
-                    <p *ngIf="emailId.errors.pattern">
+                    <p *ngIf="emailId.errors.pattern" class="par-txxt">
                       *Type correct email Id
                     </p>
                   </div>
@@ -106,10 +106,10 @@
                     *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)"
                     class="c-text-danger"
                   >
-                    <p *ngIf="phoneNumber.errors.required">
+                    <p *ngIf="phoneNumber.errors.required" class="par-txxt">
                       *PhoneNumberis required.
                     </p>
-                    <p *ngIf="phoneNumber.errors.pattern">
+                    <p *ngIf="phoneNumber.errors.pattern" class="par-txxt">
                       *Type correct PhoneNumber
                     </p>
                   </div>
@@ -174,10 +174,10 @@
                       />
                     </div>
                       <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="c-text-danger">
-                        <p *ngIf="userName.errors.required">
+                        <p *ngIf="userName.errors.required" class="par-txxt">
                           *Name is required.
                         </p>
-                        <p *ngIf="userName.errors.minlength">
+                        <p *ngIf="userName.errors.minlength" class="par-txxt">
                           *Name must be at least 4 characters long.
                         </p>
                       </div>
@@ -195,7 +195,7 @@
                         #passWord="ngModel"
                       /> </div>
                       <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)" class="c-text-danger">
-                        <p *ngIf="passWord.errors.required">
+                        <p *ngIf="passWord.errors.required" class="par-txxt">
                           *Password is required.
                         </p>
                       </div>
@@ -216,10 +216,10 @@
                         #emailId="ngModel"
                       /></div>
                       <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="c-text-danger">
-                        <p *ngIf="emailId.errors.required">
+                        <p *ngIf="emailId.errors.required" class="par-txxt">
                           *Email is required.
                         </p>
-                        <p *ngIf="emailId.errors.pattern">
+                        <p *ngIf="emailId.errors.pattern" class="par-txxt">
                           *Type correct email Id
                         </p>
                       </div>
@@ -243,10 +243,10 @@
                         *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)"
                         class="c-text-danger"
                       >
-                        <p *ngIf="phoneNumber.errors.required">
+                        <p *ngIf="phoneNumber.errors.required" class="par-txxt">
                           *PhoneNumberis required.
                         </p>
-                        <p *ngIf="phoneNumber.errors.pattern">
+                        <p *ngIf="phoneNumber.errors.pattern" class="par-txxt">
                           *Type correct PhoneNumber
                         </p>
                       </div>

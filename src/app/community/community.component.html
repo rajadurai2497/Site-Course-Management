@@ -57,10 +57,10 @@
                   
                 </div>
                 <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="c-text-danger">
-                    <p *ngIf="fullName.errors.required">
+                    <p *ngIf="fullName.errors.required" class="par-txxt">
                       * Name is required.
                     </p>
-                    <p *ngIf="fullName.errors.minlength">
+                    <p *ngIf="fullName.errors.minlength" class="par-txxt">
                       * Name must be at least 4 characters long.
                     </p>
 
@@ -72,10 +72,10 @@
                   <input class="form-control" placeholder="Email" type="email" name="emailId" required [pattern]="emailPattern" [(ngModel)]="community.emailId"
                     #emailId="ngModel" /></div>
                   <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="c-text-danger">
-                    <p *ngIf="emailId.errors.required">
+                    <p *ngIf="emailId.errors.required" class="par-txxt">
                       *Email is required.
                     </p>
-                    <p *ngIf="emailId.errors.pattern">
+                    <p *ngIf="emailId.errors.pattern" class="par-txxt">
                       *Type correct email Id
                     </p>
                  
@@ -87,17 +87,17 @@
                   <input class="form-control" placeholder="Phone Number" name="phoneNumber" required [pattern]="phoneNumberPattern" [(ngModel)]="community.phoneNumber"
                     #phoneNumber="ngModel" /></div>
                   <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="c-text-danger">
-                    <p *ngIf="phoneNumber.errors.required">
+                    <p *ngIf="phoneNumber.errors.required" class="par-txxt">
                       *PhoneNumberis required.
                     </p>
-                    <p *ngIf="phoneNumber.errors.pattern">
+                    <p *ngIf="phoneNumber.errors.pattern" class="par-txxt">
                       *Type correct PhoneNumber
                     </p>
                   
                 </div>
               </div>
               <div class="text-center">
-                <button type="button" class="btn btn-community my-4" (click)="onSubmitButtonClicked()">Join</button>
+                <button type="button" class="btn btn-community my-4"  (click)="onSubmitButtonClicked();addCommunity.reset()">Join</button>
               </div>
             </form>
           </div>

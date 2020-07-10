@@ -26,10 +26,10 @@
                                       minlength="4" [(ngModel)]="queries.name"  #name="ngModel">
                                     </div>
                                       <div *ngIf="name.invalid && (name.dirty || name.touched)" class="c-text-danger">
-                                        <p *ngIf="name.errors.required">
+                                        <p *ngIf="name.errors.required" class="par-txxt">
                                           *Name is required.
                                         </p>
-                                        <p *ngIf="name.errors.minlength">
+                                        <p *ngIf="name.errors.minlength" class="par-txxt">
                                           *Name must be at least 4 characters long.
                                         </p>
                                       </div>
@@ -43,10 +43,10 @@
                                    
                                     <input class="form-control" placeholder="Email" type="email" name="email"  required [pattern]="emailPattern" [(ngModel)]="queries.email"  #email="ngModel"></div>
                                     <div *ngIf="email.invalid && (email.dirty || email.touched)" class="c-text-danger">
-                                      <p *ngIf="email.errors.required">
+                                      <p *ngIf="email.errors.required" class="par-txxt">
                                         *Email is required.
                                       </p>
-                                      <p *ngIf="email.errors.pattern">
+                                      <p *ngIf="email.errors.pattern" class="par-txxt">
                                        *Type correct email Id
                                       </p>
                                     </div>  
@@ -57,10 +57,10 @@
                                     
                                     <input class="form-control" placeholder="Phone Number" name="phoneNumber"  required [pattern]="phoneNumberPattern" [(ngModel)]="queries.phoneNumber" #phoneNumber="ngModel"> </div>
                                     <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="c-text-danger">
-                                      <p *ngIf="phoneNumber.errors.required">
+                                      <p *ngIf="phoneNumber.errors.required" class="par-txxt">
                                         *PhoneNumberis required.
                                       </p>
-                                      <p *ngIf="phoneNumber.errors.pattern">
+                                      <p *ngIf="phoneNumber.errors.pattern" class="par-txxt">
                                        *Type correct PhoneNumber
                                       </p>
                                      
@@ -71,7 +71,7 @@
                                     <br>
                                     <div class="row pb-0">
                                         <div class="col-md-0 mr-auto ml-auto">
-                                            <button class="btn btn-lavender btn-lg btn-fill btn-hover" (click)="onSubmitButtonClicked()">Send Message</button>
+                                            <button class="btn btn-lavender btn-lg btn-fill btn-hover" (click)="onSubmitButtonClicked() ; addQueries.reset()">Send Message</button>
                                         </div>
                                     </div>
                               </form>
