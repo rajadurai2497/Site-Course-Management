@@ -8,6 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CourseService } from '../services/course.service';
 import { PaymentService } from '../services/payment.service';
+import { NgxSpinnerService } from "ngx-spinner";
+
 export interface DialogData {
   animal: string;
   name: string;
@@ -51,7 +53,9 @@ export class SignupComponent implements OnInit {
     private readonly _courseService: CourseService,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly paymentService: PaymentService,
-  ) {}
+    private SpinnerService: NgxSpinnerService,
+
+  ) { }
   ngOnInit(): void {
     this._activatedRoute.queryParams.subscribe((queryParams) => {
       this.courseId = queryParams['course'];
@@ -65,6 +69,9 @@ export class SignupComponent implements OnInit {
         Validators.pattern(this.phoneNumberPattern),
       ]),
     });
+
+
+    // this.login
   }
   get userName() {
     return this.signup.get(' userName');
@@ -79,26 +86,44 @@ export class SignupComponent implements OnInit {
     return this.signup.get('passWord');
   }
   public onSubmitButtonClicked(): void {
+    this.SpinnerService.show();
     this.signup.userId = 0;
     this._signupService.createSignup(this.signup).then((data) => {
+      // alert("please wait to get payment gateway");
+      console.log(data)
+      // console.log(this.signup.emailId, this.signup.passWord)
       if (data && data.result) {
-        console.log(data);
+        this.paymentService.insertOrder(this.courseId, data.response.access_token).subscribe((value: any) => {
+          console.log(value);
+          this.SpinnerService.hide();
+          this.initPay(value, data.access_token);
+        });
+        // this.login()
+        // this._signupService.login(this.signup.emailId, this.signup.passWord).subscribe((data) => {
+        //   if (data && data.isAuthorize) {
+        //     console.log(data.access_token);
+
+        //   };
+        // })
+        // console.log(data);
       } else {
         alert(data.errorDetails);
       }
     });
   }
 
-  login() {
+  loginsignIn() {
     const dialogRef = this.dialog.open(LoginComponent, {
       height: 'auto',
       width: 'auto',
       panelClass: 'mat-dialogue-no-padding',
     });
+
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.paymentService.insertOrder(this.courseId, result.access_token).subscribe((value: any) => {
           console.log(value);
+          this.SpinnerService.hide();
           this.initPay(value, result.access_token);
         });
       }

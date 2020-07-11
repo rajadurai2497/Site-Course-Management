@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
       this._signupService.login(this.userName, this.password).subscribe((data) => {
         if (data && data.isAuthorize) {
           this.dialogRef.close(data);
+          // afterClosed()
         }
       });
     }
