@@ -1,0 +1,29 @@
+.card-colrs{
+    box-shadow: 0 4px 8px 0 rgba(87, 92, 93, 0.2);
+    transition:0.3s;
+ //    background-image: linear-gradient(to bottom right,rgb(51, 202, 207),
+ //    rgb(169, 243, 218),
+ //    rgb(198, 241, 227));
+ //    padding: 0 20px 0 20px;
+    
+    background-color: #ffff;
+    
+ }
+
+
+ .header-texts{
+    font-family: 'Roboto' !important;
+    text-align:center;
+    font-weight: 500;
+    font-size: 30px;
+    color: #225da0;
+    padding-top: 0px;
+}
+.header-texts-p{
+    font-family: 'Roboto' !important;
+    text-align:center;
+    // font-weight: 500;
+    font-size: 14px;
+    color: #225da0;
+    padding-top: 0px;
+}
