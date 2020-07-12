@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { QueriesRoutingModule } from './queries-routing.module';
 import { QueriesComponent } from './queries.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     QueriesRoutingModule
   ]
 })

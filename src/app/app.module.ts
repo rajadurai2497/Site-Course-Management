@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
@@ -14,9 +14,10 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './signup/login/login.component';
 import { WindowRef } from './services/window-ref.service';
-import { PartnersComponent } from './shared/partners/partners.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 @NgModule({
-  declarations: [AppComponent, SignupComponent, NavbarComponent, FooterComponent, LoginComponent, PartnersComponent],
+  declarations: [AppComponent, SignupComponent, NavbarComponent, FooterComponent, LoginComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,7 +29,9 @@ import { PartnersComponent } from './shared/partners/partners.component';
     ReactiveFormsModule,
     CommonModule,
     NgbModule,
+    NgxSpinnerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [WindowRef, { provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }],
   bootstrap: [AppComponent],
 })

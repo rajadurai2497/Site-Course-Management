@@ -28,6 +28,7 @@ export class QueriesComponent implements OnInit {
       phoneNumber: ['', [Validators.required,
         Validators.pattern(this.phoneNumberPattern), ]
       ],
+      description: ['', [Validators.required, Validators.minLength(4)]],
     });
    }
    get f() { return this.queriesForm.controls; }
