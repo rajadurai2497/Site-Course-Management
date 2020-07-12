@@ -13,6 +13,7 @@ import { CourseComponent } from './course/course.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseDetailsComponent } from './courses/course-details/course-details.component';
 import {  LoginComponent } from './signup/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -56,7 +57,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [CommonModule,
-    BrowserModule,
+    BrowserModule, FormsModule, ReactiveFormsModule,
     RouterModule.forRoot(routes, {
       useHash: false
     })],

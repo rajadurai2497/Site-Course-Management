@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +24,7 @@ import { WindowRef } from './services/window-ref.service';
     AppRoutingModule,
     HttpClientModule,
     MatDialogModule,
+    ReactiveFormsModule,
     CommonModule,
     NgbModule,
   ],
