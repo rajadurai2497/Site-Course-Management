@@ -10,7 +10,6 @@ import { ValidationService } from '../services/validation.service';
   styleUrls: ['./queries.component.scss']
 })
 export class QueriesComponent implements OnInit {
-
   queries = new AddQueries();
   queriesForm: FormGroup;
   submitted = false;
