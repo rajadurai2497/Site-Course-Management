@@ -8,6 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CourseService } from '../services/course.service';
 import { PaymentService } from '../services/payment.service';
+import { NgxSpinnerService } from "ngx-spinner";
+
 import { ValidationService } from '../services/validation.service';
 export interface DialogData {
   animal: string;
@@ -52,9 +54,12 @@ export class SignupComponent implements OnInit {
     private readonly _courseService: CourseService,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly paymentService: PaymentService,
+    private SpinnerService: NgxSpinnerService,
     private readonly _validation: ValidationService,
-  ) {}
+
+  ) { }
   ngOnInit(): void {
+    this.SpinnerService.hide()
     this._activatedRoute.queryParams.subscribe((queryParams) => {
       this.courseId = queryParams['course'];
     });
@@ -67,6 +72,9 @@ export class SignupComponent implements OnInit {
         Validators.pattern(this.phoneNumberPattern),
       ]),
     });
+
+
+    // this.login
   }
   get userName() {
     return this.signup.get(' userName');
@@ -81,16 +89,22 @@ export class SignupComponent implements OnInit {
     return this.signup.get('passWord');
   }
   public onSubmitButtonClicked(): void {
+    this.SpinnerService.show();
     this.signup.userId = 0;
     if (this. validationSignup()) {
     this._signupService.createSignup(this.signup).then((data) => {
       if (data && data.result) {
+        this.SpinnerService.hide();
         alert('Account Created Successfully. Please Log in Here')
         this.login()
       } else {
+        this.SpinnerService.hide();
         alert(data.errorDetails);
       }
     });
+  }
+  else{
+    this.SpinnerService.hide();
   }
   }
 
@@ -100,10 +114,13 @@ export class SignupComponent implements OnInit {
       width: 'auto',
       panelClass: 'mat-dialogue-no-padding',
     });
+
     dialogRef.afterClosed().subscribe((result) => {
+      this.SpinnerService.show();
       if (result) {
         this.paymentService.insertOrder(this.courseId, result.access_token).subscribe((value: any) => {
           console.log(value);
+          this.SpinnerService.hide();
           this.initPay(value, result.access_token);
         });
       }
@@ -114,8 +131,8 @@ export class SignupComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  // Razor pay
 
+  // Razor pay
   public initPay(orderDetails, access_token): void {
     const ref = this;
     const options = {
@@ -149,7 +166,6 @@ export class SignupComponent implements OnInit {
         });
       },
     };
-
     this.rzp1 = new this.winRef.nativeWindow.Razorpay(options);
     this.rzp1.open();
   }
@@ -166,7 +182,6 @@ export class SignupComponent implements OnInit {
       alert('Email Address Field Empty');
       return false;
     }
-
     if (!this._validation.isEmailId(this.signup.emailId)) {
       alert('Invalid Email Address');
       return false;
