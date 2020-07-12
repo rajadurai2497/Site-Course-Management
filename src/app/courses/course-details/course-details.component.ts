@@ -36,11 +36,6 @@ export class CourseDetailsComponent implements OnInit {
         this.courseAmount = params['courseAmount'];
       }
     });
-    console.log(this.courseMasterId);
-    console.log(this.courseName);
-    console.log(this.provideWhat);
-    console.log(this.description);
-    console.log(this.courseAmount);
   }
   signup() {
     const dialogRef = this.dialog.open(SignupComponent, {

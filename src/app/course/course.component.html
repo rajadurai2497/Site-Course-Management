@@ -13,7 +13,7 @@
       <div class="col-lg-4 ">
 
         <img src="./assets/img/brand/img22_Mesa-de-trabajo-1.webp" class="img-fluid floating">
-       
+
 
 
       </div>
@@ -21,15 +21,19 @@
 
       <div class="col-lg-8   d-lg-inline d-none " style="padding-top: 110px">
         <h2 class="header-text">We Teach The Complete Formula</h2>
-        <p class="para-text">What work for one trader,might not work for another.This creates clueless traders who constantly experience negative
-          outcomes in the market. To succeed in the stock market you need to learn the "Complete Formula"-consisting of five
+        <p class="para-text">What work for one trader,might not work for another.This creates clueless traders who
+          constantly experience negative
+          outcomes in the market. To succeed in the stock market you need to learn the "Complete Formula"-consisting of
+          five
           interconnected ingredients to build you up.</p>
       </div>
 
       <div class="col-lg-7 d-lg-none  ">
         <h2 class="header-text">We Teach The Complete Formula</h2>
-        <p class="para-text">What work for one trader,might not work for another.This creates clueless traders who constantly experience negative
-          outcomes in the market. To succeed in the stock market you need to learn the "Complete Formula"-consisting of five
+        <p class="para-text">What work for one trader,might not work for another.This creates clueless traders who
+          constantly experience negative
+          outcomes in the market. To succeed in the stock market you need to learn the "Complete Formula"-consisting of
+          five
           interconnected ingredients to build you up.</p>
       </div>
     </div>
@@ -42,7 +46,8 @@
           <i class="fa fa-globe" aria-hidden="true"></i>
         </div>
         <h5 class="header-text-list" style="padding-top: 10px;">Learn Anytime,Anywhere!</h5>
-        <p class="para-text">We provide you with several different traning formats so you can learn the way that best suits you including an online
+        <p class="para-text">We provide you with several different traning formats so you can learn the way that best
+          suits you including an online
           course,pdf,communities and live sessions.</p>
       </div>
       <div class="col-lg-4">
@@ -50,7 +55,8 @@
           <i class="fa fa-leanpub" aria-hidden="true"></i>
         </div>
         <h5 class="header-text-list" style="padding-top: 10px;">Online E-Learning Platform</h5>
-        <p class="para-text">Watch traning videos,listen to recordings or read the PDFs.Access the training online from any desktop or mobile
+        <p class="para-text">Watch traning videos,listen to recordings or read the PDFs.Access the training online from
+          any desktop or mobile
           device,anywhere in the world!.</p>
       </div>
       <div class="col-lg-4">
@@ -58,7 +64,8 @@
           <i class="fa fa-meetup" aria-hidden="true"></i>
         </div>
         <h5 class="header-text-list" style="padding-top: 10px;">Expert mentorships on demand!</h5>
-        <p class="para-text">Get personalized mentorship from experts who can troubleshoot your problems and provide direction.
+        <p class="para-text">Get personalized mentorship from experts who can troubleshoot your problems and provide
+          direction.
         </p>
       </div>
     </div>
@@ -87,19 +94,14 @@
 
 
   <div class="container pb-15 ">
-
     <div class="row justify-content-center">
-
       <div class="col-lg-12">
-
         <div class="row row-grid">
           <div class="col-lg-4 pb-10" *ngFor="let course of allCourse">
             <div class="card card-lift--hover shadow border-0">
               <div class="card-body  py-3">
-
-
                 <h6 class="header-textss">{{course.courseName}}</h6>
-                <p class="description mt-3 para-txt" [innerHTML]="course.description"></p>
+                <p class="description mt-3 para-txt" [innerHTML]="course.shortDesc"></p>
                 <div>
                   <span class="badge badge-pill badge-success">100+ users</span>
                   <span class="badge badge-pill badge-success">Tamil</span>
@@ -128,4 +130,3 @@
   </div>
 </section>
 <app-partners></app-partners>
-
