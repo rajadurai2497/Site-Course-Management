@@ -20,7 +20,7 @@ export class HomeFeaturesComponent implements OnInit {
   }
   customOptions: OwlOptions = {
     loop: true,
-    autoplay:true,
+    autoplay:false,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,

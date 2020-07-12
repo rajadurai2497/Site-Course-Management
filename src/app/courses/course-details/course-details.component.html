@@ -1,67 +1,66 @@
 <section class="section section-shaped " style="    padding-top: 18px;">
-    <div class="shape shape-style-1 shape-default">
-            
-    </div>
+  <div class="shape shape-style-1 shape-default">
+
+  </div>
 </section>
 
 <section>
 
-      <div class="container py-md" style="margin-top: -25px">
-          <div class="row ">
+  <div class="container py-md" style="margin-top: -25px">
+    <div class="row ">
 
 
-              <div class="d-lg-none" style="padding-bottom: 9px">
-                  <h3 class="header-text-list">{{courseName}}
-                  </h3>
-               </div>
-
-
-            <div class="col-md-5 order-md-2" style="margin-top: -42px;
-            padding-top: 44px;">
-             
-               <div class="card shadow border-0">
-        <div class="card-header pb-20">
-          <div class="head-card">
-            <h2 class=" text-white" style="margin-bottom: -14px;">What We Provide?</h2>
-          </div>
-        </div>
-        <div class="card-body px-lg-5 py-lg-5 ">
-          <div class="para-text" [innerHTML]="provideWhat"></div>
-          <br>
-          <h5 class="para-text">Price:₹{{courseAmount}}/-</h5>
-          <a (click)="onPurchaseNowButtonClick()" >
-            <span class="btn btn-view mt-4">PURCHASE NOW</span>
-
-          </a>
-        </div>
-               </div>
-            </div>
-
-
-
-    
-              <div class="col-lg-7 order-md-1">
-                  <div class="d-lg-inline d-none">
-                    <h3 class="header-text-list">{{courseName}}</h3>
-          
-                  </div>
-  
-                    <h2 class="header-tt-list">What is This course About?
-
-                    </h2>
-
-                     <div class="para-text" [innerHTML]="description">
-
-                     </div>
-              </div>
-
-
-   
-    
-  
-          </div>
-        
-      
+      <div class="d-lg-none" style="padding-bottom: 9px">
+        <h3 class="header-text-list">{{courseName}}
+        </h3>
       </div>
+
+
+      <div class="col-md-5 order-md-2" style="margin-top: -42px;
+            padding-top: 44px;">
+
+        <div class="card shadow border-0">
+          <div class="card-header pb-20">
+            <div class="head-card">
+              <h2 class=" text-white" style="margin-bottom: -14px;">What is This course About?</h2>
+            </div>
+          </div>
+          <div class="card-body px-lg-5 py-lg-5 ">
+            
+        <div class="para-text" [innerHTML]="description"></div>
+            <br>
+            <h5 class="para-text">Price:₹{{courseAmount}}/-</h5>
+            <a (click)="onPurchaseNowButtonClick()">
+              <span class="btn btn-view mt-4">PURCHASE NOW</span>
+
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-lg-7 order-md-1">
+        <div class="d-lg-inline d-none">
+          <h3 class="header-text-list">{{courseName}}</h3>
+
+        </div>
+
+        <h2 class="header-tt-list">What We Provide?
+
+        </h2>
+
+        <div class="para-text" [innerHTML]="provideWhat"></div>
+      </div>
+
+
+
+
+
+    </div>
+
+
+  </div>
 
 </section>

@@ -59,6 +59,7 @@ export class SignupComponent implements OnInit {
 
   ) { }
   ngOnInit(): void {
+    this.SpinnerService.hide()
     this._activatedRoute.queryParams.subscribe((queryParams) => {
       this.courseId = queryParams['course'];
     });
@@ -90,33 +91,24 @@ export class SignupComponent implements OnInit {
   public onSubmitButtonClicked(): void {
     this.SpinnerService.show();
     this.signup.userId = 0;
-    if (this.validationSignup()) {
-      this._signupService.createSignup(this.signup).then((data) => {
-        // alert("please wait to get payment gateway");
-        console.log(data)
-        // console.log(this.signup.emailId, this.signup.passWord)
-        if (data && data.result) {
-          this.paymentService.insertOrder(this.courseId, data.response.access_token).subscribe((value: any) => {
-            console.log(value);
-            this.SpinnerService.hide();
-            this.initPay(value, data.access_token);
-          });
-          // this.login()
-          // this._signupService.login(this.signup.emailId, this.signup.passWord).subscribe((data) => {
-          //   if (data && data.isAuthorize) {
-          //     console.log(data.access_token);
-
-          //   };
-          // })
-          // console.log(data);
-        } else {
-          alert(data.errorDetails);
-        }
-      });
-    }
+    if (this. validationSignup()) {
+    this._signupService.createSignup(this.signup).then((data) => {
+      if (data && data.result) {
+        this.SpinnerService.hide();
+        alert('Account Created Successfully. Please Log in Here')
+        this.login()
+      } else {
+        this.SpinnerService.hide();
+        alert(data.errorDetails);
+      }
+    });
+  }
+  else{
+    this.SpinnerService.hide();
+  }
   }
 
-  loginsignIn() {
+  login() {
     const dialogRef = this.dialog.open(LoginComponent, {
       height: 'auto',
       width: 'auto',
