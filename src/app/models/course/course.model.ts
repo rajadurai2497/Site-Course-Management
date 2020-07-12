@@ -4,5 +4,6 @@ export interface AllCourse {
     courseAmount: string;
     description: string;
     provideWhat: string;
-    learnersNumber: string
+    learnersNumber: string;
+    shortDesc?:string;
 }
