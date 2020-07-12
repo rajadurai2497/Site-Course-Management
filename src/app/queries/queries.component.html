@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="card-body px-lg-5 py-lg-5">
-            <form role="form" class="pb-0">
+            <form [formGroup]="queriesForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <div class="input-group">
                   <input
@@ -141,7 +141,7 @@
               <br />
               <div class="row pb-0">
                 <div class="col-md-0 mr-auto ml-auto">
-                  <button class="btn btn-lavender btn-lg btn-fill btn-hover" (click)="onSubmitButtonClicked()">
+                  <button class="btn btn-lavender btn-lg btn-fill btn-hover" (click)="createQueries()">
                     Send Message
                   </button>
                 </div>
