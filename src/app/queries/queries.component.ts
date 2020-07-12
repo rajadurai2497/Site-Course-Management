@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddQueriesModel } from '../models/queries/queries.model';
 import { QueriesService } from '../services/queries.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ValidationService } from '../services/validation.service';
 
 @Component({
   selector: 'app-queries',
@@ -15,7 +16,7 @@ export class QueriesComponent implements OnInit {
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   dialogRef: any;
-  constructor(private readonly queriesService: QueriesService) {}
+  constructor(private readonly queriesService: QueriesService, private readonly _validation: ValidationService) {}
 
   ngOnInit(): void  {
     this.addQueries = new FormGroup({
@@ -39,6 +40,7 @@ export class QueriesComponent implements OnInit {
 
   public onSubmitButtonClicked(): void {
     this.queries.contactusId = 0;
+    if (this.validationQueries()) {
     this.queriesService.createQueries(this.queries).subscribe((data) => {
       if (data && data.result) {
         alert('Registered Successfully');
@@ -47,5 +49,28 @@ export class QueriesComponent implements OnInit {
         }
       this.dialogRef.close(true);
     });
+  }
+  }
+  validationQueries() {
+    if (!this.queries.name) {
+      alert('Field Empty');
+      return false;
+    }
+    if (!this.queries.email) {
+      alert('Email Address Field Empty');
+      return false;
+    }
+
+    if (!this._validation.isEmailId(this.queries.email)) {
+      alert('Invalid Email Address');
+      return false;
+    }
+    if (!this.queries.phoneNumber) {
+      alert('Field Empty');
+      return false;
+    }
+    return true;
+
+
   }
 }

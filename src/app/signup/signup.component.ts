@@ -10,6 +10,7 @@ import { CourseService } from '../services/course.service';
 import { PaymentService } from '../services/payment.service';
 import { NgxSpinnerService } from "ngx-spinner";
 
+import { ValidationService } from '../services/validation.service';
 export interface DialogData {
   animal: string;
   name: string;
@@ -54,6 +55,7 @@ export class SignupComponent implements OnInit {
     private readonly _activatedRoute: ActivatedRoute,
     private readonly paymentService: PaymentService,
     private SpinnerService: NgxSpinnerService,
+    private readonly _validation: ValidationService,
 
   ) { }
   ngOnInit(): void {
@@ -88,28 +90,30 @@ export class SignupComponent implements OnInit {
   public onSubmitButtonClicked(): void {
     this.SpinnerService.show();
     this.signup.userId = 0;
-    this._signupService.createSignup(this.signup).then((data) => {
-      // alert("please wait to get payment gateway");
-      console.log(data)
-      // console.log(this.signup.emailId, this.signup.passWord)
-      if (data && data.result) {
-        this.paymentService.insertOrder(this.courseId, data.response.access_token).subscribe((value: any) => {
-          console.log(value);
-          this.SpinnerService.hide();
-          this.initPay(value, data.access_token);
-        });
-        // this.login()
-        // this._signupService.login(this.signup.emailId, this.signup.passWord).subscribe((data) => {
-        //   if (data && data.isAuthorize) {
-        //     console.log(data.access_token);
+    if (this.validationSignup()) {
+      this._signupService.createSignup(this.signup).then((data) => {
+        // alert("please wait to get payment gateway");
+        console.log(data)
+        // console.log(this.signup.emailId, this.signup.passWord)
+        if (data && data.result) {
+          this.paymentService.insertOrder(this.courseId, data.response.access_token).subscribe((value: any) => {
+            console.log(value);
+            this.SpinnerService.hide();
+            this.initPay(value, data.access_token);
+          });
+          // this.login()
+          // this._signupService.login(this.signup.emailId, this.signup.passWord).subscribe((data) => {
+          //   if (data && data.isAuthorize) {
+          //     console.log(data.access_token);
 
-        //   };
-        // })
-        // console.log(data);
-      } else {
-        alert(data.errorDetails);
-      }
-    });
+          //   };
+          // })
+          // console.log(data);
+        } else {
+          alert(data.errorDetails);
+        }
+      });
+    }
   }
 
   loginsignIn() {
@@ -120,6 +124,7 @@ export class SignupComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
+      this.SpinnerService.show();
       if (result) {
         this.paymentService.insertOrder(this.courseId, result.access_token).subscribe((value: any) => {
           console.log(value);
@@ -134,8 +139,8 @@ export class SignupComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  // Razor pay
 
+  // Razor pay
   public initPay(orderDetails, access_token): void {
     const ref = this;
     const options = {
@@ -169,8 +174,32 @@ export class SignupComponent implements OnInit {
         });
       },
     };
-
     this.rzp1 = new this.winRef.nativeWindow.Razorpay(options);
     this.rzp1.open();
+  }
+  validationSignup() {
+    if (!this.signup.userName) {
+      alert('Field Empty');
+      return false;
+    }
+    if (!this.signup.passWord) {
+      alert('Field Empty');
+      return false;
+    }
+    if (!this.signup.emailId) {
+      alert('Email Address Field Empty');
+      return false;
+    }
+    if (!this._validation.isEmailId(this.signup.emailId)) {
+      alert('Invalid Email Address');
+      return false;
+    }
+    if (!this.signup.phoneNumber) {
+      alert('Field Empty');
+      return false;
+    }
+    return true;
+
+
   }
 }
