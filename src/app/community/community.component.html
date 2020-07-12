@@ -48,15 +48,15 @@
             </div>
           </div>
           <div class="card-body px-lg-5 py-lg-5">
-            <form class="pb-0"  (ngSubmit)="onSubmitButtonClicked()" #community="ngForm">
+            <form [formGroup]="communityForm" (ngSubmit)="onSubmit()" >
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" name="fullName" class="form-control" placeholder="Name" required minlength="4" [(ngModel)]="community.fullName"  #fullName="ngModel" [ngClass]="{ 'is-invalid': submitted &amp;&amp; addCommunity.controls.fullName.errors }" 
+                  <input type="text" formControlName="fullName" class="form-control" placeholder="Name" required minlength="4"  [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.fullName.errors }" 
                   />
                 </div>
                
-                <div *ngIf="submitted &amp;&amp; addCommunity.controls.fullName.errors" class="text-danger">
-                  <div *ngIf="addCommunity.controls.fullName.errors.required" class="par-txxt">First Name is required</div>
+                <div *ngIf="submitted &amp;&amp; f.fullName.errors" class="text-danger">
+                  <div *ngIf="f.fullName.errors.required" class="par-txxt">First Name is required</div>
               </div>
 
                   
@@ -64,27 +64,29 @@
               <div class="form-group mb-3">
                 <div class="input-group">
                   
-                  <input class="form-control" placeholder="Email" type="email" name="emailId" required [pattern]="emailPattern" [ngClass]="{ 'is-invalid': submitted &amp;&amp; addCommunity.controls.emailId.errors }"
+                  <input class="form-control" placeholder="Email" type="email" formControlName="emailId" required [pattern]="emailPattern" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.emailId.errors }"
                     /></div>
-                    <div *ngIf="submitted &amp;&amp; addCommunity.controls.emailId.errors" class="text-danger">
-                      <div *ngIf="addCommunity.controls.emailId.errors.required" class="par-txxt">Email is required</div>
-                      <div *ngIf="addCommunity.controls.emailId.errors.email" class="par-txxt">Email must be a valid email address</div>
+                    <div *ngIf="submitted &amp;&amp; f.emailId.errors" class="text-danger">
+                      <div *ngIf="f.emailId.errors.required" class="par-txxt">Email is required</div>
+                      <div *ngIf="f.emailId.errors.email" class="par-txxt">Email must be a valid email address</div>
                   </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   
-                  <input class="form-control" placeholder="Phone Number" name="phoneNumber" required [pattern]="phoneNumberPattern" [ngClass]="{ 'is-invalid': submitted &amp;&amp; addCommunity.controls.phoneNumber.errors }"
+                  <input class="form-control" placeholder="Phone Number" formControlName="phoneNumber" required [pattern]="phoneNumberPattern" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.phoneNumber.errors }"
                     /></div>
-                    <div *ngIf="submitted &amp;&amp; addCommunity.controls.phoneNumber.errors" class="text-danger">
-                      <div *ngIf=" addCommunity.controls.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
+                    <div *ngIf="submitted &amp;&amp; f.phoneNumber.errors" class="text-danger">
+                      <div *ngIf=" f.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
                   </div>
               </div>
               <div class="text-center">
-                <button type="button" class="btn btn-community my-4"  (click)="onSubmitButtonClicked()">Join</button>
-                <button class="btn btn-secondary" type="reset" (click)="onReset()">Clear</button>
+                <button mat-button cdkFocusInitial class="btn btn-community my-4"  (click)="createCommunity()">Join</button>
               </div>
             </form>
+            <div class="success" *ngIf="showSuccessMessage">
+              Thank You for choosing us our executive will contact you soon
+            </div>
           </div>
         </div>
       </div>

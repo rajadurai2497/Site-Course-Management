@@ -1,4 +1,4 @@
-export class AddCommunityModel {
+export class AddCommunity {
 // tslint:disable-next-line: member-ordering
 communityUserId: number;
 // tslint:disable-next-line: member-ordering

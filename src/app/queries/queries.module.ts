@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { QueriesRoutingModule } from './queries-routing.module';
 import { QueriesComponent } from './queries.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     QueriesRoutingModule
   ]
 })
