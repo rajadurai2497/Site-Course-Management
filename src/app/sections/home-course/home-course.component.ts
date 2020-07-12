@@ -19,6 +19,14 @@ export class HomeCourseComponent implements OnInit {
     this._courseService.getAllCourselist().then((data) => {
       if (data && data.result) {
         this.allCourse = data.allCourse;
+        this.allCourse .forEach(element => {
+          if(element.description && element.description.length>230){
+            element.shortDesc=element.description.substring(0,230);
+          }
+          else{
+            element.shortDesc=element.description;
+          }
+        });
       }
     });
   }
