@@ -85,7 +85,8 @@ export class SignupComponent implements OnInit {
     if (this. validationSignup()) {
     this._signupService.createSignup(this.signup).then((data) => {
       if (data && data.result) {
-        console.log(data);
+        alert('Account Created Successfully. Please Log in Here')
+        this.login()
       } else {
         alert(data.errorDetails);
       }
