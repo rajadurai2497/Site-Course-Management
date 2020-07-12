@@ -14,9 +14,8 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './signup/login/login.component';
 import { WindowRef } from './services/window-ref.service';
-import { PartnersComponent } from './shared/partners/partners.component';
 @NgModule({
-  declarations: [AppComponent, SignupComponent, NavbarComponent, FooterComponent, LoginComponent, PartnersComponent],
+  declarations: [AppComponent, SignupComponent, NavbarComponent, FooterComponent, LoginComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,6 +27,7 @@ import { PartnersComponent } from './shared/partners/partners.component';
     CommonModule,
     NgbModule,
   ],
+  exports:[],
   providers: [WindowRef, { provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }],
   bootstrap: [AppComponent],
 })

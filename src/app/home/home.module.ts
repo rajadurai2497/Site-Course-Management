@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { SectionsModule } from '../sections/sections.module';
 import { HomeRoutingModule } from './home-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     imports: [
@@ -14,6 +15,7 @@ import { HomeRoutingModule } from './home-routing.module';
         FormsModule,
         SectionsModule,
         NgbModule,
+        SharedModule,
         HomeRoutingModule
     ],
     declarations: [ HomeComponent ],
