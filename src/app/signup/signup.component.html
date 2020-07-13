@@ -94,20 +94,17 @@
               </div>
               <div class="row my-4">
                 <div class="col-12">
-                  <div class="custom-control custom-control-alternative custom-checkbox">
-                    <input class="custom-control-input" id="customCheckRegister" type="checkbox" />
-                    <label class="custom-control-label" for="customCheckRegister">
-                      <span
-                        >I agree with the
-                        <a class="linkcolr" [routerLink]="['/privacy-policy']">Privacy Policy</a>
-                      </span>
-                    </label>
+                  <!-- <div class="custom-control custom-control-alternative custom-checkbox"> -->
+                    <span>
+                      By Creating an account,you agree to our
+                      <a class="linkcolr" [routerLink]="['/terms-conditions']">Terms & Conditions</a>
+                    </span>
                     <div class="text-center">
                       <button mat-button cdkFocusInitial class="btn btn-primary mt-4" (click)="createSignup()">
                         Create account
-                      </button>
+                      </button> 
                     </div>
-                  </div>
+                  <!-- </div> -->
                 </div>
               </div>
               <span
@@ -214,11 +211,7 @@
                       </span>
                     
                     <div class="text-center" style="margin-bottom: 18px;">
-                      <!-- <button type="button" class="btn btn-primary mt-4"(click)="createSignup()"> -->
-                        <button type="button" class="btn btn-primary mt-4" (click)="onSubmitButtonClicked()">
-                    <!-- </label>
-                    <div class="text-center">
-                      <button mat-button cdkFocusInitial class="btn btn-primary mt-4" (click)="createSignup()"> -->
+                      <button type="button" class="btn btn-primary mt-4" (click)="createSignup()">
                         Create account
                       </button>
                     </div>
