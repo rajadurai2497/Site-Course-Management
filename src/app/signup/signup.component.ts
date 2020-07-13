@@ -2,13 +2,13 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { SignupService } from '../services/signup.service';
 import { AddSignupModel } from '../models/signup/signup.model';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { WindowRef } from '../services/window-ref.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CourseService } from '../services/course.service';
 import { PaymentService } from '../services/payment.service';
-import { NgxSpinnerService } from "ngx-spinner";
+import { NgxSpinnerService } from 'ngx-spinner';
 
 import { ValidationService } from '../services/validation.service';
 export interface DialogData {
@@ -35,8 +35,11 @@ export class SignupComponent implements OnInit {
   focus2;
   allCourse;
 
-  public signup = new AddSignupModel();
-  // tslint:disable-next-line: variable-name
+  signup = new AddSignupModel();
+  signupForm: FormGroup;
+  submitted = false;
+  // tslint:disable-next-line: ban-types
+  showSuccessMessage: Boolean = false ;
   private _courseDetailsService: any;
   addSignup: any;
   selectedCourse: any;
@@ -56,54 +59,51 @@ export class SignupComponent implements OnInit {
     private readonly paymentService: PaymentService,
     private SpinnerService: NgxSpinnerService,
     private readonly _validation: ValidationService,
+    private formBuilder: FormBuilder,
 
   ) { }
   ngOnInit(): void {
-    this.SpinnerService.hide()
+    this.SpinnerService.hide();
     this._activatedRoute.queryParams.subscribe((queryParams) => {
       this.courseId = queryParams['course'];
     });
-    this.addSignup = new FormGroup({
-      userName: new FormControl(this.signup.userName, [Validators.required, Validators.minLength(4)]),
-      passWord: new FormControl(this.signup.passWord, [Validators.required]),
-      emailId: new FormControl(this.signup.emailId, [Validators.required, Validators.pattern(this.emailPattern)]),
-      phoneNumber: new FormControl(this.signup.phoneNumber, [
+    this.signupForm = this.formBuilder.group({
+      userName: ['', [Validators.required, Validators.minLength(4)]],
+      passWord: ['', [Validators.required]],
+      emailId: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      phoneNumber: ['', [
         Validators.required,
         Validators.pattern(this.phoneNumberPattern),
-      ]),
+      ]],
+      city: ['', [Validators.required]],
     });
-
-
     // this.login
   }
-  get userName() {
-    return this.signup.get(' userName');
+  get f() { return this.signupForm.controls; }
+  onSubmit() {
+    this.submitted = true;
+    if (this.signupForm.invalid) {
+        return;
+    }
+    this.signupForm.reset();
   }
-  get emailId() {
-    return this.signup.get('emailId');
-  }
-  get phoneNumber() {
-    return this.signup.get('phoneNumber');
-  }
-  get passWord() {
-    return this.signup.get('passWord');
-  }
-  public onSubmitButtonClicked(): void {
+
+  createSignup() {
     this.SpinnerService.show();
     this.signup.userId = 0;
-    if (this. validationSignup()) {
-    this._signupService.createSignup(this.signup).then((data) => {
+    if (this.signupForm.valid) {
+    this._signupService.createSignup(this.signupForm.value).then((data) => {
+      this.showSuccessMessage = true;
       if (data && data.result) {
         this.SpinnerService.hide();
-        alert('Account Created Successfully. Please Log in Here')
-        this.login()
+        alert('Account Created Successfully. Please Log in Here');
+        this.login();
       } else {
         this.SpinnerService.hide();
         alert(data.errorDetails);
       }
     });
-  }
-  else{
+  } else {
     this.SpinnerService.hide();
   }
   }
@@ -168,30 +168,5 @@ export class SignupComponent implements OnInit {
     };
     this.rzp1 = new this.winRef.nativeWindow.Razorpay(options);
     this.rzp1.open();
-  }
-  validationSignup() {
-    if (!this.signup.userName) {
-      alert('Field Empty');
-      return false;
-    }
-    if (!this.signup.passWord) {
-      alert('Field Empty');
-      return false;
-    }
-    if (!this.signup.emailId) {
-      alert('Email Address Field Empty');
-      return false;
-    }
-    if (!this._validation.isEmailId(this.signup.emailId)) {
-      alert('Invalid Email Address');
-      return false;
-    }
-    if (!this.signup.phoneNumber) {
-      alert('Field Empty');
-      return false;
-    }
-    return true;
-
-
   }
 }
