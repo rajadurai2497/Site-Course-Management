@@ -46,7 +46,17 @@
                       <div class="row">
                         <div class="col-lg-6" style="margin-top: 13px;">
                           <a>
-                            <span class="header-text">₹{{course.courseAmount}}</span>
+                            <!-- //for discount prices// -->
+                            <span class="para-tts">
+                              <del style="margin-left:-22px;">₹{{course.courseAmount}}</del> 
+                            </span>
+                            <span class="para-tts">
+                              <ins style="padding-left:12px">₹{{course.courseAmount}}</ins>
+                             </span>
+                             <!-- //for non discount prices// -->
+                             <span class="header-text">
+                              ₹{{course.courseAmount}}
+                             </span>
                           </a>
                         </div>
                         <div class="col-lg-6">
