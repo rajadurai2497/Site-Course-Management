@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SliderModule } from 'angular-image-slider';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SliderModule } from 'angular-image-slider';
     FormsModule,
     NgbModule,
     CarouselModule,
-    SliderModule
+    SliderModule,
+    SharedModule
 
   ],
   exports:[ SectionsComponent ]

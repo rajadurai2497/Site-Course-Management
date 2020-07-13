@@ -1,45 +1,41 @@
-
 .modal-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    pointer-events: auto;
-    border: 0 solid rgba(0, 0, 0, .2);
-    border-radius: .4375rem;
-    outline: 0;
-    background-color: #fff;
-    background-clip: padding-box;
-    box-shadow: 0 15px 35px rgba(50, 50, 93, .2), 0 5px 15px rgba(0, 0, 0, .17)
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  border: 0 solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.4375rem;
+  outline: 0;
+  background-color: #fff;
+  background-clip: padding-box;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.17);
 }
 
-.icon-lgs{
-    width: 5rem;
-    height: 5rem;
+.icon-lgs {
+  width: 5rem;
+  height: 5rem;
 }
 .modal-header {
-    display: flex;
-    padding: 1.25rem;
-    border-bottom: 0 solid #e9ecef;
-    border-top-left-radius: .4375rem;
-    border-top-right-radius: .4375rem;
-    align-items: flex-start;
-    justify-content: space-between
+  display: flex;
+  padding: 1.25rem;
+  border-bottom: 0 solid #e9ecef;
+  border-top-left-radius: 0.4375rem;
+  border-top-right-radius: 0.4375rem;
+  align-items: flex-start;
+  justify-content: space-between;
 }
-
 
 .modal-title {
-    line-height: 1.1;
-    margin-bottom: 0
+  line-height: 1.1;
+  margin-bottom: 0;
 }
-
 
 .modal-body {
-    position: relative;
-    padding: 1.5rem;
-    flex: 1 1 auto
+  position: relative;
+  padding: 1.5rem;
+  flex: 1 1 auto;
 }
-
 
 .modal-footer {
     display: flex;
@@ -141,55 +137,158 @@
     color: #ffffff
 }
 
-
-.header-text-list{
-    font-family: 'Roboto' !important;
-    text-align:left;
-    font-weight: 500;
-    font-size: 22px; 
-    color: #225da0;
+.head-text {
+  text-align: center;
+  font-weight: 900;
+  font-size: 26px;
+  color: #1b2b91;
+}
+.size-fix {
+  height: 280px !important;
+}
+.para-text {
+  text-align: justify;
+  color: #141518;
+  font-weight: 500;
+  font-size: 15px;
+}
+.para-txt {
+  text-align: justify;
+  color: #141518;
+  font-weight: 500;
+  font-size: 15px;
 }
 
-.header-text-li{
-    font-family: 'Roboto' !important;
-    text-align:center;
-    font-weight: 500;
-    font-size: 22px; 
-    color: #225da0;
+.header-textss {
+  font-family: 'Roboto' !important;
+  text-align: left;
+  font-weight: 600;
+  font-size: 23px;
+  color: #225da0;
 }
 
-
-.header-text{
-    font-family: 'Roboto' !important;
-    text-align:center;
-    font-weight: 500;
-    font-size: 36px; 
-    color: #225da0;
+.header-text {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  color: #1b2b91;
 }
 
-.header-texts{
-    text-align:center;
-    font-weight: 500;
-    font-size: 14px;
-    color: #225da0;
-    padding-top: 0px;
+.header-txt-list {
+  text-align: left;
+  font-weight: 500;
+  font-size: 36px;
+  color: #1b2b91;
 }
 
-
-.header-texts{
-    font-family: 'Roboto' !important;
-    text-align:center;
-    font-weight: 500;
-    font-size: 30px;
-    color: #225da0;
-    padding-top: 0px;
+.head-txt {
+  color: #1b2b91;
 }
 
-.header-texts-p{
-    font-family: 'Roboto' !important;
-    text-align:center;
-    // font-weight: 500;
-    font-size: 14px;
-    color: #225da0;
-    padding-top: 0px;
+.text-primarys {
+  background-color: #62aaeb;
+  color: whitesmoke;
+}
+.card-colrs {
+  box-shadow: 0 4px 8px 0 rgba(87, 92, 93, 0.2);
+  transition: 0.3s;
+  //    background-image: linear-gradient(to bottom right,rgb(51, 202, 207),
+  //    rgb(169, 243, 218),
+  //    rgb(198, 241, 227));
+  //    padding: 0 20px 0 20px;
+
+  background-color: #ffff;
+}
+
+.bck-img {
+  background-image: url('/assets/img/back/course-back.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.5;
+}
+.overlay {
+  background-color: #33cacf80;
+}
+
+.header-text-lst {
+  text-align: center;
+  padding: 100px 0 50px 0;
+  font-weight: 700;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.header-text-list {
+  font-family: 'Roboto' !important;
+  text-align: left;
+  font-weight: 500;
+  font-size: 22px;
+  color: #225da0;
+}
+
+.header-text-li {
+  font-family: 'Roboto' !important;
+  text-align: center;
+  font-weight: 500;
+  font-size: 22px;
+  color: #225da0;
+}
+
+.header-text {
+  font-family: 'Roboto' !important;
+  text-align: center;
+  font-weight: 500;
+  font-size: 36px;
+  color: #225da0;
+}
+
+.header-texts {
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #225da0;
+  padding-top: 0px;
+}
+
+.header-texts {
+  font-family: 'Roboto' !important;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  color: #225da0;
+  padding-top: 0px;
+}
+
+.header-texts-p {
+  font-family: 'Roboto' !important;
+  text-align: center;
+  // font-weight: 500;
+  font-size: 14px;
+  color: #225da0;
+  padding-top: 0px;
+}
+.card {
+  .card-body {
+    min-height: 375px;
+    .course-pill {
+      position: absolute;
+      bottom: 60px;
+    }
+    .container {
+      position: absolute;
+      bottom: 0;
+      .course-amount {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+      }
+      .course-buynow {
+        position: absolute;
+        bottom: 0;
+        right: 25px;
+        text-align: right;
+      }
+    }
+  }
 }

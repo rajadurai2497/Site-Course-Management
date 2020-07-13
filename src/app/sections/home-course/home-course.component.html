@@ -37,14 +37,14 @@
                   <div class="card-body  py-3">
 
                     <h4 class="header-textss">{{course.courseName}}</h4>
-                    <p class="description mt-3 para-txt" [innerHTML]="course.description"></p>
-                <div>
+                    <p class="description mt-3 para-texts" [innerHTML]="course.shortDesc"></p>
+                    <div class="course-pill">
                       <span class="badge badge-pill badge-success">100+ users</span>
                       <span class="badge badge-pill badge-success">Tamil</span>
                     </div>
                     <div class="container">
                       <div class="row">
-                        <div class="col-lg-6" style="margin-top: 13px;">
+                        <div class="col-lg-6 course-amount">
                           <a>
                             <!-- //for discount prices// -->
                             <span class="para-tts">
@@ -59,7 +59,7 @@
                              </span>
                           </a>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 course-buynow">
                           <a (click)="goToDetails(course)">
                             <span class="btn btn-view mt-4">Buy Now</span>
                           </a>

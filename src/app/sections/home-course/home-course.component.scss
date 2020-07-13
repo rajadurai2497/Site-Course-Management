@@ -50,3 +50,30 @@
 .overlay{
     background-color: #33cacf80;
 }
+
+.card {
+    .card-body {
+      min-height: 375px;
+      .course-pill{
+          position: absolute;
+          bottom: 60px;
+      }
+      .container{
+          position: absolute;
+          bottom: 0;
+          .course-amount{
+              position: absolute;
+              bottom: 15px;
+              left:0;
+          }
+          .course-buynow{
+              position: absolute;
+              bottom: 0;
+              right: 25px;
+              text-align: right;
+          }
+      }
+    }
+  }
+
+  
