@@ -1,7 +1,4 @@
-export class AddQueriesModel {
-  validationQueries() {
-    throw new Error("Method not implemented.");
-  }
+export class AddQueries {
         // tslint:disable-next-line: member-ordering
         contactusId: number;
         // tslint:disable-next-line: member-ordering
@@ -14,7 +11,4 @@ export class AddQueriesModel {
         description: string;
         refund: true;
   // tslint:disable-next-line: member-ordering
-  get(arg0: string) {
-    throw new Error('Method not implemented.');
-  }
 }

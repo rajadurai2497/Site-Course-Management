@@ -43,17 +43,32 @@
     color:red;
 }
 
+
 .par-txt{
     text-align:center;
     color: #7c7f88;
     font-weight: 300;
     font-size:18px;
 }
+.par-txxt{
+    text-align:center;
+    color: #f70808;
+    font-weight: 300;
+    font-size:13px;
+}
 .para-texts{
     text-align:justify;
     color: #141518;
     font-weight: 500;
     font-size:15px;
+}
+ 
+.success{
+    text-align:center;
+    border-color: #1b2b91;
+    color: #2b9202;
+    font-weight: 300;
+    font-size:18px;
 }
 
 .head-card{
@@ -137,7 +152,6 @@
     color: #225da0;
     padding-top: 0px;
 }
-
 
 
 .heade-txt-list{

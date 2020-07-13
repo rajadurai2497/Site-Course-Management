@@ -2,18 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ROUTE_CONFIG } from '../models/constant';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class QueriesService {
-  public readonly routePrefix = '​Token​/ContactusSave';
-  constructor(private readonly httpClient: HttpClient) { }
+export class QueriesService extends ApiService {
+  public readonly routePrefix = '​Token​';
+  constructor(private readonly httpClient: HttpClient) {
+    super(httpClient);
+  }
 
-  createQueries(queries: any): Observable<any> {
-
-    const apiUrl = `${ROUTE_CONFIG.CourseManagementURL}/${this.routePrefix}`;
-    return this.httpClient.post<any>(apiUrl, queries);
+  createQueries(queries): Promise<any> {
+    const apiUrl = ROUTE_CONFIG.CourseManagementURL + '​Token​/ContactusSave';
+    return this.doPost(apiUrl,  queries , true);
   }
 
 

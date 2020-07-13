@@ -1,9 +1,6 @@
-<section class="section section-shaped " style="    padding-top: 18px;">
-    <div class="shape shape-style-1 shape-default">
-            
-    </div>
+<section class="section section-shaped" style="padding-top: 18px;">
+  <div class="shape shape-style-1 shape-default"></div>
 </section>
-
 <section class="section section-lga pb-20">
   <div class="container pb-12">
     <div class="row row-grid align-items-center">
@@ -11,17 +8,19 @@
         <div class="pr-md-5">
           <h3 class="header-txt-list">Traders Community</h3>
           <p class="para-txt">
-            Join an energetic community of 1,000+ traders on the same wavelength as you.Trading is lonely when you're surrounded by "Normal
-            People" who just don't get it.
+            Join an energetic community of 1,000+ traders on the same wavelength as you.Trading is lonely when you're
+            surrounded by "Normal People" who just don't get it.
           </p>
-
           <ul>
             <li class="header-txt">Trading Tips</li>
             <p class="para-txt" style="margin-top: 10px;">
-              We’re constantly on the look out to provide our members with only the top techniques to have the upper hand in trading.
+              We’re constantly on the look out to provide our members with only the top techniques to have the upper
+              hand in trading.
             </p>
-            <li  class="header-txt">Collaborative Environment</li>
-            <p class="para-txt" style="margin-top: 10px;">Join in community of like-minded individuals with the same passion to excel in life.</p>
+            <li class="header-txt">Collaborative Environment</li>
+            <p class="para-txt" style="margin-top: 10px;">
+              Join in community of like-minded individuals with the same passion to excel in life.
+            </p>
             <li class="header-txt">Q & A Session</li>
             <p class="para-txt" style="margin-top: 10px;">
               Having trouble with something? JUST ASK! No more waiting days or weeks for your how/why questions.
@@ -39,7 +38,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-5 order-md-2">
         <div class="card shadow border-0">
           <div class="card-header bg-greenish pb-20">
@@ -48,65 +46,70 @@
             </div>
           </div>
           <div class="card-body px-lg-5 py-lg-5">
-            <form role="form" class="pb-0">
+            <form [formGroup]="communityForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <div class="input-group">
-                  
-                  <input class="form-control" placeholder="Name" name="fullName" required minlength="4" [(ngModel)]="community.fullName" #fullName="ngModel"
+                  <input
+                    type="text"
+                    formControlName="fullName"
+                    class="form-control"
+                    placeholder="Name"
+                    required
+                    minlength="4"
+                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.fullName.errors }"
                   />
-                  
                 </div>
-                <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="c-text-danger">
-                    <p *ngIf="fullName.errors.required">
-                      * Name is required.
-                    </p>
-                    <p *ngIf="fullName.errors.minlength">
-                      * Name must be at least 4 characters long.
-                    </p>
-
-                  </div>
+                <div *ngIf="submitted &amp;&amp; f.fullName.errors" class="text-danger">
+                  <div *ngIf="f.fullName.errors.required" class="par-txxt">First Name is required</div>
+                </div>
               </div>
               <div class="form-group mb-3">
                 <div class="input-group">
-                  
-                  <input class="form-control" placeholder="Email" type="email" name="emailId" required [pattern]="emailPattern" [(ngModel)]="community.emailId"
-                    #emailId="ngModel" /></div>
-                  <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="c-text-danger">
-                    <p *ngIf="emailId.errors.required">
-                      *Email is required.
-                    </p>
-                    <p *ngIf="emailId.errors.pattern">
-                      *Type correct email Id
-                    </p>
-                 
+                  <input
+                    class="form-control"
+                    placeholder="Email"
+                    type="email"
+                    formControlName="emailId"
+                    required
+                    [pattern]="emailPattern"
+                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.emailId.errors }"
+                  />
+                </div>
+                <div *ngIf="submitted &amp;&amp; f.emailId.errors" class="text-danger">
+                  <div *ngIf="f.emailId.errors.required" class="par-txxt">Email is required</div>
+                  <div *ngIf="f.emailId.errors.email" class="par-txxt">Email must be a valid email address</div>
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  
-                  <input class="form-control" placeholder="Phone Number" name="phoneNumber" required [pattern]="phoneNumberPattern" [(ngModel)]="community.phoneNumber"
-                    #phoneNumber="ngModel" /></div>
-                  <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="c-text-danger">
-                    <p *ngIf="phoneNumber.errors.required">
-                      *PhoneNumberis required.
-                    </p>
-                    <p *ngIf="phoneNumber.errors.pattern">
-                      *Type correct PhoneNumber
-                    </p>
-                  
+                  <input
+                    class="form-control"
+                    placeholder="Phone Number"
+                    formControlName="phoneNumber"
+                    required
+                    [pattern]="phoneNumberPattern"
+                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.phoneNumber.errors }"
+                  />
+                </div>
+                <div *ngIf="submitted &amp;&amp; f.phoneNumber.errors" class="text-danger">
+                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
                 </div>
               </div>
               <div class="text-center">
-                <button type="button" class="btn btn-community my-4" (click)="onSubmitButtonClicked()">Join</button>
+                <button mat-button cdkFocusInitial class="btn btn-community my-4" (click)="createCommunity()">
+                  Join
+                </button>
               </div>
             </form>
+            <div class="success" *ngIf="showSuccessMessage">
+              Thank You for choosing us our executive will contact you soon
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <div class="container">
   <div class="row align-items-center">
     <div class="col-lg-12 d-lg-inline d-none">
@@ -115,32 +118,32 @@
     </div>
   </div>
 </div>
-
 <section class="section section-lgs section-card-shaped over-lay-blue pb-20">
-  <div class="shape shape-style-1 light-bg">
-  </div>
+  <div class="shape shape-style-1 light-bg"></div>
   <div class="container">
     <div class="row row-grid align-items-center">
       <div class="col-lg-4 order-md-1">
-        <img src="./assets/img/brand/img77-01.webp" class="img-fluid ">
+        <img src="./assets/img/brand/img77-01.webp" class="img-fluid" />
       </div>
       <div class="col-lg-8 order-md-2">
-             
         <h1 class="header-txt-list">
-            YOU'RE JOINING A MOVEMENT
+          YOU'RE JOINING A MOVEMENT
         </h1>
-      <div class="row">
-        <div class="col">
-     
-          <p class=" para-texts">
-              There are a lot of other stock market trading services and companies that are out there but you'll see very quickly that we are different. We’re extremely proud of our stock market trading community and the "Open Demate account with us" mentality that flows throughout it. You're not joining in just cheap trading service. You're joining a movement when you subscribe to our community. You’re going to quickly see that the Lurecap  Academy Community isn’t about the money. We are all about the people. We are about helping you. YOU are our passion!</p>
+        <div class="row">
+          <div class="col">
+            <p class="para-texts">
+              There are a lot of other stock market trading services and companies that are out there but you'll see
+              very quickly that we are different. We’re extremely proud of our stock market trading community and the
+              "Open Demate account with us" mentality that flows throughout it. You're not joining in just cheap trading
+              service. You're joining a movement when you subscribe to our community. You’re going to quickly see that
+              the Lurecap Academy Community isn’t about the money. We are all about the people. We are about helping
+              you. YOU are our passion!
+            </p>
+          </div>
         </div>
       </div>
-      </div>
-      </div>
-      </div>
-   
- 
+    </div>
+  </div>
   <div class="container">
     <div class="row row-grid align-items-center">
       <div class="col">
@@ -150,11 +153,10 @@
   </div>
 </section>
 <section class="section section-lgs section-card-shaped pb-20">
- 
   <div class="container">
     <div class="row row-grid align-items-center">
       <div class="col-md-6 order-md-2">
-        <img src="./assets/img/brand/community-pic-2.webp" class="img-fluid floating" />
+        <img src="./assets/img/brand/home-01.png" class="img-fluid floating" />
       </div>
       <div class="col-md-6 order-md-1">
         <div class="pr-md-5">
@@ -185,9 +187,6 @@
                 </div>
               </div>
             </li>
-
-            
-                   
             <li class="py-2">
               <div class="d-flex align-items-center">
                 <div>
@@ -217,23 +216,61 @@
       </div>
     </div>
   </div>
-</section>
-<section class="section section-lgs section-card-shaped over-lay-blue pb-20">
-  <div class="shape shape-style-1 light-bg">
+  <div class="container over-lay-blue">
+    <div class="row row-grid align-items-center">
+      <div class="col">
+        <h1 class="header-txt-list" style="padding-top: 15px;">STOCK MARKET TRADING AGAINST THE GRAIN</h1>
+        <p class="para-txt" style="padding-bottom: 6px;">
+          We love that we are going completely against the grain in the industry. No sugar-coating: It takes time,
+          dedication, passion, motivation, and focus to make it as a trader. We believe ANYONE CAN BECOME A PROFITABLE
+          TRADER – if they have the proper mind-set and dedication. You might be thinking that what we're saying sounds
+          too good to be true? What you see is what you get in our trading community.
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="container   ">
-      <div class="row row-grid align-items-center">
-        <div class="col">
-          <h1 class="header-txt-list" style="padding-top: 15px;">STOCK MARKET TRADING AGAINST THE GRAIN</h1>
-          <p class="para-txt" style="padding-bottom: 6px;">
-            We love that we are going completely against the grain in the industry. No sugar-coating: It takes time, dedication, passion,
-            motivation, and focus to make it as a trader. We believe ANYONE CAN BECOME A PROFITABLE TRADER – if they have the
-            proper mind-set and dedication. You might be thinking that what we're saying sounds too good to be true? What you
-            see is what you get in our trading community.
-          </p>
+</section>
+<section class="section section-lgs section-card-shaped">
+  <div class="shape shape-style-1">
+    <div class="container pb-12 card-colrs">
+      <div class="row">
+        <hr />
+
+        <div class="col-lg-12" style="margin-top: 13px;">
+          <h1 class="header-texts">Our Partners</h1>
+          <p class="header-texts-p">We are with India's biggest stack market brokers</p>
         </div>
       </div>
     </div>
+    <div class="row" style="padding-bottom: 10px;">
+      <div class="col-lg-6 footer-img d-lg-inline d-none">
+        <a href="https://zerodha.com/open-account?c=ZMPRJL"
+          ><img class="col-lg-6 float-lg-right" src="./assets/img/brand/Blank-cover.png"
+        /></a>
+        <a href="http://tinyurl.com/ybnb2te6"
+          ><img class="col-lg-6 float-lg-right" src="./assets/img/brand/image3.png"
+        /></a>
+      </div>
+      <div class="col-lg-6 footer-img d-lg-inline d-none">
+        <a href="#"><img class="col-lg-6 float-lg-left" src="./assets/img/brand/icici.png" /></a>
+        <a href="#"><img class="col-lg-6 float-lg-left" src="./assets/img/brand/upstox.png" /></a>
+      </div>
+    </div>
+    <div class="row d-lg-none">
+      <div class="col-lg-6 footer-img" style="padding-left: 22px;">
+        <a href="https://zerodha.com/open-account?c=ZMPRJL"
+          ><img class="col-lg-6 float-lg-right" src="./assets/img/brand/Blank-cover.png"
+        /></a>
+        <a href="http://tinyurl.com/ybnb2te6"
+          ><img class="col-lg-6 float-lg-right" src="./assets/img/brand/image3.png"
+        /></a>
+      </div>
+      <div class="col-lg-6 footer-img" style="padding-left: 56px;">
+        <a href="#"><img class="col-lg-6 float-lg-left" src="./assets/img/brand/icici.png" /></a>
+        <a href="#"><img class="col-lg-6 float-lg-left" src="./assets/img/brand/upstox.png" /></a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <app-partners></app-partners> 

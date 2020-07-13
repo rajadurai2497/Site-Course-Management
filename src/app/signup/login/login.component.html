@@ -7,18 +7,18 @@
           </div>
         </div>
         <div class="card-body px-lg-5 py-lg-5 ">
-          <form role="form" class="pb-0">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <div class="input-group ">
                  
-                  <input class="form-control" placeholder="Email or phone number"  name="userName" [(ngModel)]="userName" >
+                  <input class="form-control" placeholder="Enter your email"  formControlName="userName" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.userName.errors }" required >
                 </div>
             </div>
             
             <div class="form-group mb-3" >
               <div class="input-group ">
                 
-                <input class="form-control" placeholder="password" type="password" name="password" [(ngModel)]="password">
+                <input class="form-control" placeholder="Enter your password" type="password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.password.errors }" required>
               </div>
             </div>
             <a class="linkcolr"  >forgot Password?</a>
