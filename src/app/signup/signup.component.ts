@@ -89,23 +89,23 @@ export class SignupComponent implements OnInit {
     return this.signup.get('passWord');
   }
   public onSubmitButtonClicked(): void {
-    this.SpinnerService.show();
+    // this.SpinnerService.show();
     this.signup.userId = 0;
-    if (this. validationSignup()) {
-    this._signupService.createSignup(this.signup).then((data) => {
-      if (data && data.result) {
-        this.SpinnerService.hide();
-        alert('Account Created Successfully. Please Log in Here')
-        this.login()
-      } else {
-        this.SpinnerService.hide();
-        alert(data.errorDetails);
-      }
-    });
-  }
-  else{
-    this.SpinnerService.hide();
-  }
+    if (this.validationSignup()) {
+      this._signupService.createSignup(this.signup).then((data) => {
+        if (data && data.result) {
+          alert('Account Created Successfully. Please Log in Here')
+          this.login()
+          this.SpinnerService.hide();
+        } else {
+          this.SpinnerService.hide();
+          alert(data.errorDetails);
+        }
+      });
+    }
+    else {
+      this.SpinnerService.hide();
+    }
   }
 
   login() {
@@ -116,10 +116,10 @@ export class SignupComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.SpinnerService.show();
       if (result) {
+        this.SpinnerService.show();
+        console.log(this.courseId)
         this.paymentService.insertOrder(this.courseId, result.access_token).subscribe((value: any) => {
-          console.log(value);
           this.SpinnerService.hide();
           this.initPay(value, result.access_token);
         });
