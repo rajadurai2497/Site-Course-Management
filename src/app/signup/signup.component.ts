@@ -116,10 +116,10 @@ export class SignupComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.SpinnerService.show();
       if (result) {
+        this.SpinnerService.show();
+        console.log(this.courseId)
         this.paymentService.insertOrder(this.courseId, result.access_token).subscribe((value: any) => {
-          console.log(value);
           this.SpinnerService.hide();
           this.initPay(value, result.access_token);
         });

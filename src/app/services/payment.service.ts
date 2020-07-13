@@ -22,7 +22,10 @@ export class PaymentService {
 
   verifyPayment(payload: any, access_token): Observable<any> {
     let headers = new HttpHeaders();
+  
     headers = headers.append('Authorization', 'bearer ' + access_token);
+    headers=headers.append("Content-Type", "application/json-patch+json")
+    headers=headers.append("Access-Control-Allow-Origin", "*")
     const requestOptions = {
       headers: headers,
     };

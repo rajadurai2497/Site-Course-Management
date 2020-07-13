@@ -11,7 +11,8 @@
             <div class="form-group">
                 <div class="input-group ">
                  
-                  <input class="form-control" placeholder="Enter your email"  formControlName="userName" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.userName.errors }" required >
+                  <input class="form-control" placeholder="Email/Phone number"  formControlName="userName" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.userName.errors }" required >
+                 
                 </div>
             </div>
             
@@ -19,6 +20,7 @@
               <div class="input-group ">
                 
                 <input class="form-control" placeholder="Enter your password" type="password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.password.errors }" required>
+                
               </div>
             </div>
             <a class="linkcolr"  >forgot Password?</a>
@@ -26,7 +28,7 @@
                 
                 <div class="row pb-0">
                     <div class="col-md-0 mr-auto ml-auto">
-                        <button class="btn btn-lavender btn-lg btn-fill btn-hover" (click)="login()" >login</button>
+                        <button  class="btn btn-lavender btn-lg btn-fill btn-hover" (click)="login()" >login</button>
                     </div>
                 </div>
           </form>
