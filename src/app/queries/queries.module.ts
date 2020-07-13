@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { QueriesRoutingModule } from './queries-routing.module';
 import { QueriesComponent } from './queries.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
 
@@ -12,7 +12,6 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     SharedModule,
     QueriesRoutingModule
   ]

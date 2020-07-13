@@ -1,15 +1,21 @@
-<section class="section section-shaped" style="padding-top: 18px;">
-  <div class="shape shape-style-1 shape-default"></div>
+<section class="section section-shaped " style="    padding-top: 18px;">
+    <div class="shape shape-style-1 shape-default">
+            
+    </div>
 </section>
+
 <ngx-spinner></ngx-spinner>
+
 <section class="section section-lg light-bg section-card-shaped pb-20">
   <div class="shape shape-style-1"></div>
+
   <div class="container">
     <div class="row row-grid align-items-center">
+      
       <div class="col-md-8 order-md-1 d-lg-inline d-none">
-        <img src="./assets/img/brand/signup.webp" class="img-fluid floating" />
-      </div>
-      <div class="col-md-4 order-md-2">
+          <img src="./assets/img/brand/signup.webp" class="img-fluid floating" />
+        </div>
+      <div class="col-md-4 order-md-2 ">
         <div class="card shadow border-0">
           <div class="card-header bg-greenish">
             <div class="text-center mb-3">
@@ -17,81 +23,108 @@
             </div>
           </div>
           <div class="card-body px-lg-4 py-lg-4">
-            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <form role="form">
               <div class="form-group">
                 <div class="input-group">
+                  
                   <input
                     class="form-control"
                     placeholder="Name"
                     required
                     minlength="4"
-                    formControlName="userName"
+                    [(ngModel)]="signup.userName"
+                    name=" userName"
                     type="text"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.userName.errors }"
+                    #userName="ngModel"
                   />
                 </div>
-                <div *ngIf="submitted &amp;&amp; f.userName.errors" class="text-danger">
-                  <div *ngIf="f.userName.errors.required" class="par-txxt">First Name is required</div>
-                </div>
+                  <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="c-text-danger">
+                    <p *ngIf="userName.errors.required">
+                      *Name is required.
+                    </p>
+                    <p *ngIf="userName.errors.minlength">
+                      *Name must be at least 4 characters long.
+                    </p>
+                  </div>
+                
               </div>
               <div class="form-group" [ngClass]="{ focused: focus2 === true }">
-                <div class="input-group">
+                <div class="input-group ">
+                 
                   <input
                     class="form-control"
                     placeholder="Password"
                     type="password"
-                    formControlName="passWord"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.passWord.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.passWord.errors" class="text-danger">
-                  <div *ngIf="f.passWord.errors.required" class="par-txxt">PassWord is required</div>
-                </div>
+                    name="passWord"
+                    [(ngModel)]="signup.passWord"
+                    #passWord="ngModel"
+                  /> </div>
+                  <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)" class="c-text-danger">
+                    <p *ngIf="passWord.errors.required">
+                      *Password is required.
+                    </p>
+                  </div>
+               
               </div>
+
               <div class="form-group" [ngClass]="{ focused: focus1 === true }">
                 <div class="input-group">
+                  
                   <input
                     class="form-control"
                     placeholder="Email"
                     type="email"
                     required
                     [pattern]="emailPattern"
-                    formControlName="emailId"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.emailId.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.emailId.errors" class="text-danger">
-                  <div *ngIf="f.emailId.errors.required" class="par-txxt">Email is required</div>
-                  <div *ngIf="f.emailId.errors.email" class="par-txxt">Email must be a valid email address</div>
-                </div>
+                    name="emailId"
+                    [(ngModel)]="signup.emailId"
+                    #emailId="ngModel"
+                  /></div>
+                  <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="c-text-danger">
+                    <p *ngIf="emailId.errors.required">
+                      *Email is required.
+                    </p>
+                    <p *ngIf="emailId.errors.pattern">
+                      *Type correct email Id
+                    </p>
+                  </div>
+                
               </div>
+
               <div class="form-group">
                 <div class="input-group">
+                  
                   <input
                     class="form-control"
                     placeholder="PhoneNumber"
                     type="text"
                     required
                     [pattern]="phoneNumberPattern"
-                    formControlName="phoneNumber"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.phoneNumber.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.phoneNumber.errors" class="text-danger">
-                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
-                </div>
+                    name="phoneNumber"
+                    [(ngModel)]="signup.phoneNumber"
+                    #phoneNumber="ngModel"
+                  /></div>
+                  <div
+                    *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)"
+                    class="c-text-danger"
+                  >
+                    <p *ngIf="phoneNumber.errors.required">
+                      *PhoneNumberis required.
+                    </p>
+                    <p *ngIf="phoneNumber.errors.pattern">
+                      *Type correct PhoneNumber
+                    </p>
+                  </div>
+                
               </div>
+
               <div class="form-group">
                 <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="city"
-                    type="text"
-                    formControlName="city"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.city.errors }"
-                  />
+                  
+                  <input class="form-control" placeholder="city" type="text" name="city" [(ngModel)]="signup.city" />
                 </div>
               </div>
+
               <div class="row my-4">
                 <div class="col-12">
                   <div class="custom-control custom-control-alternative custom-checkbox">
@@ -103,136 +136,24 @@
                       </span>
                     </label>
                     <div class="text-center">
-                      <button mat-button cdkFocusInitial class="btn btn-primary mt-4" (click)="createSignup()">
+                      <button type="button" class="btn btn-primary mt-4" (click)="onSubmitButtonClicked()">
                         Create account
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
+
               <span
                 >Already an user!
                 <a class="linkcolr" (click)="login()">Login Here</a>
               </span>
             </form>
-            <div class="success" *ngIf="showSuccessMessage">
-              Registration completed successfully
-            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4 order-md-2 d-lg-none" style="margin-top: -70px;">
-        <div class="card shadow border-0">
-          <div class="card-header bg-greenish">
-            <div class="text-center mb-3">
-              <h2 class="text-center text-blues" style="margin-bottom: -14px;">REGISTER HERE</h2>
-            </div>
-          </div>
-          <div class="card-body px-lg-4 py-lg-4">
-            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-              <div class="form-group">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Name"
-                    required
-                    minlength="4"
-                    formControlName="userName"
-                    type="text"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.userName.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.userName.errors" class="text-danger">
-                  <div *ngIf="f.userName.errors.required" class="par-txxt">First Name is required</div>
-                </div>
-              </div>
-              <div class="form-group" [ngClass]="{ focused: focus2 === true }">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Password"
-                    type="password"
-                    formControlName="passWord"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.passWord.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.passWord.errors" class="text-danger">
-                  <div *ngIf="f.passWord.errors.required" class="par-txxt">PassWord is required</div>
-                </div>
-              </div>
-              <div class="form-group" [ngClass]="{ focused: focus1 === true }">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Email"
-                    type="email"
-                    required
-                    [pattern]="emailPattern"
-                    formControlName="emailId"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.emailId.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.emailId.errors" class="text-danger">
-                  <div *ngIf="f.emailId.errors.required" class="par-txxt">Email is required</div>
-                  <div *ngIf="f.emailId.errors.email" class="par-txxt">Email must be a valid email address</div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="PhoneNumber"
-                    type="text"
-                    required
-                    [pattern]="phoneNumberPattern"
-                    formControlName="phoneNumber"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.phoneNumber.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.phoneNumber.errors" class="text-danger">
-                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="city"
-                    type="text"
-                    formControlName="city"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.city.errors }"
-                  />
-                </div>
-              </div>
-              <div class="row my-4">
-                <div class="col-12">
-                  <div class="custom-control custom-control-alternative custom-checkbox">
-                    <input class="custom-control-input" id="customCheckRegister" type="checkbox" />
-                    <label class="custom-control-label" for="customCheckRegister">
-                      <span
-                        >I agree with the
-                        <a class="linkcolr" [routerLink]="['/privacy-policy']">Privacy Policy</a>
-                      </span>
-                    </label>
-                    <div class="text-center">
-                      <button mat-button cdkFocusInitial class="btn btn-primary mt-4" (click)="createSignup()">
-                        Create account
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <span
-                >Already an user!
-                <a class="linkcolr" (click)="login()">Login Here</a>
-              </span>
-            </form>
-            <div class="success" *ngIf="showSuccessMessage">
-              Registration completed successfully
-            </div>
-          </div>
-        </div>
-      </div>
+      
+       
     </div>
   </div>
 </section>

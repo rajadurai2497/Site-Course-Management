@@ -1,4 +1,4 @@
-export class AddCommunity {
+export class AddCommunityModel {
 // tslint:disable-next-line: member-ordering
 communityUserId: number;
 // tslint:disable-next-line: member-ordering
@@ -9,5 +9,4 @@ phoneNumber: string;
 get(arg0: string) {
   throw new Error('Method not implemented.');
 }
-
 }
