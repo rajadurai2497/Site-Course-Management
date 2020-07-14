@@ -102,7 +102,6 @@ export class SignupComponent implements OnInit {
         } else {
           this.SpinnerService.hide();
         }
-        this.showSuccessMessage = false;
       });
     }
     else {
