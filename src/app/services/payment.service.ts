@@ -26,6 +26,7 @@ export class PaymentService {
     headers = headers.append('Authorization', 'bearer ' + access_token);
     headers=headers.append("Content-Type", "application/json-patch+json")
     headers=headers.append("Access-Control-Allow-Origin", "*")
+    
     const requestOptions = {
       headers: headers,
     };

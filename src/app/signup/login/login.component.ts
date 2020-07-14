@@ -41,11 +41,9 @@ export class LoginComponent implements OnInit {
 
   public login(): void {
     if(this.loginForm.valid){
-    // if (this.userName !== '' && this.password !== '') {
       this._signupService.login(this.loginForm.controls.userName.value, this.loginForm.controls.password.value).subscribe((data) => {
         if (data && data.isAuthorize) {
           this.dialogRef.close(data);
-          // afterClosed()
         }
       });
     }
