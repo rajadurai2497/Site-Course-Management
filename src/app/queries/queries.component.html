@@ -19,8 +19,8 @@
                   [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                 <!-- </div> -->
                 <div *ngIf="submitted && f.name.errors" class="text-danger">
-                  <div *ngIf="f.name.errors.required" class="par-txxt">First Name is required</div>
-                  <div *ngIf="f.name.errors.minlength" class="par-txxt">Name much be at least 3 characters</div>
+                  <div *ngIf="f.name.errors.required" class="par-txxt">name is required*</div>
+                  <div *ngIf="f.name.errors.minlength" class="par-txxt">name must be 3 characters*</div>
                 </div>
               </div>
               <div class="form-group mb-3">
@@ -29,8 +29,8 @@
                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                 <!-- </div> -->
                 <div *ngIf="submitted && f.email.errors" class="text-danger">
-                  <div *ngIf="f.email.errors.required" class="par-txxt">Email is required</div>
-                  <div *ngIf="f.email.errors.email" class="par-txxt">Email must be a valid email address</div>
+                  <div *ngIf="f.email.errors.required" class="par-txxt">email is required*</div>
+                  <div *ngIf="f.email.errors.email" class="par-txxt"> must be a valid email address*</div>
                 </div>
               </div>
               <div class="form-group">
@@ -40,7 +40,7 @@
                   [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
                 <!-- </div> -->
                 <div *ngIf="submitted && f.phoneNumber.errors" class="text-danger">
-                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
+                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">phone number is required*</div>
                 </div>
               </div>
               <textarea class="form-control" formControlName="description" rows="4" placeholder="Tell us your queries"
@@ -55,7 +55,7 @@
               </div>
             </form>
             <div class="success" *ngIf="showSuccessMessage">
-              Thank You for choosing us! Our executive will contact you soon
+              Thank You for choosing us!<br> Our executive will contact you soon.
             </div>
           </div>
         </div>

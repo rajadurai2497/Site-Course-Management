@@ -84,28 +84,25 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.invalid) {
         return;
     }
-    // this.submitted = false;
-    //     this.registerForm.reset();
-    this.signupForm.reset();
+
   }
   public onSubmitButtonClicked(): void {
     // this.SpinnerService.show();
     this.signup.userId = 0;
     if (this.signupForm.valid) {
       this._signupService.createSignup(this.signupForm.value).then((data) => {
-        //this.signupForm.reset();
         this.submitted = false;
+        this.signupForm.reset();
         this.showSuccessMessage = true;
         if (data && data.result) {
-          alert('Account created successfully')
           this.paymentService.insertOrder(this.courseId, data.response.access_token).subscribe((value: any) => {
             this.SpinnerService.hide();
             this.initPay(value,data.response.access_token);
           });
         } else {
           this.SpinnerService.hide();
-          alert(data.errorDetails);
         }
+        this.showSuccessMessage = false;
       });
     }
     else {
