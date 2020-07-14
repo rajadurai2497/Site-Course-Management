@@ -162,7 +162,7 @@ export class SignupComponent implements OnInit {
         this.paymentService.verifyPayment(payload, access_token).subscribe((message: any) => {
           if (message) {
             alert('Payment completed successfully. You will be redirected to our Course Management Page');
-            location.href="https://lurecapacademy.com/"
+            location.href="https://portal.lurecapacademy.com/"
           } else {
             alert('payment failed');
           }
