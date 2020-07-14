@@ -13,7 +13,7 @@ export class QueriesService extends ApiService {
   }
 
   createQueries(queries): Promise<any> {
-    const apiUrl = ROUTE_CONFIG.CourseManagementURL + '​/Token​/ContactusSave';
+    const apiUrl = ROUTE_CONFIG.CourseManagementURL +`/Token/ContactusSave`;
     return this.doPost(apiUrl, queries, true);
   }
 }
