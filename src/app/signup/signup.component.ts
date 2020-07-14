@@ -97,9 +97,11 @@ export class SignupComponent implements OnInit {
         this.submitted = false;
         this.showSuccessMessage = true;
         if (data && data.result) {
-          alert('Account Created Successfully. Please Log in Here')
-          this.login();
-          this.SpinnerService.hide();
+          alert('Account created successfully')
+          this.paymentService.insertOrder(this.courseId, data.response.access_token).subscribe((value: any) => {
+            this.SpinnerService.hide();
+            this.initPay(value,data.response.access_token);
+          });
         } else {
           this.SpinnerService.hide();
           alert(data.errorDetails);
@@ -161,7 +163,8 @@ export class SignupComponent implements OnInit {
           '"}';
         this.paymentService.verifyPayment(payload, access_token).subscribe((message: any) => {
           if (message) {
-            alert('Payment Success');
+            alert('Payment completed successfully. You will be redirected to our Course Management Page');
+            location.href="https://lurecapacademy.com/"
           } else {
             alert('payment failed');
           }
