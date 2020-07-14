@@ -53,8 +53,8 @@
                   [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
                 <!-- </div> -->
                 <div *ngIf="submitted && f.fullName.errors" class="text-danger">
-                  <div *ngIf="f.fullName.errors.required" class="par-txxt">name is required*</div>
-                  <div *ngIf="f.fullName.errors.minlength" class="par-txxt">name must be 3 characters*</div>
+                  <div *ngIf="f.fullName.errors.required" class="par-txxt">*name is required</div>
+                  <div *ngIf="f.fullName.errors.minlength" class="par-txxt">*name must be 3 characters</div>
                 </div>
               </div>
               <div class="form-group mb-3">
@@ -63,8 +63,8 @@
                   [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" />
                 <!-- </div> -->
                 <div *ngIf="submitted && f.emailId.errors" class="text-danger">
-                  <div *ngIf="f.emailId.errors.required" class="par-txxt">email is required*</div>
-                  <div *ngIf="f.emailId.errors.email" class="par-txxt">must be a valid email address*</div>
+                  <div *ngIf="f.emailId.errors.required" class="par-txxt">*email is required</div>
+                  <div *ngIf="f.emailId.errors.email" class="par-txxt">*must be a valid email address</div>
                 </div>
               </div>
               <div class="form-group">
@@ -73,7 +73,7 @@
                   [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
                 <!-- </div> -->
                 <div *ngIf="submitted && f.phoneNumber.errors" class="text-danger">
-                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">phone number is required*</div>
+                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">*phone number is required</div>
                 </div>
               </div>
               <div class="text-center">

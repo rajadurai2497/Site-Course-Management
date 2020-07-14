@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   submitted = false;
   // tslint:disable-next-line: ban-types
-  showSuccessMessage: Boolean = false ;
+  showSuccessMessage: Boolean = false;
   private _courseDetailsService: any;
   addSignup: any;
   selectedCourse: any;
@@ -72,22 +72,20 @@ export class SignupComponent implements OnInit {
       emailId: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', [
         Validators.required,
-       Validators.pattern(this.phoneNumberPattern),
+        Validators.pattern(this.phoneNumberPattern),
       ]],
       city: ['', [Validators.required]],
     });
-    // this.login
   }
   get f() { return this.signupForm.controls; }
   onSubmit() {
     this.submitted = true;
     if (this.signupForm.invalid) {
-        return;
+      return;
     }
 
   }
   public onSubmitButtonClicked(): void {
-    // this.SpinnerService.show();
     this.signup.userId = 0;
     if (this.signupForm.valid) {
       this._signupService.createSignup(this.signupForm.value).then((data) => {
@@ -95,9 +93,10 @@ export class SignupComponent implements OnInit {
         this.signupForm.reset();
         this.showSuccessMessage = true;
         if (data && data.result) {
+          this.SpinnerService.show();
           this.paymentService.insertOrder(this.courseId, data.response.access_token).subscribe((value: any) => {
             this.SpinnerService.hide();
-            this.initPay(value,data.response.access_token);
+            this.initPay(value, data.response.access_token);
           });
         } else {
           this.SpinnerService.hide();
@@ -160,7 +159,7 @@ export class SignupComponent implements OnInit {
         this.paymentService.verifyPayment(payload, access_token).subscribe((message: any) => {
           if (message) {
             alert('Payment completed successfully. You will be redirected to our Course Management Page');
-            location.href="https://portal.lurecapacademy.com/"
+            location.href = "https://portal.lurecapacademy.com/"
           } else {
             alert('payment failed');
           }

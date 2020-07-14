@@ -20,32 +20,32 @@
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <!--<div class="input-group">-->
-                  <input class="form-control" placeholder="Name" required minlength="3" formControlName="userName"
-                    [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
-               <!--- </div>-->
+                <input class="form-control" placeholder="Name" required minlength="3" formControlName="userName"
+                  [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+                <!--- </div>-->
                 <div *ngIf="submitted && f.userName.errors" class="text-danger">
-                  <div *ngIf="f.userName.errors.required" class="par-txxt">name is required*</div>
-                  <div *ngIf="f.userName.errors.minlength" class="par-txxt">name must be 3 characters*</div>
+                  <div *ngIf="f.userName.errors.required" class="par-txxt">*name is required</div>
+                  <div *ngIf="f.userName.errors.minlength" class="par-txxt">*name must be 3 characters</div>
 
                 </div>
               </div>
-               <div class="form-group" [ngClass]="{ focused: focus2 === true }">
+              <div class="form-group" [ngClass]="{ focused: focus2 === true }">
                 <div class="input-group">
                   <input class="form-control" placeholder="Password" type="password" formControlName="passWord"
                     [ngClass]="{ 'is-invalid': submitted && f.passWord.errors }" />
                 </div>
                 <div *ngIf="submitted && f.passWord.errors" class="text-danger">
-                  <div *ngIf="f.passWord.errors.required" class="par-txxt">password is required*</div>
+                  <div *ngIf="f.passWord.errors.required" class="par-txxt">*password is required</div>
                 </div>
               </div>
-           <div class="form-group" [ngClass]="{ focused: focus1 === true }">
+              <div class="form-group" [ngClass]="{ focused: focus1 === true }">
                 <div class="input-group">
-                  <input class="form-control" placeholder="Email" type="email" 
-                    formControlName="emailId" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" />
+                  <input class="form-control" placeholder="Email" type="email" formControlName="emailId"
+                    [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" />
                 </div>
                 <div *ngIf="submitted && f.emailId.errors" class="text-danger">
-                  <div *ngIf="f.emailId.errors.required" class="par-txxt">email is required*</div>
-                  <div *ngIf="f.emailId.errors.email" class="par-txxt">must be a valid email address*</div>
+                  <div *ngIf="f.emailId.errors.required" class="par-txxt">*email is required</div>
+                  <div *ngIf="f.emailId.errors.email" class="par-txxt">*must be a valid email address</div>
                 </div>
               </div>
               <div class="form-group" [ngClass]="{ focused: focus1 === true }">
@@ -55,7 +55,7 @@
                     [ngClass]="{'is-invalid': submitted && f.phoneNumber.errors}" />
                 </div>
                 <div *ngIf="submitted && f.phoneNumber.errors" class="text-danger">
-                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">phone number is required*</div>
+                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">*phone number is required</div>
                 </div>
               </div>
               <div class="form-group">
@@ -94,3 +94,8 @@
     </div>
   </div>
 </section>
+<style>
+  .login-nav {
+    display: none !important;
+  }
+</style>

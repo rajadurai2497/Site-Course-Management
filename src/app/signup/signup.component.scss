@@ -1,196 +1,190 @@
-
-.text-blues{
-    color: white;
-
+.text-blues {
+  color: white;
 }
 
 .btn-lavender {
-    color: #fff;
-    border-color: #1b2b91;
-    background-color:#1b2b91;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+  color: #fff;
+  border-color: #1b2b91;
+  background-color: #1b2b91;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-.bg-greenish{
-    background-color:#1b2b91;
-}
-
-.text-blues{
-    color: white;
-
-}
-.linkcolr{
-    color:#1b2b91;
-    cursor: pointer;
-}
-.header-texts{
-    text-align:center;
-    font-weight: 500;
-    font-size: 14px;
-    color: #225da0;
-    padding-top: 0px;
-}s
-
-.para-txt{
-    text-align:justify;
-    color: #7c7f88;
-    font-weight: 300;
-    font-size:14px;
-}
- 
-.par-txxt{
-    color: #f70808;
-    font-weight: 300;
-    font-size:13px;
+.bg-greenish {
+  background-color: #1b2b91;
 }
 
-.header-text{
-    text-align:left;
-    font-weight: 600;
-    font-size: 36px;
-    color: #1b2b91;
+.text-blues {
+  color: white;
+}
+.linkcolr {
+  color: #1b2b91;
+  cursor: pointer;
+  font-weight: 600;
+}
+.header-texts {
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #225da0;
+  padding-top: 0px;
+}
+s .para-txt {
+  text-align: justify;
+  color: #7c7f88;
+  font-weight: 300;
+  font-size: 14px;
 }
 
-.bck-img{
-    background-image: url('/assets/img/back/stock.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    opacity: 0.3;
+.par-txxt {
+  color: #f70808;
+  font-weight: 300;
+  font-size: 13px;
 }
 
-.over-lay-blue {
-    background:rgba(8, 8, 8, 0.73);
+.header-text {
+  text-align: left;
+  font-weight: 600;
+  font-size: 36px;
+  color: #1b2b91;
 }
 
-.header-text-lst{
-    text-align:center;
-    padding:100px 0 50px 0;
-    font-weight: 700;
-    font-size: 30px;
-    color: #ffffff
-}
-
-.success{
-    text-align:center;
-    border-color: #1b2b91;
-    color: #2b9202;
-    font-weight: 300;
-    font-size:18px;
-}
-
-.adjustview{
-    padding-top: 0px;
-    margin-bottom: 200px;
-}
-
-
-.header-texts{
-    font-family: 'Roboto' !important;
-    text-align:center;
-    font-weight: 500;
-    font-size: 30px;
-    color: #225da0;
-    padding-top: 0px;
-}
-
-.header-texts-p{
-    font-family: 'Roboto' !important;
-    text-align:center;
-    // font-weight: 500;
-    font-size: 14px;
-    color: #225da0;
-    padding-top: 0px;
-}.btn-lavender {
-    color: #fff;
-    border-color: #1b2b91;
-    background-color:#1b2b91;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-}
-.bg-greenish{
-    background-color:#1b2b91;
-}
-
-.text-blues{
-    color: white;
-
-}
-.c-text-danger
-{
-    color:red;
-}
-
-.fthov{
-    color: #1b47a5;
-  }
-  .fthov:hover{
-   
-    color: #1b47a5;
-  }
- 
-
-.header-texts{
-    text-align:center;
-    font-weight: 500;
-    font-size: 14px;
-    color: #225da0;
-    padding-top: 0px;
-}
-
-.para-txt{
-    text-align:justify;
-    color: #7c7f88;
-    font-weight: 300;
-    font-size:14px;
-}
-
-
-.header-text{
-    text-align:left;
-    font-weight: 600;
-    font-size: 36px;
-    color: #1b2b91;
-}
-
-.bck-img{
-    background-image: url('/assets/img/back/stock.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    opacity: 0.3;
+.bck-img {
+  background-image: url('/assets/img/back/stock.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.3;
 }
 
 .over-lay-blue {
-    background:rgba(8, 8, 8, 0.73);
+  background: rgba(8, 8, 8, 0.73);
 }
 
-.header-text-lst{
-    text-align:center;
-    padding:100px 0 50px 0;
-    font-weight: 700;
-    font-size: 30px;
-    color: #ffffff
+.header-text-lst {
+  text-align: center;
+  padding: 100px 0 50px 0;
+  font-weight: 700;
+  font-size: 30px;
+  color: #ffffff;
 }
 
-.adjustview{
-    padding-top: 0px;
-    margin-bottom: 200px;
+.success {
+  text-align: center;
+  border-color: #1b2b91;
+  color: #2b9202;
+  font-weight: 300;
+  font-size: 18px;
 }
 
-
-.header-texts{
-    font-family: 'Roboto' !important;
-    text-align:center;
-    font-weight: 500;
-    font-size: 30px;
-    color: #225da0;
-    padding-top: 0px;
+.adjustview {
+  padding-top: 0px;
+  margin-bottom: 200px;
 }
 
-.header-texts-p{
-    font-family: 'Roboto' !important;
-    text-align:center;
-    // font-weight: 500;
-    font-size: 14px;
-    color: #225da0;
-    padding-top: 0px;
+.header-texts {
+  font-family: 'Roboto' !important;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  color: #225da0;
+  padding-top: 0px;
+}
+
+.header-texts-p {
+  font-family: 'Roboto' !important;
+  text-align: center;
+  // font-weight: 500;
+  font-size: 14px;
+  color: #225da0;
+  padding-top: 0px;
+}
+.btn-lavender {
+  color: #fff;
+  border-color: #1b2b91;
+  background-color: #1b2b91;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.bg-greenish {
+  background-color: #1b2b91;
+}
+
+.text-blues {
+  color: white;
+}
+.c-text-danger {
+  color: red;
+}
+
+.fthov {
+  color: #1b47a5;
+}
+.fthov:hover {
+  color: #1b47a5;
+}
+
+.header-texts {
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #225da0;
+  padding-top: 0px;
+}
+
+.para-txt {
+  text-align: justify;
+  color: #7c7f88;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.header-text {
+  text-align: left;
+  font-weight: 600;
+  font-size: 36px;
+  color: #1b2b91;
+}
+
+.bck-img {
+  background-image: url('/assets/img/back/stock.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.3;
+}
+
+.over-lay-blue {
+  background: rgba(8, 8, 8, 0.73);
+}
+
+.header-text-lst {
+  text-align: center;
+  padding: 100px 0 50px 0;
+  font-weight: 700;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.adjustview {
+  padding-top: 0px;
+  margin-bottom: 200px;
+}
+
+.header-texts {
+  font-family: 'Roboto' !important;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  color: #225da0;
+  padding-top: 0px;
+}
+
+.header-texts-p {
+  font-family: 'Roboto' !important;
+  text-align: center;
+  // font-weight: 500;
+  font-size: 14px;
+  color: #225da0;
+  padding-top: 0px;
+}
+.login-nav {
+  display: none !important;
 }
