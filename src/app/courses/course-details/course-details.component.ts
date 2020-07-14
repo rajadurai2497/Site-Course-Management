@@ -15,6 +15,7 @@ export class CourseDetailsComponent implements OnInit {
   description: string;
   provideWhat: string;
   learnersNumber: string;
+  dicountAmount:string;
 
   constructor(private dialog: MatDialog, private route: ActivatedRoute, private readonly router: Router) {}
 
@@ -34,6 +35,9 @@ export class CourseDetailsComponent implements OnInit {
       }
       if (params['courseAmount']) {
         this.courseAmount = params['courseAmount'];
+      }
+      if (params['dicountAmount']) {
+        this.dicountAmount = params['dicountAmount'];
       }
     });
   }

@@ -6,4 +6,5 @@ export interface AllCourse {
     provideWhat: string;
     learnersNumber: string;
     shortDesc?:string;
+    dicountAmount: string;
 }

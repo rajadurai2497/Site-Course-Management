@@ -111,7 +111,19 @@
                   <div class="row">
                     <div class="col-lg-6 course-amount">
                       <a>
-                        <span class="header-text">₹{{course.courseAmount}}</span>
+                        <div *ngIf="!course.dicountAmount==0">
+                          <span class="para-tts" >
+                            <del style="margin-left:-22px;">₹{{course.courseAmount}}</del> 
+                          </span>
+                          <span class="para-tts">
+                            <ins style="padding-left:12px">₹{{course.dicountAmount}}</ins>
+                           </span>
+                          </div>
+                          <div *ngIf="course.dicountAmount==0">
+                            <span class="para-tts" >
+                              <ins style="margin-left:-22px;">₹{{course.courseAmount}}</ins> 
+                            </span>
+                          </div>
                       </a>
                     </div>
                     <div class="col-lg-6 course-buynow">
