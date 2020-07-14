@@ -22,10 +22,10 @@ export class QueriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.queriesForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(4)]],
-      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', [Validators.required,
-      Validators.pattern(this.phoneNumberPattern),]
+      Validators.pattern(this.phoneNumberPattern), ]
       ],
       description: ['', [Validators.required, Validators.minLength(4)]],
     });

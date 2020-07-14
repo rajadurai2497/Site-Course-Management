@@ -23,7 +23,6 @@ export interface DialogData {
   providers: [MatDialog],
 })
 export class SignupComponent implements OnInit {
-  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
   // [x: string]: any;
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   userId: number;
@@ -39,7 +38,7 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   submitted = false;
   // tslint:disable-next-line: ban-types
-  showSuccessMessage: Boolean = false ;
+  showSuccessMessage: Boolean = false;
   private _courseDetailsService: any;
   addSignup: any;
   selectedCourse: any;
@@ -68,41 +67,39 @@ export class SignupComponent implements OnInit {
       this.courseId = queryParams['course'];
     });
     this.signupForm = this.formBuilder.group({
-      userName: ['', [Validators.required, Validators.minLength(4)]],
+      userName: ['', [Validators.required, Validators.minLength(3)]],
       passWord: ['', [Validators.required]],
-      emailId: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      emailId: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', [
         Validators.required,
         Validators.pattern(this.phoneNumberPattern),
       ]],
       city: ['', [Validators.required]],
     });
-    // this.login
   }
   get f() { return this.signupForm.controls; }
   onSubmit() {
     this.submitted = true;
     if (this.signupForm.invalid) {
-        return;
+      return;
     }
-    // this.submitted = false;
-    //     this.registerForm.reset();
-    this.signupForm.reset();
+
   }
   public onSubmitButtonClicked(): void {
-    // this.SpinnerService.show();
     this.signup.userId = 0;
     if (this.signupForm.valid) {
       this._signupService.createSignup(this.signupForm.value).then((data) => {
+        this.submitted = false;
+        this.signupForm.reset();
+        this.showSuccessMessage = true;
         if (data && data.result) {
-          alert('Account created successfully')
+          this.SpinnerService.show();
           this.paymentService.insertOrder(this.courseId, data.response.access_token).subscribe((value: any) => {
             this.SpinnerService.hide();
-            this.initPay(value,data.response.access_token);
+            this.initPay(value, data.response.access_token);
           });
         } else {
           this.SpinnerService.hide();
-          alert(data.errorDetails);
         }
       });
     }
@@ -162,7 +159,7 @@ export class SignupComponent implements OnInit {
         this.paymentService.verifyPayment(payload, access_token).subscribe((message: any) => {
           if (message) {
             alert('Payment completed successfully. You will be redirected to our Course Management Page');
-            location.href="https://portal.lurecapacademy.com/"
+            location.href = "https://portal.lurecapacademy.com/"
           } else {
             alert('payment failed');
           }
