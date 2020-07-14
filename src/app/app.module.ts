@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,7 +14,7 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './signup/login/login.component';
 import { WindowRef } from './services/window-ref.service';
-import { NgxSpinnerModule } from "ngx-spinner"; 
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [AppComponent, SignupComponent, NavbarComponent, FooterComponent, LoginComponent],
@@ -26,6 +26,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     AppRoutingModule,
     HttpClientModule,
     MatDialogModule,
+    ReactiveFormsModule,
     CommonModule,
     NgbModule,
     NgxSpinnerModule

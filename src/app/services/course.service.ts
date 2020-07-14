@@ -7,7 +7,7 @@ import { AllCourse } from '../models/course/course.model';
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService extends ApiService{
+export class CourseService extends ApiService {
 currentCourse: AllCourse;
   constructor(private readonly httpClient: HttpClient) {
     super( httpClient);

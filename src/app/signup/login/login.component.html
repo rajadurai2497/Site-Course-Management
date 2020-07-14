@@ -7,23 +7,27 @@
           </div>
         </div>
         <div class="card-body px-lg-5 py-lg-5 ">
-          <form role="form" class="pb-0">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <div class="input-group ">
                  
-                  <input class="form-control" placeholder="Email/Phone number"  name="userName" [(ngModel)]="userName" >
+                  <input class="form-control" placeholder="Email/Phone number" formControlName="userName" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.userName.errors }" >
+                </div>
+                <div *ngIf="submitted &amp;&amp; f.userName.errors" class="text-danger">
+                  <div *ngIf="f.userName.errors.required" class="par-txxt">required*</div>
                 </div>
             </div>
             
             <div class="form-group mb-3" >
               <div class="input-group ">
                 
-                <input class="form-control" placeholder="Password" type="password" name="password" [(ngModel)]="password">
+                <input class="form-control" placeholder="Password" type="password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.password.errors }">
+              </div>
+              <div *ngIf="submitted &amp;&amp; f.password.errors" class="text-danger">
+                <div *ngIf="f.password.errors.required" class="par-txxt">Password is required*</div>
               </div>
             </div>
             <a class="linkcolr"  >forgot Password?</a>
-        
-                
                 <div class="row pb-0">
                     <div class="col-md-0 mr-auto ml-auto">
                         <button  class="btn btn-lavender btn-lg btn-fill btn-hover" (click)="login()" >login</button>

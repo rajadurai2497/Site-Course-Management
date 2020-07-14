@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AddQueriesModel } from '../models/queries/queries.model';
+import { AddQueries } from '../models/queries/queries.model';
 import { QueriesService } from '../services/queries.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ValidationService } from '../services/validation.service';
 
 @Component({
@@ -10,67 +10,40 @@ import { ValidationService } from '../services/validation.service';
   styleUrls: ['./queries.component.scss']
 })
 export class QueriesComponent implements OnInit {
-
-  public queries = new AddQueriesModel();
-  addQueries: any;
+  queries = new AddQueries();
+  queriesForm: FormGroup;
+  submitted = false;
+  // tslint:disable-next-line: ban-types
+  showSuccessMessage: Boolean = false;
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   dialogRef: any;
-  constructor(private readonly queriesService: QueriesService, private readonly _validation: ValidationService) {}
+  constructor(private readonly queriesService: QueriesService, private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void  {
-    this.addQueries = new FormGroup({
-      name: new FormControl(this.queries.name, [
-        Validators.required,
-        Validators.minLength(4),
-      ]),
-      email: new FormControl(this.queries.email, [
-        Validators.required,
-        Validators.pattern(this.emailPattern),
-      ]),
-      phoneNumber: new FormControl(this.queries.phoneNumber, [
-        Validators.required,
-        Validators.pattern(this. phoneNumberPattern),
-      ]),
-    });
-   }
-   get fullName() { return this.queries.get('fullName'); }
-  get emailId() { return this.queries.get('emailId'); }
-  get phoneNumber() { return this.queries.get('phoneNumber'); }
-
-  public onSubmitButtonClicked(): void {
-    this.queries.contactusId = 0;
-    if (this.validationQueries()) {
-    this.queriesService.createQueries(this.queries).subscribe((data) => {
-      if (data && data.result) {
-        alert('Registered Successfully');
-        } else {
-          alert('Registered UnSuccessfully');
-        }
-      this.dialogRef.close(true);
+  ngOnInit(): void {
+    this.queriesForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(4)]],
+      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      phoneNumber: ['', [Validators.required,
+      Validators.pattern(this.phoneNumberPattern),]
+      ],
+      description: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
+  get f() { return this.queriesForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.queriesForm.invalid) {
+      return;
+    }
+    this.queriesForm.reset();
   }
-  validationQueries() {
-    if (!this.queries.name) {
-      alert('Field Empty');
-      return false;
+  createQueries() {
+    if (this.queriesForm.valid) {
+      this.queriesService.createQueries(this.queriesForm.value).then((data) => {
+        this.showSuccessMessage = true;
+      });
     }
-    if (!this.queries.email) {
-      alert('Email Address Field Empty');
-      return false;
-    }
-
-    if (!this._validation.isEmailId(this.queries.email)) {
-      alert('Invalid Email Address');
-      return false;
-    }
-    if (!this.queries.phoneNumber) {
-      alert('Field Empty');
-      return false;
-    }
-    return true;
-
-
   }
 }
