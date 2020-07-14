@@ -15,7 +15,7 @@ export class CourseDetailsComponent implements OnInit {
   description: string;
   provideWhat: string;
   learnersNumber: string;
-  dicountAmount:string;
+  dicountAmount:number;
 
   constructor(private dialog: MatDialog, private route: ActivatedRoute, private readonly router: Router) {}
 
