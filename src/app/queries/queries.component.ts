@@ -37,11 +37,12 @@ export class QueriesComponent implements OnInit {
     if (this.queriesForm.invalid) {
       return;
     }
-    this.queriesForm.reset();
   }
   createQueries() {
     if (this.queriesForm.valid) {
       this.queriesService.createQueries(this.queriesForm.value).then((data) => {
+        this.submitted=false;
+        this.queriesForm.reset();
         this.showSuccessMessage = true;
       });
     }

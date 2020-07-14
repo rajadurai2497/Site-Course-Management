@@ -16,18 +16,18 @@
               <div class="form-group">
                 <!-- <div class="input-group"> -->
                 <input class="form-control" placeholder="Name" formControlName="name" minlength="4"
-                  [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.name.errors }" />
+                  [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                 <!-- </div> -->
-                <div *ngIf="submitted &amp;&amp; f.name.errors" class="text-danger">
+                <div *ngIf="submitted && f.name.errors" class="text-danger">
                   <div *ngIf="f.name.errors.required" class="par-txxt">First Name is required</div>
                 </div>
               </div>
               <div class="form-group mb-3">
                 <!-- <div class="input-group"> -->
                 <input class="form-control" placeholder="Email" type="email" formControlName="email"
-                  [pattern]="emailPattern" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.email.errors }" />
+                  [pattern]="emailPattern" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                 <!-- </div> -->
-                <div *ngIf="submitted &amp;&amp; f.email.errors" class="text-danger">
+                <div *ngIf="submitted && f.email.errors" class="text-danger">
                   <div *ngIf="f.email.errors.required" class="par-txxt">Email is required</div>
                   <div *ngIf="f.email.errors.email" class="par-txxt">Email must be a valid email address</div>
                 </div>
@@ -36,14 +36,14 @@
                 <!-- <div class="input-group"> -->
                 <input class="form-control" placeholder="Phone Number" formControlName="phoneNumber"
                   [pattern]="phoneNumberPattern"
-                  [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.phoneNumber.errors }" />
+                  [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
                 <!-- </div> -->
-                <div *ngIf="submitted &amp;&amp; f.phoneNumber.errors" class="text-danger">
+                <div *ngIf="submitted && f.phoneNumber.errors" class="text-danger">
                   <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
                 </div>
               </div>
               <textarea class="form-control" formControlName="description" rows="4" placeholder="Tell us your queries"
-                [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.description.errors }" required></textarea>
+                [ngClass]="{ 'is-invalid': submitted && f.description.errors }" required></textarea>
               <br />
               <div class="row pb-0">
                 <div class="col-md-0 mr-auto ml-auto">
@@ -54,7 +54,7 @@
               </div>
             </form>
             <div class="success" *ngIf="showSuccessMessage">
-              Thank You for choosing us our executive will contact you soon
+              Thank You for choosing us. Our executive will contact you soon
             </div>
           </div>
         </div>

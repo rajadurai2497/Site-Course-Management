@@ -49,43 +49,29 @@
             <form [formGroup]="communityForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <!-- <div class="input-group"> -->
-                  <input
-                    type="text"
-                    formControlName="fullName"
-                    class="form-control"
-                    placeholder="Name"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.fullName.errors }"
-                  />
+                <input type="text" formControlName="fullName" class="form-control" placeholder="Name"
+                  [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
                 <!-- </div> -->
-                <div *ngIf="submitted &amp;&amp; f.fullName.errors" class="text-danger">
+                <div *ngIf="submitted && f.fullName.errors" class="text-danger">
                   <div *ngIf="f.fullName.errors.required" class="par-txxt">First Name is required</div>
                 </div>
               </div>
               <div class="form-group mb-3">
                 <!-- <div class="input-group"> -->
-                  <input
-                    class="form-control"
-                    placeholder="Email"
-                    type="email"
-                    formControlName="emailId"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.emailId.errors }"
-                  />
+                <input class="form-control" placeholder="Email" type="email" formControlName="emailId"
+                  [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" />
                 <!-- </div> -->
-                <div *ngIf="submitted &amp;&amp; f.emailId.errors" class="text-danger">
+                <div *ngIf="submitted && f.emailId.errors" class="text-danger">
                   <div *ngIf="f.emailId.errors.required" class="par-txxt">Email is required</div>
                   <div *ngIf="f.emailId.errors.email" class="par-txxt">Email must be a valid email address</div>
                 </div>
               </div>
               <div class="form-group">
                 <!-- <div class="input-group"> -->
-                  <input
-                    class="form-control"
-                    placeholder="Phone Number"
-                    formControlName="phoneNumber"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.phoneNumber.errors }"
-                  />
+                <input class="form-control" placeholder="Phone Number" formControlName="phoneNumber"
+                  [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
                 <!-- </div> -->
-                <div *ngIf="submitted &amp;&amp; f.phoneNumber.errors" class="text-danger">
+                <div *ngIf="submitted && f.phoneNumber.errors" class="text-danger">
                   <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
                 </div>
               </div>
@@ -96,7 +82,7 @@
               </div>
             </form>
             <div class="success" *ngIf="showSuccessMessage">
-              Thank You for choosing us our executive will contact you soon
+              Thank You for choosing us. Our executive will contact you soon
             </div>
           </div>
         </div>

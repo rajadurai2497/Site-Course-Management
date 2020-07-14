@@ -29,7 +29,7 @@
 
             <div class="para-text" [innerHTML]="description"></div>
             <br>
-            <div *ngIf="!dicountAmount==0">
+            <div *ngIf="dicountAmount!=0">
               <span class="para-tts">
                 <del style="margin-left:-22px;">₹{{courseAmount}}</del>
               </span>

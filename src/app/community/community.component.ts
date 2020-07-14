@@ -18,7 +18,7 @@ export class CommunityComponent implements OnInit {
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   dialogRef: any;
   constructor(private readonly _communityService: CommunityService,
-     private formBuilder: FormBuilder) {}
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.communityForm = this.formBuilder.group({
@@ -36,12 +36,12 @@ export class CommunityComponent implements OnInit {
     if (this.communityForm.invalid) {
       return;
     }
-    this.communityForm.reset();
   }
   createCommunity() {
     if (this.communityForm.valid) {
       this._communityService.createCommunity(this.communityForm.value).then((data) => {
         this.communityForm.reset();
+        this.submitted=false;
         this.showSuccessMessage = true;
       });
     }
