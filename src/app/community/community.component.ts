@@ -22,7 +22,7 @@ export class CommunityComponent implements OnInit {
 
   ngOnInit(): void {
     this.communityForm = this.formBuilder.group({
-      fullName: ['', [Validators.required, Validators.minLength(4)]],
+      fullName: ['', [Validators.required, Validators.minLength(3)]],
       emailId: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', [Validators.required, Validators.pattern(this.phoneNumberPattern)]],
     });

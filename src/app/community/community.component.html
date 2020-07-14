@@ -49,11 +49,12 @@
             <form [formGroup]="communityForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <!-- <div class="input-group"> -->
-                <input type="text" formControlName="fullName" class="form-control" placeholder="Name"
+                <input type="text" formControlName="fullName" class="form-control" placeholder="Name"  minlength="3"
                   [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
                 <!-- </div> -->
                 <div *ngIf="submitted && f.fullName.errors" class="text-danger">
                   <div *ngIf="f.fullName.errors.required" class="par-txxt">First Name is required</div>
+                  <div *ngIf="f.fullName.errors.minlength" class="par-txxt">Name much be at least 3 characters</div>
                 </div>
               </div>
               <div class="form-group mb-3">

@@ -23,7 +23,6 @@ export interface DialogData {
   providers: [MatDialog],
 })
 export class SignupComponent implements OnInit {
-  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
   // [x: string]: any;
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   userId: number;
@@ -68,12 +67,12 @@ export class SignupComponent implements OnInit {
       this.courseId = queryParams['course'];
     });
     this.signupForm = this.formBuilder.group({
-      userName: ['', [Validators.required, Validators.minLength(4)]],
+      userName: ['', [Validators.required, Validators.minLength(3)]],
       passWord: ['', [Validators.required]],
-      emailId: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      emailId: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', [
         Validators.required,
-        Validators.pattern(this.phoneNumberPattern),
+       Validators.pattern(this.phoneNumberPattern),
       ]],
       city: ['', [Validators.required]],
     });
@@ -94,6 +93,9 @@ export class SignupComponent implements OnInit {
     this.signup.userId = 0;
     if (this.signupForm.valid) {
       this._signupService.createSignup(this.signupForm.value).then((data) => {
+        //this.signupForm.reset();
+        this.submitted = false;
+        this.showSuccessMessage = true;
         if (data && data.result) {
           alert('Account created successfully')
           this.paymentService.insertOrder(this.courseId, data.response.access_token).subscribe((value: any) => {
