@@ -40,6 +40,7 @@ export class CourseComponent implements OnInit {
         courseAmount: course.courseAmount,
         provideWhat: course.provideWhat,
         description: course.description,
+        dicountAmount:course.dicountAmount
       },
       skipLocationChange: true,
     };

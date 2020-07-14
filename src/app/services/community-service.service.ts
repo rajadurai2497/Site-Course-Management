@@ -8,14 +8,12 @@ import { ApiService } from './api.service';
   providedIn: 'root'
 })
 export class CommunityService extends ApiService {
-  public readonly routePrefix = 'Token';
   constructor(private readonly httpClient: HttpClient) {
     super(httpClient);
   }
 
   createCommunity(community): Promise<any> {
-
-    const apiUrl = ROUTE_CONFIG.CourseManagementURL + `/Token/RegisterUser`;
+    const apiUrl = ROUTE_CONFIG.CourseManagementURL + `/Token/RegisterCommunity`;
     return this.doPost(apiUrl, community , true);
   }
 

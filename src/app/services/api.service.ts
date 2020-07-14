@@ -34,9 +34,10 @@ export class ApiService {
   }
 
   doPost(url: string, body: any, showLoading?: boolean): Promise<any> {
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
+    let headers = new HttpHeaders();
+  
+    headers=headers.append("Content-Type", "application/json-patch+json")
+    headers=headers.append("Access-Control-Allow-Origin", "*")
     
     // headers = headers.append('Authorization',"bearer " + this.currentUser.access_token);
     const requestOptions = {

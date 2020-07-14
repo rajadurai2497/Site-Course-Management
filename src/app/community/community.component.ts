@@ -15,15 +15,15 @@ export class CommunityComponent implements OnInit {
   submitted = false;
   // tslint:disable-next-line: ban-types
   showSuccessMessage: Boolean = false;
-  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   dialogRef: any;
-  constructor(private readonly _communityService: CommunityService, private formBuilder: FormBuilder) {}
+  constructor(private readonly _communityService: CommunityService,
+     private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.communityForm = this.formBuilder.group({
       fullName: ['', [Validators.required, Validators.minLength(4)]],
-      emailId: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      emailId: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', [Validators.required, Validators.pattern(this.phoneNumberPattern)]],
     });
   }
@@ -41,6 +41,7 @@ export class CommunityComponent implements OnInit {
   createCommunity() {
     if (this.communityForm.valid) {
       this._communityService.createCommunity(this.communityForm.value).then((data) => {
+        this.communityForm.reset();
         this.showSuccessMessage = true;
       });
     }

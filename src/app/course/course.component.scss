@@ -38,11 +38,103 @@
 }
 
 .modal-footer {
-  display: flex;
-  padding: 1.5rem;
-  border-top: 0 solid #e9ecef;
-  align-items: center;
-  justify-content: flex-end;
+    display: flex;
+    padding: 1.5rem;
+    border-top: 0 solid #e9ecef;
+    align-items: center;
+    justify-content: flex-end
+}
+
+ 
+.head-text{
+    text-align:center;
+    font-weight: 900;
+    font-size: 26px;
+    color: #1b2b91;
+}
+.size-fix
+{
+    height: 280px !important;
+}
+.para-text{
+    text-align:justify;
+    color:  #141518; 
+    font-weight: 500;
+    font-size:15px;
+}
+.para-txt{
+    text-align:justify;
+
+    font-weight: 500;
+    font-size:15px
+}
+
+.header-textss{
+    font-family: 'Roboto' !important;
+    text-align:left;
+    font-weight: 600;
+    font-size: 23px;
+    color: #225da0;
+}
+
+.header-text{
+    text-align:center;
+    font-weight: 700;
+    font-size: 36px;
+    color: #1b2b91
+}
+
+.header-txt-list{
+    text-align:left;
+    font-weight: 500;
+    font-size: 36px;
+    color: #1b2b91
+}
+
+.head-txt{
+   
+    color: #1b2b91;
+}
+
+.text-primarys{
+    background-color: #62aaeb;
+    color: whitesmoke;
+}
+.card-colrs{
+    box-shadow: 0 4px 8px 0 rgba(87, 92, 93, 0.2);
+    transition:0.3s;
+ //    background-image: linear-gradient(to bottom right,rgb(51, 202, 207),
+ //    rgb(169, 243, 218),
+ //    rgb(198, 241, 227));
+ //    padding: 0 20px 0 20px;
+    
+    background-color: #ffff;
+    
+ }
+ .para-tts{
+    
+    color: #225da0;
+    font-weight: 500;
+    font-size:25px;
+}
+
+.bck-img{ 
+    background-image: url('/assets/img/back/course-back.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.5;
+  }
+  .overlay{
+      background-color: #33cacf80;
+  }
+
+.header-text-lst{
+    text-align:center;
+    padding:100px 0 50px 0;
+    font-weight: 700;
+    font-size: 30px;
+    color: #ffffff
 }
 
 .head-text {

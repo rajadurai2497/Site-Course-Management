@@ -4,8 +4,6 @@
 <section class="section section-lgg pb-5">
   <div class="container">
     <div class="row row-grid align-items-center">
-      <!-- //Queriesform// -->
-
       <div class="col-md-5 order-md-2" style="padding-top: 52px;">
         <div class="card shadow border-0">
           <div class="card-header bg-greenish">
@@ -16,128 +14,36 @@
           <div class="card-body px-lg-5 py-lg-5">
             <form [formGroup]="queriesForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Name"
-                    formControlName="name"
-                    required
-                    minlength="4"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.name.errors }"
-                  />
-                </div>
+                <!-- <div class="input-group"> -->
+                <input class="form-control" placeholder="Name" formControlName="name" minlength="4"
+                  [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.name.errors }" />
+                <!-- </div> -->
                 <div *ngIf="submitted &amp;&amp; f.name.errors" class="text-danger">
                   <div *ngIf="f.name.errors.required" class="par-txxt">First Name is required</div>
                 </div>
               </div>
               <div class="form-group mb-3">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Email"
-                    type="email"
-                    formControlName="email"
-                    required
-                    [pattern]="emailPattern"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.email.errors }"
-                  />
-                </div>
+                <!-- <div class="input-group"> -->
+                <input class="form-control" placeholder="Email" type="email" formControlName="email"
+                  [pattern]="emailPattern" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.email.errors }" />
+                <!-- </div> -->
                 <div *ngIf="submitted &amp;&amp; f.email.errors" class="text-danger">
                   <div *ngIf="f.email.errors.required" class="par-txxt">Email is required</div>
                   <div *ngIf="f.email.errors.email" class="par-txxt">Email must be a valid email address</div>
                 </div>
               </div>
               <div class="form-group">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Phone Number"
-                    formControlName="phoneNumber"
-                    required
-                    [pattern]="phoneNumberPattern"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.phoneNumber.errors }"
-                  />
-                </div>
+                <!-- <div class="input-group"> -->
+                <input class="form-control" placeholder="Phone Number" formControlName="phoneNumber"
+                  [pattern]="phoneNumberPattern"
+                  [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.phoneNumber.errors }" />
+                <!-- </div> -->
                 <div *ngIf="submitted &amp;&amp; f.phoneNumber.errors" class="text-danger">
                   <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
                 </div>
               </div>
-              <textarea class="form-control" formControlName="description" rows="4" placeholder="Tell us your queries" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.description.errors }" required></textarea>
-              <br />
-              <div class="row pb-0">
-                <div class="col-md-0 mr-auto ml-auto">
-                  <button mat-button cdkFocusInitial class="btn btn-lavender my-4" (click)="createQueries()">
-                    Send Message
-                  </button>
-                </div>
-              </div>
-            </form>
-            <div class="success" *ngIf="showSuccessMessage">
-              Thank You for choosing us our executive will contact you soon
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- //Queriesform// -->
-
-      <div class="col-md-5 order-md-2" style="padding-top: 52px;">
-        <div class="card shadow border-0">
-          <div class="card-header bg-greenish">
-            <div class="text-center mb-3">
-              <h2 class="text-center text-blues header-txt" style="margin-bottom: -14px;">Connect With Us</h2>
-            </div>
-          </div>
-          <div class="card-body px-lg-5 py-lg-5">
-            <form [formGroup]="queriesForm" (ngSubmit)="onSubmit()">
-              <div class="form-group">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Name"
-                    formControlName="name"
-                    required
-                    minlength="4"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.name.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.name.errors" class="text-danger">
-                  <div *ngIf="f.name.errors.required" class="par-txxt">First Name is required</div>
-                </div>
-              </div>
-              <div class="form-group mb-3">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Email"
-                    type="email"
-                    formControlName="email"
-                    required
-                    [pattern]="emailPattern"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.email.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.email.errors" class="text-danger">
-                  <div *ngIf="f.email.errors.required" class="par-txxt">Email is required</div>
-                  <div *ngIf="f.email.errors.email" class="par-txxt">Email must be a valid email address</div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Phone Number"
-                    formControlName="phoneNumber"
-                    required
-                    [pattern]="phoneNumberPattern"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.phoneNumber.errors }"
-                  />
-                </div>
-                <div *ngIf="submitted &amp;&amp; f.phoneNumber.errors" class="text-danger">
-                  <div *ngIf="f.phoneNumber.errors.required" class="par-txxt">PhoneNumber is required</div>
-                </div>
-              </div>
-              <textarea class="form-control" formControlName="description" rows="4" placeholder="Tell us your queries" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.description.errors }" required></textarea>
+              <textarea class="form-control" formControlName="description" rows="4" placeholder="Tell us your queries"
+                [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.description.errors }" required></textarea>
               <br />
               <div class="row pb-0">
                 <div class="col-md-0 mr-auto ml-auto">

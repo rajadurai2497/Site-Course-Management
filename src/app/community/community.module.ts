@@ -10,8 +10,6 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [CommunityComponent],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     CommunityRoutingModule,
     SharedModule
   ],

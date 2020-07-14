@@ -85,27 +85,28 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.invalid) {
         return;
     }
+    // this.submitted = false;
+    //     this.registerForm.reset();
     this.signupForm.reset();
   }
-
-  createSignup() {
-    this.SpinnerService.show();
+  public onSubmitButtonClicked(): void {
+    // this.SpinnerService.show();
     this.signup.userId = 0;
     if (this.signupForm.valid) {
-    this._signupService.createSignup(this.signupForm.value).then((data) => {
-      this.showSuccessMessage = true;
-      if (data && data.result) {
-        this.SpinnerService.hide();
-        alert('Account Created Successfully. Please Log in Here');
-        this.login();
-      } else {
-        this.SpinnerService.hide();
-        alert(data.errorDetails);
-      }
-    });
-  } else {
-    this.SpinnerService.hide();
-  }
+      this._signupService.createSignup(this.signupForm.value).then((data) => {
+        if (data && data.result) {
+          alert('Account Created Successfully. Please Log in Here')
+          this.login()
+          this.SpinnerService.hide();
+        } else {
+          this.SpinnerService.hide();
+          alert(data.errorDetails);
+        }
+      });
+    }
+    else {
+      this.SpinnerService.hide();
+    }
   }
 
   login() {
@@ -116,10 +117,9 @@ export class SignupComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.SpinnerService.show();
       if (result) {
+        this.SpinnerService.show();
         this.paymentService.insertOrder(this.courseId, result.access_token).subscribe((value: any) => {
-          console.log(value);
           this.SpinnerService.hide();
           this.initPay(value, result.access_token);
         });

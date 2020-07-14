@@ -20,6 +20,7 @@
 }
 .linkcolr{
     color:#1b2b91;
+    cursor: pointer;
 }
 .header-texts{
     text-align:center;
@@ -37,7 +38,6 @@
 }
  
 .par-txxt{
-    text-align:center;
     color: #f70808;
     font-weight: 300;
     font-size:13px;
@@ -118,6 +118,15 @@
 {
     color:red;
 }
+
+.fthov{
+    color: #1b47a5;
+  }
+  .fthov:hover{
+   
+    color: #1b47a5;
+  }
+ 
 
 .header-texts{
     text-align:center;

@@ -14,41 +14,36 @@ export class QueriesComponent implements OnInit {
   queriesForm: FormGroup;
   submitted = false;
   // tslint:disable-next-line: ban-types
-  showSuccessMessage: Boolean = false ;
+  showSuccessMessage: Boolean = false;
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   dialogRef: any;
-  constructor(private readonly queriesService: QueriesService,  private formBuilder: FormBuilder) {}
+  constructor(private readonly queriesService: QueriesService, private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void  {
+  ngOnInit(): void {
     this.queriesForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       phoneNumber: ['', [Validators.required,
-        Validators.pattern(this.phoneNumberPattern), ]
+      Validators.pattern(this.phoneNumberPattern),]
       ],
       description: ['', [Validators.required, Validators.minLength(4)]],
     });
-   }
-   get f() { return this.queriesForm.controls; }
+  }
+  get f() { return this.queriesForm.controls; }
 
-   onSubmit() {
+  onSubmit() {
     this.submitted = true;
     if (this.queriesForm.invalid) {
-        return;
+      return;
     }
     this.queriesForm.reset();
   }
   createQueries() {
     if (this.queriesForm.valid) {
-
-      this.queriesService. createQueries(this.queriesForm.value).then((data) => {
+      this.queriesService.createQueries(this.queriesForm.value).then((data) => {
         this.showSuccessMessage = true;
       });
     }
-}
-
-
-
-
+  }
 }

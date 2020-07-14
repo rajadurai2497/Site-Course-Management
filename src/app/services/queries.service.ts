@@ -8,16 +8,12 @@ import { ApiService } from './api.service';
   providedIn: 'root'
 })
 export class QueriesService extends ApiService {
-  public readonly routePrefix = '​Token​';
   constructor(private readonly httpClient: HttpClient) {
     super(httpClient);
   }
 
   createQueries(queries): Promise<any> {
-    const apiUrl = ROUTE_CONFIG.CourseManagementURL + '​Token​/ContactusSave';
-    return this.doPost(apiUrl,  queries , true);
+    const apiUrl = ROUTE_CONFIG.CourseManagementURL + '​/Token​/ContactusSave';
+    return this.doPost(apiUrl, queries, true);
   }
-
-
-
 }
