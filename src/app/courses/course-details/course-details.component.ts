@@ -49,7 +49,6 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   public onPurchaseNowButtonClick(): void {
-    console.log(this.courseMasterId)
     this.router.navigate(['/signup'], { queryParams: { course: this.courseMasterId } });
   }
   // [routerLink]="['/signup']"
