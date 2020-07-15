@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './signup/login/login.component';
 import { WindowRef } from './services/window-ref.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [AppComponent, SignupComponent, NavbarComponent, FooterComponent, LoginComponent],
@@ -29,7 +30,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     CommonModule,
     NgbModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatSnackBarModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [WindowRef, { provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }],

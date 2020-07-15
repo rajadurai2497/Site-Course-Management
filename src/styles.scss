@@ -56,3 +56,21 @@ body { margin: 0; font-family: 'Exo 2'!important; }
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-snack-bar-container {
+    simple-snack-bar {
+      span {
+        font-size: 14px !important;
+        font-weight: 600;
+        color:  #1b2e8c!important;
+      }
+    }
+    background-color:  #33cacfe0 !important;
+    .mat-simple-snackbar-action .mat-button-wrapper {
+      color: red !important;
+      font-size: 12px !important;
+    }
+  }

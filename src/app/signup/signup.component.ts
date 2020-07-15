@@ -11,6 +11,7 @@ import { PaymentService } from '../services/payment.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 import { ValidationService } from '../services/validation.service';
+import { MatSnackBar } from '@angular/material';
 export interface DialogData {
   animal: string;
   name: string;
@@ -59,6 +60,7 @@ export class SignupComponent implements OnInit {
     private SpinnerService: NgxSpinnerService,
     private readonly _validation: ValidationService,
     private formBuilder: FormBuilder,
+    private _snackBar: MatSnackBar,
 
   ) { }
   ngOnInit(): void {
@@ -158,10 +160,16 @@ export class SignupComponent implements OnInit {
           '"}';
         this.paymentService.verifyPayment(payload, access_token).subscribe((message: any) => {
           if (message) {
-            alert('Payment completed successfully. You will be redirected to our Course Management Page');
+            this._snackBar.open('Payment completed successfully. You will be redirected to our Course Management Page', 'Close', {
+              duration: 2000,
+              verticalPosition: 'top',
+            });
             location.href = "https://portal.lurecapacademy.com/"
           } else {
-            alert('payment failed');
+            this._snackBar.open('payment failed', 'Close', {
+              duration: 2000,
+              verticalPosition: 'top',
+            });
           }
         });
       },
@@ -170,3 +178,4 @@ export class SignupComponent implements OnInit {
     this.rzp1.open();
   }
 }
+
