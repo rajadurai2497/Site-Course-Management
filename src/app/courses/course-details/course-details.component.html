@@ -31,19 +31,15 @@
             <br>
             <div *ngIf="dicountAmount!=0">
               <span class="para-tts">
-                <del style="margin-left:-22px;">₹{{courseAmount}}</del>
-              </span>
-              <span class="para-tts">
-                <ins style="padding-left:12px">₹{{dicountAmount}}</ins>
+                <p>Price:₹ <del style="font-weight: 900;">{{courseAmount}}</del><ins
+                    style="font-weight: 900;margin-left: 30px;">{{dicountAmount}}</ins></p>
               </span>
             </div>
             <div *ngIf="dicountAmount==0">
               <span class="para-tts">
-                <ins style="margin-left:-22px;">₹{{courseAmount}}</ins>
+                <p>Price:₹ <ins style="font-weight: 900;">{{courseAmount}}</ins></p>
               </span>
             </div>
-            <!-- <h5 class="para-text">Price:₹{{dicountAmount}}/-</h5> -->
-
             <a (click)="onPurchaseNowButtonClick()">
               <span class="btn btn-view mt-4">PURCHASE NOW</span>
 
