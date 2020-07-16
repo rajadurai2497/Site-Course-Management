@@ -7,4 +7,5 @@ export interface AllCourse {
     learnersNumber: string;
     shortDesc?:string;
     dicountAmount: number;
+    count?:number;
 }

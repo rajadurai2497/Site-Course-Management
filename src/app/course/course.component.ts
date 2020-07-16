@@ -30,6 +30,7 @@ export class CourseComponent implements OnInit {
           else{
             element.shortDesc=element.description;
           }
+          element.count=0;
           this.getCount(element);
         });
       }
@@ -37,7 +38,7 @@ export class CourseComponent implements OnInit {
   }
   public getCount(course: AllCourse): void{
     this._countService.getCount(course.courseMasterId).then((data)=>{
-      this.count=data.countResult
+      course.count=data.countResult
     })
   }
 
