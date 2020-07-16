@@ -12,16 +12,13 @@ import { NgxSpinnerService } from 'ngx-spinner';
 
 import { ValidationService } from '../services/validation.service';
 import { MatSnackBar } from '@angular/material';
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
-  providers: [MatDialog],
+
 })
 export class SignupComponent implements OnInit {
   // [x: string]: any;
@@ -49,9 +46,7 @@ export class SignupComponent implements OnInit {
   orderDetails: any;
 
   constructor(
-    public dialogRef: MatDialogRef<SignupComponent>,
     private winRef: WindowRef,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private dialog: MatDialog,
     private readonly _signupService: SignupService,
     private readonly _courseService: CourseService,
@@ -126,10 +121,6 @@ export class SignupComponent implements OnInit {
         });
       }
     });
-  }
-
-  onNoClick(): void {
-    this.dialogRef.close();
   }
 
 
