@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseService } from 'src/app/services/course.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { AllCourse } from 'src/app/models/course/course.model';
+import { CountService } from 'src/app/services/count.service';
 
 @Component({
   selector: 'app-home-course',
@@ -9,8 +10,10 @@ import { AllCourse } from 'src/app/models/course/course.model';
   styleUrls: ['./home-course.component.scss']
 })
 export class HomeCourseComponent implements OnInit {
+  courseLanguage="Tamil";
   allCourse: AllCourse[] = [];
-  constructor(private readonly _courseService: CourseService, private router: Router) { }
+  count:any[];
+  constructor(private readonly _countService: CountService,private readonly _courseService: CourseService, private router: Router) { }
 
   ngOnInit() {
     this.getAllCourselist();
@@ -26,9 +29,15 @@ export class HomeCourseComponent implements OnInit {
           else{
             element.shortDesc=element.description;
           }
+          this.getCount(element);
         });
       }
     });
+  }
+  public getCount(course: AllCourse): void{
+    this._countService.getCount(course.courseMasterId).then((data)=>{
+      this.count=data.countResult
+    })
   }
 
   public goToDetails(course: AllCourse): void {

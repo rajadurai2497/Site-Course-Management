@@ -5,14 +5,11 @@
       <div class="shape shape-style-1 backimg">
       </div>
       <div class="container py-lg-md d-flex pb-0">
-
         <div class="col px-0">
           <h1 class="header-text-list">Courses We Offer
-
           </h1>
           <div class="row">
             <div class="col-lg-12">
-
               <p class=" para-texts">It is important for every individual to understand the various types of financial
                 products to create a financial portfolio. Each financial product has its own risk and rewards. The
                 reforms happening in the Indian Financial Market has brought various types of financial instruments for
@@ -21,7 +18,6 @@
           </div>
         </div>
       </div>
-      
       <div class="container pb-0">
         <div class="row justify-content-center">
           <div class="col-lg-12">
@@ -29,28 +25,27 @@
               <div class="col-lg-4" *ngFor="let course of allCourse | slice:0:3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body  py-3">
-
                     <h4 class="header-textss">{{course.courseName}}</h4>
                     <p class="description mt-3 para-texts" [innerHTML]="course.shortDesc"></p>
                     <div class="course-pill">
-                      <span class="badge badge-pill badge-success">100+ users</span>
-                      <span class="badge badge-pill badge-success">Tamil</span>
+                      <span class="badge badge-pill badge-success">{{count}}+ users</span>
+                      <span class="badge badge-pill badge-success">{{courseLanguage}}</span>
                     </div>
                     <div class="container">
                       <div class="row">
                         <div class="col-lg-6 course-amount">
                           <a>
                             <div *ngIf="course.dicountAmount!=0">
-                            <span class="para-tts" >
-                              <del style="margin-left:-22px;">₹{{course.courseAmount}}</del> 
-                            </span>
-                            <span class="para-tts">
-                              <ins style="padding-left:12px">₹{{course.dicountAmount}}</ins>
-                             </span>
+                              <span class="para-tts">
+                                <del style="margin-left:-22px;">₹{{course.courseAmount}}</del>
+                              </span>
+                              <span class="para-tts">
+                                <ins style="padding-left:12px">₹{{course.dicountAmount}}</ins>
+                              </span>
                             </div>
                             <div *ngIf="course.dicountAmount==0">
-                              <span class="para-tts" >
-                                <ins style="margin-left:-22px;">₹{{course.courseAmount}}</ins> 
+                              <span class="para-tts">
+                                <ins style="margin-left:-22px;">₹{{course.courseAmount}}</ins>
                               </span>
                             </div>
                           </a>
@@ -62,7 +57,6 @@
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -72,8 +66,6 @@
       </div>
       <br>
       <div class="row justify-content-center">
-
         <span class="btn btn-view" [routerLink]="['/Course']">View all Courses</span>
-
       </div>
     </section>

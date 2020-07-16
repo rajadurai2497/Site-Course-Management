@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class PaymentService {
   PaymentUrl = 'http://coursemanagement-001-site1.etempurl.com/api';
-  PaymentUrls = 'http://coursemanagement-001-site1.etempurl.com/api/v1';
   constructor(private readonly _http: HttpClient) {}
 
   insertOrder(courseId: string, access_token): Observable<any> {
@@ -31,7 +30,7 @@ export class PaymentService {
     const requestOptions = {
       headers: headers,
     };
-    const apiUrl = this.PaymentUrls + `/Course/VerifyPayment`;
+    const apiUrl = this.PaymentUrl + `/Payment/VerifyPayment`;
     return this._http.post<Observable<any>>(apiUrl, payload, requestOptions);
   }
 }

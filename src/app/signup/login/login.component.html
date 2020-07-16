@@ -13,7 +13,7 @@
                  
                   <input class="form-control" placeholder="Email/Phone number" formControlName="userName" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.userName.errors }" >
                 </div>
-                <div *ngIf="submitted &amp;&amp; f.userName.errors" class="text-danger">
+                <div *ngIf="submitted && f.userName.errors" class="text-danger">
                   <div *ngIf="f.userName.errors.required" class="par-txxt">required*</div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 
                 <input class="form-control" placeholder="Password" type="password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted &amp;&amp; f.password.errors }">
               </div>
-              <div *ngIf="submitted &amp;&amp; f.password.errors" class="text-danger">
+              <div *ngIf="submitted && f.password.errors" class="text-danger">
                 <div *ngIf="f.password.errors.required" class="par-txxt">Password is required*</div>
               </div>
             </div>

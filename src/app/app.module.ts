@@ -3,7 +3,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -18,7 +17,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatSnackBarModule } from '@angular/material';
 
 @NgModule({
-  declarations: [AppComponent, SignupComponent, NavbarComponent, FooterComponent, LoginComponent],
+  declarations: [AppComponent, NavbarComponent, FooterComponent, LoginComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -38,3 +37,5 @@ import { MatSnackBarModule } from '@angular/material';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+

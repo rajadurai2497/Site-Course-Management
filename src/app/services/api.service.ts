@@ -13,7 +13,7 @@ export class ApiService {
 
   doGet(url: string, isShowLoading?: boolean): any {
     let headers = new HttpHeaders();
-   
+    headers=headers.append("Access-Control-Allow-Origin", "*")
     // headers = headers.append('Authorization',"bearer " + this.currentUser.access_token);
     const requestOptions = {
       headers: headers,
