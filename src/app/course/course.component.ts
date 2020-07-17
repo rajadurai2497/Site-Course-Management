@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../services/course.service';
 import { AllCourse } from '../models/course/course.model';
-import { NavigationExtras, Router } from '@angular/router';
+import { NavigationExtras, Router, ActivatedRoute } from '@angular/router';
 import { CountService } from '../services/count.service';
 
 @Component({
@@ -11,34 +11,46 @@ import { CountService } from '../services/count.service';
   providers: [CourseService],
 })
 export class CourseComponent implements OnInit {
-  courseLanguage="Tamil";
+  courseLanguage = "Tamil";
   allCourse: AllCourse[] = [];
-  count:any[]
-  constructor(private readonly _countService: CountService,private readonly _courseService: CourseService, private router: Router) {}
+  count: any[]
+  courseMasterId:number=0;
+  constructor(private readonly _countService: CountService,private route: ActivatedRoute, private readonly _courseService: CourseService, private router: Router) { }
 
   ngOnInit(): void {
+    this.route.queryParams.forEach((params) => {
+      if (params['courseId']) {
+        this.courseMasterId = params['courseId'];
+        this.getAllCourselist();
+        return;
+      }
+
+    });
     this.getAllCourselist();
   }
   public getAllCourselist(): void {
     this._courseService.getAllCourselist().then((data) => {
       if (data && data.result) {
         this.allCourse = data.allCourse;
-        this.allCourse .forEach(element => {
-          if(element.description && element.description.length>230){
-            element.shortDesc=element.description.substring(0,230);
+        this.allCourse.forEach(element => {
+          if (element.description && element.description.length > 230) {
+            element.shortDesc = element.description.substring(0, 230);
           }
-          else{
-            element.shortDesc=element.description;
+          else {
+            element.shortDesc = element.description;
           }
-          element.count=0;
+          element.count = 0;
           this.getCount(element);
+          if(this.courseMasterId!=0 && element.courseMasterId==this.courseMasterId+""){
+            this.goToDetails(element);
+          }
         });
       }
     });
   }
-  public getCount(course: AllCourse): void{
-    this._countService.getCount(course.courseMasterId).then((data)=>{
-      course.count=data.countResult
+  public getCount(course: AllCourse): void {
+    this._countService.getCount(course.courseMasterId).then((data) => {
+      course.count = data.countResult
     })
   }
 
@@ -50,7 +62,7 @@ export class CourseComponent implements OnInit {
         courseAmount: course.courseAmount,
         provideWhat: course.provideWhat,
         description: course.description,
-        dicountAmount:course.dicountAmount
+        dicountAmount: course.dicountAmount
       },
       skipLocationChange: true,
     };
