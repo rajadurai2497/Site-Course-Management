@@ -156,6 +156,10 @@ export class SignupComponent implements OnInit {
               duration: 2000,
               verticalPosition: 'top',
             });
+            // let snackBarRef = this._snackBar.open('CustomSnackBar' ,'close',{});
+            // snackBarRef.onAction().subscribe(() => {
+            //  console.log('Action button clicked!');
+            // })
             location.href = "https://portal.lurecapacademy.com/"
           } else {
             this._snackBar.open('payment failed', 'Close', {
