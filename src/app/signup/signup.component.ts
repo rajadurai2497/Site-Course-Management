@@ -64,7 +64,7 @@ export class SignupComponent implements OnInit {
       this.courseId = queryParams['course'];
     });
     this.signupForm = this.formBuilder.group({
-      userName: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       passWord: ['', [Validators.required]],
       emailId: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', [
@@ -138,17 +138,18 @@ export class SignupComponent implements OnInit {
         email: orderDetails.coursePaymentData.emailId,
         contact: orderDetails.coursePaymentData.phoneNumber,
       },
+
       handler: (response) => {
         const payload =
-          '{Paymentid: "' +
-          response.razorpay_payment_id +
-          '",' +
-          'Orderid: "' +
-          response.razorpay_order_id +
-          '",' +
-          'Signature: "' +
-          response.razorpay_signature +
-          '"}';
+        '{"paymentid": "' +
+        response.razorpay_payment_id +
+        '",' +
+        '"orderid": "' +
+        response.razorpay_order_id +
+        '",' +
+        '"signature": "' +
+        response.razorpay_signature +
+        '"}';
         this.paymentService.verifyPayment(payload, access_token).subscribe((message: any) => {
           if (message) {
             this._snackBar.open('Payment completed successfully. You will be redirected to our Course Management Page', 'Close', {

@@ -11,8 +11,7 @@
 
 
       <div class="d-lg-none" style="padding-bottom: 9px">
-        <h3 class="header-text-list">{{courseName}}
-        </h3>
+        <h3 class="header-text-list" [innerHTML]="courseName"></h3>
       </div>
 
 
@@ -31,8 +30,9 @@
             <br>
             <div *ngIf="dicountAmount!=0">
               <span class="para-tts">
-                <p>Price:₹ <del style="font-weight: 900;">{{courseAmount}}</del><ins
-                    style="font-weight: 900;margin-left: 30px;">{{dicountAmount}}</ins></p>
+                <p class="header-text-list">Price:<ins
+                    style="font-weight: 900;">₹{{dicountAmount}}</ins><del
+                    style="font-weight: 900;margin-left: 30px;font-size: 18px;">₹{{courseAmount}}</del></p>
               </span>
             </div>
             <div *ngIf="dicountAmount==0">

@@ -2,7 +2,7 @@
   <div class="shape shape-style-1 shape-default"></div>
 </section>
 <ngx-spinner></ngx-spinner>
-<section class="section section-lg light-bg section-card-shaped pb-20">
+<section class="section section-lgg light-bg section-card-shaped pb-20">
   <div class="shape shape-style-1"></div>
   <div class="container">
     <div class="row row-grid align-items-center">
@@ -20,12 +20,12 @@
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <!--<div class="input-group">-->
-                <input class="form-control" placeholder="Name" required minlength="3" formControlName="userName"
-                  [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+                <input class="form-control" placeholder="Name" required minlength="3" formControlName="name"
+                  [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                 <!--- </div>-->
-                <div *ngIf="submitted && f.userName.errors" class="text-danger">
-                  <div *ngIf="f.userName.errors.required" class="par-txxt">*name is required</div>
-                  <div *ngIf="f.userName.errors.minlength" class="par-txxt">*name must be 3 characters</div>
+                <div *ngIf="submitted && f.name.errors" class="text-danger">
+                  <div *ngIf="f.name.errors.required" class="par-txxt">*name is required</div>
+                  <div *ngIf="f.name.errors.minlength" class="par-txxt">*name must be 3 characters</div>
 
                 </div>
               </div>
