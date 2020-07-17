@@ -1,16 +1,13 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SignupService } from '../services/signup.service';
 import { AddSignupModel } from '../models/signup/signup.model';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { WindowRef } from '../services/window-ref.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { CourseService } from '../services/course.service';
 import { PaymentService } from '../services/payment.service';
 import { NgxSpinnerService } from 'ngx-spinner';
-
-import { ValidationService } from '../services/validation.service';
 import { MatSnackBar } from '@angular/material';
 
 
@@ -21,7 +18,6 @@ import { MatSnackBar } from '@angular/material';
 
 })
 export class SignupComponent implements OnInit {
-  // [x: string]: any;
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   userId: number;
   city: string;
@@ -37,7 +33,6 @@ export class SignupComponent implements OnInit {
   submitted = false;
   // tslint:disable-next-line: ban-types
   showSuccessMessage: Boolean = false;
-  private _courseDetailsService: any;
   addSignup: any;
   selectedCourse: any;
   name: any;
@@ -49,11 +44,9 @@ export class SignupComponent implements OnInit {
     private winRef: WindowRef,
     private dialog: MatDialog,
     private readonly _signupService: SignupService,
-    private readonly _courseService: CourseService,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly paymentService: PaymentService,
     private SpinnerService: NgxSpinnerService,
-    private readonly _validation: ValidationService,
     private formBuilder: FormBuilder,
     private _snackBar: MatSnackBar,
 
@@ -80,7 +73,6 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.invalid) {
       return;
     }
-
   }
   public onSubmitButtonClicked(): void {
     this.signup.userId = 0;
@@ -104,7 +96,6 @@ export class SignupComponent implements OnInit {
       this.SpinnerService.hide();
     }
   }
-
   login() {
     const dialogRef = this.dialog.open(LoginComponent, {
       height: 'auto',
@@ -126,7 +117,6 @@ export class SignupComponent implements OnInit {
 
   // Razor pay
   public initPay(orderDetails, access_token): void {
-    const ref = this;
     const options = {
       key: orderDetails.razorKey,
       amount: orderDetails.coursePaymentData.courseAmount,
@@ -156,10 +146,6 @@ export class SignupComponent implements OnInit {
               duration: 2000,
               verticalPosition: 'top',
             });
-            // let snackBarRef = this._snackBar.open('CustomSnackBar' ,'close',{});
-            // snackBarRef.onAction().subscribe(() => {
-            //  console.log('Action button clicked!');
-            // })
             location.href = "https://portal.lurecapacademy.com/"
           } else {
             this._snackBar.open('payment failed', 'Close', {
