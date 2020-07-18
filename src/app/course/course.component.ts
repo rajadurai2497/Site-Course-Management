@@ -26,6 +26,7 @@ export class CourseComponent implements OnInit {
       }
 
     });
+    
     this.getAllCourselist();
   }
   public getAllCourselist(): void {

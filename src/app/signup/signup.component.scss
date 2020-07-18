@@ -21,7 +21,15 @@
   font-weight: 600;
 }
 .btn-pr{
-  font-size: 0.5rem;
+     font-size: 0.8rem;
+     border: none;
+     background-color: snow;
+     color: #1b2b91;
+
+}
+.btn-pr:hover{
+   cursor: pointer;
+
 }
 .header-texts {
   text-align: center;
@@ -191,6 +199,4 @@ s .para-txt {
 .login-nav {
   display: none !important;
 }
-.btn-pr{
-  font-size: 0.5rem;
-}
+
