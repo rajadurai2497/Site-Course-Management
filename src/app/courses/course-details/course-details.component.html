@@ -27,22 +27,25 @@
           <div class="card-body px-lg-5 py-lg-5 ">
             <div class="para-text" [innerHTML]="provideWhat"></div>
             <br>
-            <div *ngIf="dicountAmount!=0">
+            <div *ngIf="dicountAmount!=0 && courseAmount!=0">
               <span class="para-tts">
-                <p class="header-text-list">Price:<ins
-                    style="font-weight: 900;">₹{{dicountAmount}}</ins><del
+                <p class="header-text-list">Price:<ins style="font-weight: 900;">₹{{dicountAmount}}</ins><del
                     style="font-weight: 900;margin-left: 30px;font-size: 18px;">₹{{courseAmount}}</del></p>
               </span>
             </div>
-            <div *ngIf="dicountAmount==0">
+            <div *ngIf="dicountAmount==0 && courseAmount!=0">
               <span class="para-tts">
-                <p>Price:₹ <ins style="font-weight: 900;">{{courseAmount}}</ins></p>
+                <p class="header-text-list">Price:<ins style="font-weight: 900;font-size: 18px;">₹{{courseAmount}}</ins>
+                </p>
               </span>
+              <a (click)="onPurchaseNowButtonClick()">
+                <span class="btn btn-view mt-4">PURCHASE NOW</span>
+              </a>
             </div>
-            <a (click)="onPurchaseNowButtonClick()">
-              <span class="btn btn-view mt-4">PURCHASE NOW</span>
-            </a>
           </div>
+          <a *ngIf="courseAmount==0 && dicountAmount==0" [routerLink]="['/Course']">
+            <span class="btn btn-view ml-4">COMING SOON</span>
+          </a>
         </div>
       </div>
       <div class="col-lg-7 order-md-1">
