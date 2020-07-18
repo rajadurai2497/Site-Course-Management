@@ -35,7 +35,7 @@
                       <div class="row">
                         <div class="col-lg-6 course-amount">
                           <a>
-                            <div *ngIf="course.dicountAmount!=0">
+                            <div *ngIf="course.dicountAmount!=0  && course.courseAmount!=0">
                               <span class="para-tts">
                                 <del style="margin-left:-22px;">₹{{course.courseAmount}}</del>
                               </span>
@@ -43,7 +43,7 @@
                                 <ins style="padding-left:12px">₹{{course.dicountAmount}}</ins>
                               </span>
                             </div>
-                            <div *ngIf="course.dicountAmount==0">
+                            <div *ngIf="course.dicountAmount==0 && course.courseAmount!=0">
                               <span class="para-tts">
                                 <ins style="margin-left:-22px;">₹{{course.courseAmount}}</ins>
                               </span>
@@ -53,6 +53,11 @@
                         <div class="col-lg-6 course-buynow">
                           <a (click)="goToDetails(course)">
                             <span class="btn btn-view mt-4">Buy Now</span>
+                          </a>
+                        </div>
+                        <div *ngIf="course.dicountAmount ==0 && course.courseAmount==0" class="col-lg-6 course-buynow">
+                          <a (click)="goToDetails(course)">
+                            <span class="btn btn-view mt-4 ">COMING SOON</span>
                           </a>
                         </div>
                       </div>
