@@ -32,6 +32,9 @@
                 <p class="header-text-list">Price:<ins style="font-weight: 900;">₹{{dicountAmount}}</ins><del
                     style="font-weight: 900;margin-left: 30px;font-size: 18px;">₹{{courseAmount}}</del></p>
               </span>
+              <a (click)="onPurchaseNowButtonClick()">
+                <span class="btn btn-view mt-4">PURCHASE NOW</span>
+              </a>
             </div>
             <div *ngIf="dicountAmount==0 && courseAmount!=0">
               <span class="para-tts">
