@@ -126,7 +126,7 @@
                           </div>
                       </a>
                     </div>
-                    <div class="col-lg-6 course-buynow">
+                    <div  *ngIf="course.dicountAmount !=0 || course.courseAmount!=0" class="col-lg-6 course-buynow">
                       <a (click)="goToDetails(course)">
                         <span class="btn btn-view mt-4 ">Buy Now</span>
                       </a>
