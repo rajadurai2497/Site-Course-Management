@@ -11,7 +11,7 @@ import { AllCourse } from 'src/app/models/course/course.model';
 export class CourseDetailsComponent implements OnInit {
   courseMasterId: string;
   courseName: string;
-  courseAmount: string;
+  courseAmount: number;
   description: string;
   provideWhat: string;
   learnersNumber: string;
