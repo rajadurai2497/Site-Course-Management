@@ -102,26 +102,28 @@
               <div class="card-body  py-3">
                 <h6 class="header-textss">{{course.courseName}}</h6>
                 <p class="description mt-3 para-txt" [innerHTML]="course.shortDesc"></p>
-                <div class="course-pill">
+                <div class="course-pill" style="padding-bottom: 15px;">
                   <span class="badge badge-pill badge-success">{{course.count}}+ users</span>
-                  <span class="badge badge-pill badge-success">{{course.language}}</span>
+                  
+                  <span class="badge badge-pill badge-success" style="margin-left: 10px;">{{course.language}}</span>
 
                 </div>
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-6 course-amount">
                       <a>
-                        <div *ngIf="course.dicountAmount!=0 && course.courseAmount!=0">
-                          <span class="para-tts" >
-                            <del style="margin-left:-22px;">₹{{course.courseAmount}}</del> 
-                          </span>
-                          <span class="para-tts">
-                            <ins style="padding-left:9px">₹{{course.dicountAmount}}</ins>
+                        <div *ngIf="course.dicountAmount!=0 && course.courseAmount!=0" style="padding-bottom:10px;">
+                          <span class="para-tts"
+                             style="margin-left:-18px;">₹{{course.dicountAmount}}
                            </span>
+                          <span class="para-tts" style="font-size: 18px; color: #707282;">
+                            <del style="margin-left:1px;">₹{{course.courseAmount}}</del> 
+                          </span>
+                          
                           </div>
-                          <div *ngIf="course.dicountAmount==0 && course.courseAmount!=0">
-                            <span class="para-tts" >
-                              <ins style="margin-left:-22px;">₹{{course.courseAmount}}</ins> 
+                          <div *ngIf="course.dicountAmount==0 && course.courseAmount!=0" style="padding-bottom:10px;">
+                            <span class="para-tts" 
+                              style="margin-left:-22px;">₹{{course.courseAmount}}
                             </span>
                           </div>
                       </a>
@@ -131,7 +133,7 @@
                         <span class="btn btn-view mt-4 ">Buy Now</span>
                       </a>
                     </div>
-                    <div *ngIf="course.dicountAmount ==0 && course.courseAmount==0" class="col-lg-6 course-buynow">
+                    <div *ngIf="course.dicountAmount ==0 && course.courseAmount==0" class="col-lg-6 course-buynow" style="padding-left: 0px;">
                       <a (click)="goToDetails(course)">
                         <span class="btn btn-view mt-4 ">COMING SOON</span>
                       </a>
