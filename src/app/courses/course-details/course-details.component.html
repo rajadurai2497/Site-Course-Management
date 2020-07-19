@@ -27,12 +27,17 @@
             </div>
           </div>
           <div class="card-body px-lg-5 py-lg-5 ">
-            <div class="para-text" [innerHTML]="provideWhat"></div>
+            <span class="para-text" [innerHTML]="provideWhat"></span>
             <br>
             <div *ngIf="dicountAmount!=0 && courseAmount!=0">
               <span class="para-tts">
-                <p class="header-text-list">Price:<ins style="font-weight: 900;">₹{{dicountAmount}}</ins><del
-                    style="font-weight: 900;margin-left: 30px;font-size: 18px;">₹{{courseAmount}}</del></p>
+                <p class="header-text-list">Price:
+                  <span style="font-weight: 900;">₹{{dicountAmount}}
+                  </span>
+                  <del
+                    style="font-weight: 900;margin-left: 30px;font-size:20px;">₹{{courseAmount}}
+                  </del>
+                </p>
               </span>
               <a (click)="onPurchaseNowButtonClick()">
                 <span class="btn btn-view mt-4">PURCHASE NOW</span>
@@ -40,7 +45,9 @@
             </div>
             <div *ngIf="dicountAmount==0 && courseAmount!=0">
               <span class="para-tts">
-                <p class="header-text-list">Price:<ins style="font-weight: 900;font-size: 18px;">₹{{courseAmount}}</ins>
+                <p class="header-text-list">Price:
+                  <span style="font-weight: 900;font-size: 18px;">₹{{courseAmount}}
+                  </span>
                 </p>
               </span>
               <a (click)="onPurchaseNowButtonClick()">
