@@ -11,7 +11,7 @@ import { CountService } from '../services/count.service';
   providers: [CourseService],
 })
 export class CourseComponent implements OnInit {
-  courseLanguage = "Tamil";
+  
   allCourse: AllCourse[] = [];
   count: any[]
   courseMasterId:number=0;
@@ -63,7 +63,8 @@ export class CourseComponent implements OnInit {
         courseAmount: course.courseAmount,
         provideWhat: course.provideWhat,
         description: course.description,
-        dicountAmount: course.dicountAmount
+        dicountAmount: course.dicountAmount,
+        language: course.language
       },
       skipLocationChange: true,
     };

@@ -8,4 +8,5 @@ export interface AllCourse {
     shortDesc?:string;
     dicountAmount: number;
     count?:number;
+    language:string;
 }
