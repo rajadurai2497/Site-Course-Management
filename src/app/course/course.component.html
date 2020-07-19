@@ -104,7 +104,7 @@
                 <p class="description mt-3 para-txt" [innerHTML]="course.shortDesc"></p>
                 <div class="course-pill">
                   <span class="badge badge-pill badge-success">{{course.count}}+ users</span>
-                  <span class="badge badge-pill badge-success">{{courseLanguage}}</span>
+                  <span class="badge badge-pill badge-success">{{course.language}}</span>
 
                 </div>
                 <div class="container">
@@ -116,7 +116,7 @@
                             <del style="margin-left:-22px;">₹{{course.courseAmount}}</del> 
                           </span>
                           <span class="para-tts">
-                            <ins style="padding-left:12px">₹{{course.dicountAmount}}</ins>
+                            <ins style="padding-left:9px">₹{{course.dicountAmount}}</ins>
                            </span>
                           </div>
                           <div *ngIf="course.dicountAmount==0 && course.courseAmount!=0">

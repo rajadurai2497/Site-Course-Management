@@ -10,7 +10,7 @@ import { CountService } from 'src/app/services/count.service';
   styleUrls: ['./home-course.component.scss']
 })
 export class HomeCourseComponent implements OnInit {
-  courseLanguage="Tamil";
+  
   allCourse: AllCourse[] = [];
   count:any[];
   constructor(private readonly _countService: CountService,private readonly _courseService: CourseService, private router: Router) { }
@@ -49,7 +49,8 @@ export class HomeCourseComponent implements OnInit {
         "courseAmount": course.courseAmount,
         "provideWhat": course.provideWhat,
         "description": course.description,
-        "dicountAmount":course.dicountAmount
+        "dicountAmount":course.dicountAmount,
+        "language":course.language
       },
       skipLocationChange: true
     };

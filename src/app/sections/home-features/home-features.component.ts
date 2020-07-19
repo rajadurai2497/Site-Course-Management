@@ -11,12 +11,7 @@ export class HomeFeaturesComponent implements OnInit {
   constructor() { }
   public imagesUrl;
   ngOnInit() {
-    this.imagesUrl = [
-      'assets/img/brand/img22.png',
-     'assets/img/brand/img33-01.png',
-      'assets/img/brand/29.png',
-      'assets/img/brand/img2-01.png'
-    ];
+    
   }
   customOptions: OwlOptions = {
     loop: true,
