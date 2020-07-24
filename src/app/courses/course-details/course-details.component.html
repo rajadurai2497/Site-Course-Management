@@ -4,9 +4,9 @@
   </div>
 </section>
 
-<section>
+<section >
 
-  <div class="container py-md" style="margin-top: -25px">
+  <div class="container  py-md" style="margin-top: -25px">
     <div class="row ">
 
 
@@ -17,8 +17,160 @@
       </div>
 
 
-      <div class="col-md-5 order-md-2" style="margin-top: -42px;
-            padding-top: 44px;">
+      <div class="col-lg-7 ">
+        <div class="d-lg-inline d-none">
+          <h3 class="header-text-list order-md-1">{{courseName}}</h3>
+        </div>
+        <div class="col-lg-5 col-md-12 order-md-2 d-lg-none" >
+
+          <div class="card shadow border-0">
+            <div class="card-header pb-20">
+              <div class="head-card">
+                <h2 class=" text-white" style="margin-bottom: -14px;">What We Provide?</h2>
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5 ">
+              <span class="para-text" [innerHTML]="provideWhat"></span>
+              <br>
+              <div *ngIf="dicountAmount!=0 && courseAmount!=0">
+                <span class="para-tts">
+                  <p class="para-tts">Price:
+                    <span style="font-weight: 900;">₹{{dicountAmount}}
+                    </span>
+                    <del
+                      style="font-size: 16px; color: #707282;">₹{{courseAmount}}
+                    </del>
+                  </p>
+                </span>
+                <a (click)="onPurchaseNowButtonClick()">
+                  <span class="btn btn-view mt-4">BUY NOW</span>
+                </a>
+              </div>
+              <div *ngIf="dicountAmount==0 && courseAmount!=0">
+                <span class="para-tts">
+                  <p class="header-text-list">Price:
+                    <span style="font-weight: 900;font-size: 18px;">₹{{courseAmount}}
+                    </span>
+                  </p>
+                </span>
+                <a (click)="onPurchaseNowButtonClick()">
+                  <span class="btn btn-view mt-4">PURCHASE NOW</span>
+                </a>
+              </div>
+            </div>
+            <a *ngIf="courseAmount==0 && dicountAmount==0" [routerLink]="['/Course']">
+              <span class="btn btn-view ml-4">COMING SOON</span>
+            </a>
+          </div>
+        </div>
+  
+
+        <h2 class="header-tt-list order-md-3">What is This course About?
+        </h2>
+        <p>
+          These are the course objectives but not the topics. By minding beginner's and non-financial sector student's convenience, we have split this course into 200+ topics.
+        Stock Market Basics
+
+        What Makes Trading the Perfect Business
+        What makes a Trader Successful?
+        Trading Systems and Approaches
+        How the Stock Market Works: What Drives Stock Prices?
+        The Business of stock Trading
+        How to Profit from stock Moves: Going Long and Shorts
+        Secrets to Consistent Profits
+
+        The Statistics of Consistent Profits from Random Outcomes
+        Trading like a professional
+        Developing a Trading System with Positive Expectancy
+        How and When to Buy and/or Sell Stocks
+        Choosing the Right Stock Broker
+        Choosing the Right Stock Broker for You
+        Types of stock brokers
+        Brokerages, taxes and breakeven
+        Important Keys to Selecting a Good Stock Broker
+        Stock Charting Tutorial
+        Stock Screening Tutorial
+        Placing Orders On Brokerage Platform
+        Mastering Technical Analysis
+
+        Principles of Technical Analysis
+        Identifying Trends
+        Utilising Support & Resistance and Supply and Demand Zones
+        Mastering Moving Averages
+        Candlestick Patterns
+        Mastering Indicators: Trend Following and Oscillators
+        Using Powerful Candlestick Patterns & Price Action Trading
+        Anticipating Trend Changes with Divergence
+        Market and Sector Analysis
+        Fundamental Analysis
+
+        Key characteristics that Identify a Great Business(stocks)
+        How to Read Financial Statements
+        Income Statement, Balance Sheet and Statement of Cash Flows
+        How to Identify Growth Potential and Danger Signs
+        How to Screen for the Best Stocks in the Market
+        How to Buy Stocks at reasonable Prices
+        Finding the True Intrinsic Value of a Stock
+        P/E Ratio
+        A Detailed Method to Find the Best Investments at the Best Time
+        Learn about penny stocks
+        Identification of real value of stocks
+        Avoiding over price stocks
+        Gathering knowledge of profit hunting
+        Building a Winning Portfolio
+
+        How to Diversify Your Portfolio to Minimise Risk
+        Low Risk, High Return Portfolio with Optimal Portfolio Allocation
+        Defensive Versus Cyclical Stocks
+        Various Stock Investment Categories: Which Is the Best for You?
+        Best Investment Opportunities and How You Can Find Them
+        Stock Screeners to Find the Best Stocks
+        Manage Your Portfolio Like a Professional
+        When to Exit an Investment
+        Psychology of Winning Traders
+
+        How Winning Traders Think
+        Types of emotions affects your trading system
+        Managing & Overcoming Negative Emotions
+        How to Manage Temporary Draw downs
+        Programming Your Mind to become a Winning Trader
+        Psychology Versus Strategy
+        Position Sizing
+
+        How to use position sizing
+        How to effectively use Money Management
+        Regulate Your Trading Business with Order Management
+        Learn to utilize the leverage effectively
+        Developing a Trading System
+
+        Develop a Winning Trading Plan
+        Learn a Daily Routine that takes just 1-2 hours a day
+        Understanding Bid/Ask Spreads
+        How to Maximise the Returns by Timing Your Entry and Exits
+        How to Identify Market Trends and Cycles
+        How to Use Moving Averages to Read Trend Changes
+        Entry and Exit Rules for Bounce Strategy Long and Short Setups
+        Uptrend and Downtrend Wave Patterns and Low Risk Filters
+        Trade Management
+        How to Screen for Bounce trade setups
+        Identifying High Momentum Stocks
+        Personal Finance
+
+        Banking
+        Insurance
+        Financial Planning
+        Invesing and Saving
+        Budgeting
+        Loans and credit
+        Renting and Buying
+        Retirement Planning
+        Taxes Etc....
+        </p>
+        <div class="para-text" [innerHTML]="description"></div>
+      </div>
+
+      
+      <div class="col-md-5  position-sticky positionb d-lg-inline d-none" >
 
         <div class="card shadow border-0">
           <div class="card-header pb-20">
@@ -31,16 +183,16 @@
             <br>
             <div *ngIf="dicountAmount!=0 && courseAmount!=0">
               <span class="para-tts">
-                <p class="header-text-list">Price:
+                <p class="para-tts">Price:
                   <span style="font-weight: 900;">₹{{dicountAmount}}
                   </span>
                   <del
-                    style="font-weight: 900;margin-left: 30px;font-size:20px;">₹{{courseAmount}}
+                    style="font-size: 16px; color: #707282;">₹{{courseAmount}}
                   </del>
                 </p>
               </span>
               <a (click)="onPurchaseNowButtonClick()">
-                <span class="btn btn-view mt-4">PURCHASE NOW</span>
+                <span class="btn btn-view mt-4">BUY NOW</span>
               </a>
             </div>
             <div *ngIf="dicountAmount==0 && courseAmount!=0">
@@ -60,14 +212,14 @@
           </a>
         </div>
       </div>
-      <div class="col-lg-7 order-md-1">
-        <div class="d-lg-inline d-none">
-          <h3 class="header-text-list">{{courseName}}</h3>
-        </div>
-        <h2 class="header-tt-list">What is This course About?
-        </h2>
-        <div class="para-text" [innerHTML]="description"></div>
-      </div>
+
+
+      
+
+
     </div>
   </div>
 </section>
+
+
+<app-partners></app-partners>
