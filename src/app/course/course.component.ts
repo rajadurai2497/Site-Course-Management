@@ -19,8 +19,8 @@ export class CourseComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.forEach((params) => {
-      if (params['courseId']) {
-        this.courseMasterId = params['courseId'];
+      if (params['course']) {
+        this.courseMasterId = params['course'];
         this.getAllCourselist();
         return;
       }
@@ -58,15 +58,9 @@ export class CourseComponent implements OnInit {
   public goToDetails(course: AllCourse): void {
     const navigationExtras: NavigationExtras = {
       queryParams: {
-        courseId: course.courseMasterId,
-        courseName: course.courseName,
-        courseAmount: course.courseAmount,
-        provideWhat: course.provideWhat,
-        description: course.description,
-        dicountAmount: course.dicountAmount,
-        language: course.language
+        course: course.courseMasterId,
       },
-      skipLocationChange: true,
+      skipLocationChange: false,
     };
     this.router.navigate(['course-details'], navigationExtras);
   }
