@@ -1,45 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupComponent } from 'src/app/signup/signup.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { AllCourse } from 'src/app/models/course/course.model';
+import { CourseService } from 'src/app/services/course.service';
 @Component({
   selector: 'app-course-details',
   templateUrl: './course-details.component.html',
   styleUrls: ['./course-details.component.scss'],
+  providers: [CourseService],
 })
 export class CourseDetailsComponent implements OnInit {
-  courseMasterId: string;
-  courseName: string;
-  courseAmount: number;
-  description: string;
-  provideWhat: string;
-  learnersNumber: string;
-  dicountAmount:number;
+  currentCourse:AllCourse;
+  courseMasterId:number=0;
 
-  constructor(private dialog: MatDialog, private route: ActivatedRoute, private readonly router: Router) {}
+
+  constructor(private dialog: MatDialog,private readonly _courseService: CourseService, private route: ActivatedRoute, private readonly router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.forEach((params) => {
-      if (params['courseId']) {
-        this.courseMasterId = params['courseId'];
-      }
-      if (params['courseName']) {
-        this.courseName = params['courseName'];
-      }
-      if (params['provideWhat']) {
-        this.provideWhat = params['provideWhat'];
-      }
-      if (params['description']) {
-        this.description = params['description'];
-      }
-      if (params['courseAmount']) {
-        this.courseAmount = params['courseAmount'];
-      }
-      if (params['dicountAmount']) {
-        this.dicountAmount = params['dicountAmount'];
+      if (params['course']) {
+        this.courseMasterId = params['course'];
       }
     });
+    this.getAllCourselist();
   }
   signup() {
     const dialogRef = this.dialog.open(SignupComponent, {
@@ -51,4 +35,20 @@ export class CourseDetailsComponent implements OnInit {
   public onPurchaseNowButtonClick(): void {
     this.router.navigate(['/signup'], { queryParams: { course: this.courseMasterId } });
   }
+  public getAllCourselist(): void {
+    this._courseService.getAllCourselist().then((data) => {
+      if (data && data.result) {
+        data.allCourse.forEach(element => {
+          if(this.courseMasterId==element.courseMasterId){
+            this.currentCourse = element;
+            } 
+        });
+      }
+    });
+  }
 }
+
+ 
+  
+
+  
