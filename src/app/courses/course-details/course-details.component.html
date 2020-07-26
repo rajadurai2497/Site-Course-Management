@@ -6,13 +6,11 @@
 
 <section>
 
-  <div class="container py-md" style="margin-top: -25px">
+  <div class="container py-md" style="margin-top: -25px" *ngIf="currentCourse">
     <div class="row ">
-
-
       <div class="d-lg-none" style="padding-bottom: 9px; padding-left: 30px;">
         <span>
-        <h3 class="header-text-list" [innerHTML]="courseName"></h3>
+        <h3 class="header-text-list" [innerHTML]="currentCourse.courseName"></h3>
         </span>
       </div>
 
@@ -27,15 +25,15 @@
             </div>
           </div>
           <div class="card-body px-lg-5 py-lg-5 ">
-            <span class="para-text" [innerHTML]="provideWhat"></span>
+            <span class="para-text" [innerHTML]="currentCourse.provideWhat"></span>
             <br>
-            <div *ngIf="dicountAmount!=0 && courseAmount!=0">
+            <div *ngIf="currentCourse.dicountAmount!=0 && currentCourse.courseAmount!=0">
               <span class="para-tts">
                 <p class="header-text-list">Price:
-                  <span style="font-weight: 900;">₹{{dicountAmount}}
+                  <span style="font-weight: 900;">₹{{currentCourse.dicountAmount}}
                   </span>
                   <del
-                    style="font-weight: 900;margin-left: 30px;font-size:20px;">₹{{courseAmount}}
+                    style="font-weight: 900;margin-left: 30px;font-size:20px;">₹{{currentCourse.courseAmount}}
                   </del>
                 </p>
               </span>
@@ -43,10 +41,10 @@
                 <span class="btn btn-view mt-4">PURCHASE NOW</span>
               </a>
             </div>
-            <div *ngIf="dicountAmount==0 && courseAmount!=0">
+            <div *ngIf="currentCourse.dicountAmount==0 && currentCourse.courseAmount!=0">
               <span class="para-tts">
                 <p class="header-text-list">Price:
-                  <span style="font-weight: 900;font-size: 18px;">₹{{courseAmount}}
+                  <span style="font-weight: 900;font-size: 18px;">₹{{currentCourse.courseAmount}}
                   </span>
                 </p>
               </span>
@@ -55,18 +53,18 @@
               </a>
             </div>
           </div>
-          <a *ngIf="courseAmount==0 && dicountAmount==0" [routerLink]="['/Course']">
+          <a *ngIf="currentCourse.courseAmount==0 && currentCourse.dicountAmount==0" [routerLink]="['/Course']">
             <span class="btn btn-view ml-4">COMING SOON</span>
           </a>
         </div>
       </div>
       <div class="col-lg-7 order-md-1">
         <div class="d-lg-inline d-none">
-          <h3 class="header-text-list">{{courseName}}</h3>
+          <h3 class="header-text-list">{{currentCourse.courseName}}</h3>
         </div>
         <h2 class="header-tt-list">What is This course About?
         </h2>
-        <div class="para-text" [innerHTML]="description"></div>
+        <div class="para-text" [innerHTML]="currentCourse.description"></div>
       </div>
     </div>
   </div>
