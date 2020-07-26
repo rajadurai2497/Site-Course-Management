@@ -4,19 +4,22 @@
     background-color: inherit;
     @include transition($transition-base);
 }
-.headroom--pinned {
-	@extend .position-fixed;
-    transform: translateY(0%);
-}
+// .headroom--pinned {
+// 	@extend .position-fixed;
+//      transform: translateY(0%);
+// }
+
 .headroom--unpinned {
 	@extend .position-fixed;
     transform: translateY(-100%);
+   
 }
 
 .headroom--not-top {
 	padding-top: .5rem;
 	padding-bottom: .5rem;
-    background-color:  white;
+    // background-color:  white;
+    background: linear-gradient(150deg,#33cacf 15%,#c6f1e3 70%,#a9f3da 94%);
     color:#000;
     box-shadow: 0 1px 10px rgba(130, 130, 134, 0.1);
 }

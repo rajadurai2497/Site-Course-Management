@@ -4,7 +4,7 @@
   </div>
 </section>
 
-<section>
+<section >
 
   <div class="container py-md" style="margin-top: -25px" *ngIf="currentCourse">
     <div class="row ">
@@ -15,8 +15,62 @@
       </div>
 
 
-      <div class="col-md-5 order-md-2" style="margin-top: -42px;
-            padding-top: 44px;">
+      <div class="col-lg-7 ">
+        <div class="d-lg-inline d-none">
+          <h3 class="header-text-list order-md-1">{{currentCourse.courseName}}</h3>
+        </div>
+        <div class="col-lg-5 col-md-12 order-md-2 d-lg-none" >
+
+          <div class="card shadow border-0">
+            <div class="card-header pb-20">
+              <div class="head-card">
+                <h2 class=" text-white" style="margin-bottom: -14px;">What We Provide?</h2>
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5 ">
+              <span class="para-text" [innerHTML]="currentCourse.provideWhat"></span>
+              <br>
+              <div *ngIf="dicountAmount!=0 && courseAmount!=0">
+                <span class="para-tts">
+                  <p class="para-tts">Price:
+                    <span style="font-weight: 900;">₹{{currentCourse.dicountAmount}}
+                    </span>
+                    <del
+                      style="font-size: 16px; color: #707282;">₹{{currentCourse.courseAmount}}
+                    </del>
+                  </p>
+                </span>
+                <a (click)="onPurchaseNowButtonClick()">
+                  <span class="btn btn-view mt-4">BUY NOW</span>
+                </a>
+              </div>
+              <div *ngIf="dicountAmount==0 && courseAmount!=0">
+                <span class="para-tts">
+                  <p class="header-text-list">Price:
+                    <span style="font-weight: 900;font-size: 18px;">₹{{currentCourse.courseAmount}}
+                    </span>
+                  </p>
+                </span>
+                <a (click)="onPurchaseNowButtonClick()">
+                  <span class="btn btn-view mt-4">PURCHASE NOW</span>
+                </a>
+              </div>
+            </div>
+            <a *ngIf="courseAmount==0 && dicountAmount==0" [routerLink]="['/Course']">
+              <span class="btn btn-view ml-4">COMING SOON</span>
+            </a>
+          </div>
+        </div>
+  
+
+        <h2 class="header-tt-list order-md-3">What is This course About?
+        </h2>
+        <div class="para-text" [innerHTML]="currentCourse.description"></div>
+      </div>
+
+      
+      <div class="col-md-5 d-lg-inline d-none">
+      <div class="sticky-top">
 
         <div class="card shadow border-0">
           <div class="card-header pb-20">
@@ -29,16 +83,16 @@
             <br>
             <div *ngIf="currentCourse.dicountAmount!=0 && currentCourse.courseAmount!=0">
               <span class="para-tts">
-                <p class="header-text-list">Price:
+                <p class="para-tts">Price:
                   <span style="font-weight: 900;">₹{{currentCourse.dicountAmount}}
                   </span>
                   <del
-                    style="font-weight: 900;margin-left: 30px;font-size:20px;">₹{{currentCourse.courseAmount}}
+                    style="font-size: 16px; color: #707282;">₹{{currentCourse.courseAmount}}
                   </del>
                 </p>
               </span>
               <a (click)="onPurchaseNowButtonClick()">
-                <span class="btn btn-view mt-4">PURCHASE NOW</span>
+                <span class="btn btn-view mt-4">BUY NOW</span>
               </a>
             </div>
             <div *ngIf="currentCourse.dicountAmount==0 && currentCourse.courseAmount!=0">
@@ -57,15 +111,10 @@
             <span class="btn btn-view ml-4">COMING SOON</span>
           </a>
         </div>
-      </div>
-      <div class="col-lg-7 order-md-1">
-        <div class="d-lg-inline d-none">
-          <h3 class="header-text-list">{{currentCourse.courseName}}</h3>
         </div>
-        <h2 class="header-tt-list">What is This course About?
-        </h2>
-        <div class="para-text" [innerHTML]="currentCourse.description"></div>
       </div>
     </div>
   </div>
+  
 </section>
+<app-partners></app-partners>
