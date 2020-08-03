@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PaymentService {
-  PaymentUrl =ROUTE_CONFIG. BasicURL;
+  PaymentUrl =ROUTE_CONFIG.CourseManagementURL;
   constructor(private readonly _http: HttpClient) {}
 
   insertOrder(courseId: string, access_token): Observable<any> {
