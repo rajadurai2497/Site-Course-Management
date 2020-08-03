@@ -30,7 +30,7 @@
             <div class="card-body px-lg-5 py-lg-5 ">
               <span class="para-text" [innerHTML]="currentCourse.provideWhat"></span>
               <br>
-              <div *ngIf="dicountAmount!=0 && courseAmount!=0">
+              <div *ngIf="currentCourse.dicountAmount==0 && currentCourse.courseAmount!=0">
                 <span class="para-tts">
                   <p class="para-tts" style="padding-left: 22px;">Price:
                     <span style="font-weight: 900;">₹{{currentCourse.dicountAmount}}
