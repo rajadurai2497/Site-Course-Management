@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { AllCourse } from 'src/app/models/course/course.model';
 import { CourseService } from 'src/app/services/course.service';
+import { CountService } from 'src/app/services/count.service';
 @Component({
   selector: 'app-course-details',
   templateUrl: './course-details.component.html',
@@ -13,9 +14,9 @@ import { CourseService } from 'src/app/services/course.service';
 export class CourseDetailsComponent implements OnInit {
   currentCourse:AllCourse;
   courseMasterId:number=0;
+  learnersCount:number=10250;
 
-
-  constructor(private dialog: MatDialog,private readonly _courseService: CourseService, private route: ActivatedRoute, private readonly router: Router) {}
+  constructor(private dialog: MatDialog,private readonly _countService: CountService,private readonly _courseService: CourseService, private route: ActivatedRoute, private readonly router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.forEach((params) => {
@@ -24,6 +25,7 @@ export class CourseDetailsComponent implements OnInit {
       }
     });
     this.getAllCourselist();
+    this.getCount();
   }
   signup() {
     const dialogRef = this.dialog.open(SignupComponent, {
@@ -31,7 +33,11 @@ export class CourseDetailsComponent implements OnInit {
       width: '400px',
     });
   }
-
+  public getCount(): void{
+    this._countService.getCount(this.courseMasterId).then((data)=>{
+      this.learnersCount=data.countResult;
+    })
+  }
   public onPurchaseNowButtonClick(): void {
     this.router.navigate(['/signup'], { queryParams: { course: this.courseMasterId } });
   }

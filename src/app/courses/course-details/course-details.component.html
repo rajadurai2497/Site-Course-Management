@@ -11,6 +11,10 @@
       <div class="d-lg-none" style="padding-bottom: 9px; padding-left: 30px;">
         <span>
           <h3 class="header-text-list" [innerHTML]="currentCourse.courseName"></h3>
+          <div class="embed-responsive embed-responsive-16by9 ">
+            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/435423154"
+                width="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
         </span>
       </div>
 
@@ -18,6 +22,10 @@
       <div class="col-lg-7 ">
         <div class="d-lg-inline d-none">
           <h3 class="header-text-list order-md-1">{{currentCourse.courseName}}</h3>
+          <div class="embed-responsive embed-responsive-16by9 ">
+            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/435423154"
+                width="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
         </div>
         <div class="col-lg-5 col-md-12 order-md-2 d-lg-none">
 
@@ -29,7 +37,10 @@
             </div>
             <div class="card-body px-lg-5 py-lg-5 ">
               <span class="para-text" [innerHTML]="currentCourse.provideWhat"></span>
-              <br>
+              <div class="course-pill" style="padding-bottom: 15px;padding-left: 6%; ">
+                <span class="badge badge-pill badge-success">{{learnersCount}}+ users</span>
+                <span class="badge badge-pill badge-success" style="margin-left: 10px;">{{currentCourse.language}}</span>
+              </div>
               <div *ngIf="currentCourse.dicountAmount!=0 && currentCourse.courseAmount!=0">
                 <span class="para-tts">
                   <p class="para-tts" style="padding-left: 22px;">Price:
@@ -65,6 +76,10 @@
         <h2 class="header-tt-list order-md-3">What is This course About?
         </h2>
         <div class="para-text" [innerHTML]="currentCourse.description"></div>
+        <div class="embed-responsive embed-responsive-16by9 ">
+          <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/435423154"
+              width="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
       </div>
 
 
@@ -79,7 +94,11 @@
             </div>
             <div class="card-body px-lg-5 py-lg-5 ">
               <span class="para-text" [innerHTML]="currentCourse.provideWhat"></span>
-              <br>
+              
+              <div class="course-pill" style="padding-bottom: 15px;padding-left: 6%; ">
+                <span class="badge badge-pill badge-success">{{learnersCount}}+ users</span>
+                <span class="badge badge-pill badge-success" style="margin-left: 10px;">{{currentCourse.language}}</span>
+              </div>
               <div *ngIf="currentCourse.dicountAmount!=0 && currentCourse.courseAmount!=0">
                 <span class="para-tts">
                   <p class="para-tts" style="padding-left: 22px;">Price:
