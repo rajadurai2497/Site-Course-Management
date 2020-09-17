@@ -18,7 +18,7 @@ import { MatSnackBar } from '@angular/material';
 
 })
 export class SignupComponent implements OnInit {
-  
+
   phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
   userId: number;
   city: string;
@@ -57,7 +57,7 @@ export class SignupComponent implements OnInit {
     this._activatedRoute.queryParams.subscribe((queryParams) => {
       this.courseId = queryParams['course'];
     });
-    
+
     this.signupForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       passWord: ['', [Validators.required]],
@@ -93,8 +93,7 @@ export class SignupComponent implements OnInit {
           this.SpinnerService.hide();
         }
       });
-    }
-    else {
+    } else {
       this.SpinnerService.hide();
     }
   }
@@ -146,9 +145,10 @@ export class SignupComponent implements OnInit {
           if (message) {
             this._snackBar.open('Payment completed successfully. You will be redirected to our Course Management Page', 'Close', {
               duration: 2000,
+
               verticalPosition: 'top',
             });
-            location.href = "https://portal.lurecapacademy.com/auth/signin?pay=1"
+            location.href = 'https://lurecapacademy.com/thankyou';
           } else {
             this._snackBar.open('payment failed', 'Close', {
               duration: 2000,

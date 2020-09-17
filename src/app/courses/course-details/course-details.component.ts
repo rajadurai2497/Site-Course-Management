@@ -16,7 +16,10 @@ export class CourseDetailsComponent implements OnInit {
   courseMasterId:number=0;
   learnersCount:number=10250;
 
-  constructor(private dialog: MatDialog,private readonly _countService: CountService,private readonly _courseService: CourseService, private route: ActivatedRoute, private readonly router: Router) {}
+  constructor(private dialog: MatDialog,private readonly _countService: CountService,
+    private readonly _courseService: CourseService,
+     private route: ActivatedRoute,
+      private readonly router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.forEach((params) => {

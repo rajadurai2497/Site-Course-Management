@@ -15,9 +15,10 @@ import { LoginComponent } from './signup/login/login.component';
 import { WindowRef } from './services/window-ref.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatSnackBarModule } from '@angular/material';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent, LoginComponent],
+  declarations: [AppComponent, NavbarComponent, FooterComponent, LoginComponent, ThankyouComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
